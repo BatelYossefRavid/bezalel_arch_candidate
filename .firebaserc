@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "bezalelarchcandidate"
+    "default": "participatory-assist2"
+  },
+  "targets": {
+    "participatory-assist2": {
+      "hosting": {
+        "bezalel_cv": [
+          "bezalelarchcandidate"
+        ]
+      }
+    }
   }
 }

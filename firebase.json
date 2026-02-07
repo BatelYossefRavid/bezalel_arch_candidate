@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "bezalel_cv",
     "public": ".",
     "ignore": [
       "firebase.json",
