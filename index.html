@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ד"ר בת-אל יוסף רביד | אדריכלות, מחקר והובלה</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Heebo', sans-serif; letter-spacing: -0.01em; scroll-behavior: smooth; }
+        .bauhaus-grid {
+            background-image: linear-gradient(#f3f3f3 1px, transparent 1px), linear-gradient(90deg, #f3f3f3 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .active-tab { border-bottom: 5px solid black; opacity: 1 !important; font-weight: 900; }
+        
+        /* Accordion Logic */
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .accordion-item.active .accordion-content { max-height: 5000px; }
+        .accordion-header { border-bottom: 1px solid #000; cursor: pointer; transition: background 0.2s; }
+        .accordion-header:hover { background-color: #fafafa; }
+        .chevron { transition: transform 0.3s; }
+        .accordion-item.active .chevron { transform: rotate(180deg); }
+        
+        /* Typography */
+        .intro-text p { margin-bottom: 1.5rem; line-height: 1.8; font-weight: 300; font-size: 1.25rem; }
+    </style>
+</head>
+<body class="bg-white text-black min-h-screen selection:bg-black selection:text-white">
+
+    <!-- Background Grid -->
+    <div class="fixed inset-0 bauhaus-grid opacity-30 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-16">
+        
+        <!-- Top Bar with Download -->
+        <div class="flex justify-between items-center mb-16 border-b-2 border-black pb-6">
+            <div class="text-[11px] font-black tracking-[0.4em] uppercase opacity-40">Candidate for Head of School / Bezalel Academy</div>
+            <a href="#" class="bg-black text-white px-6 py-3 text-[11px] font-black tracking-[0.2em] uppercase hover:bg-gray-800 transition-all flex items-center gap-2 shadow-lg">
+                הורדת קורות חיים אקדמיים (PDF)
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+        </div>
+
+        <!-- Identity Header -->
+        <header class="mb-20">
+            <h1 class="text-7xl md:text-9xl font-black tracking-tighter leading-[0.85] uppercase mb-10">
+                בת-אל<br>יוסף רביד
+            </h1>
+            <div class="max-w-4xl border-r-8 border-black pr-8">
+                <p class="text-2xl md:text-3xl font-light leading-tight tracking-tight">
+                    אדריכלית, חוקרת ומרצה. מומחית ב**מדע נתונים עירוני**, מחקר יישומי ופיתוח כלים תכנוניים מבוססי נתונים.
+                </p>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="flex gap-10 border-b border-gray-100 mb-20 overflow-x-auto">
+            <button onclick="openTab('intro', this)" class="tab-link active-tab pb-4 text-[14px] font-bold tracking-[0.2em] uppercase opacity-30 transition-all whitespace-nowrap">01. ראשית דבר</button>
+            <button onclick="openTab('cv', this)" class="tab-link pb-4 text-[14px] font-bold tracking-[0.2em] uppercase opacity-30 transition-all whitespace-nowrap">02. קורות חיים</button>
+            <button onclick="openTab('vision', this)" class="tab-link pb-4 text-[14px] font-bold tracking-[0.2em] uppercase opacity-30 transition-all whitespace-nowrap">03. חזון אקדמי</button>
+            <button onclick="openTab('portfolio', this)" class="tab-link pb-4 text-[14px] font-bold tracking-[0.2em] uppercase opacity-30 transition-all whitespace-nowrap">04. תיק עבודות</button>
+        </nav>
+
+        <main>
+            
+            <!-- SECTION 1: INTRO (ראשית דבר) -->
+            <div id="intro" class="tab-content active animate-in fade-in duration-700">
+                <article class="max-w-3xl intro-text italic text-gray-900">
+                    <h2 class="text-4xl font-black uppercase mb-12 not-italic">ראשית דבר</h2>
+                    
+                    <p>אני כותבת טקסט זה מתוך התרגשות עמוקה והערכה כנה למוסד שממנו צמחתי, ושעבורי היה ועודנו מקור השראה מתמשך לאורך דרכי המקצועית והאקדמית. בצלאל אינה רק תחנת פתיחה בקריירה שלי – היא חלק מהזהות המקצועית שלי כאדריכלית, חוקרת ומרצה.</p>
+                    
+                    <p>לבצלאל הגעתי בשנת 2008, צעירה, סקרנית, לאחר מסע של שנה בעולם, ועם תחושה ברורה שזוהי נקודת מפנה בחיי. אני זוכרת היטב את רגע פתיחת המעטפה שבה נכתב שהתקבלתי – רגע שבו הבנתי שמכאן הדרך שלי עומדת להשתנות. נקודת הפתיחה שלי לא הייתה מובנת מאליה, אך הדחף ללמוד, להשתלב ולפעול היה חזק ובלתי ניתן לעצירה. הניצוץ שנדלק בשנים ההן מלווה אותי עד היום.</p>
+                    
+                    <p>את האהבה העמוקה למקצוע מצאתי בסטודיו לאדריכלות אזרחית, בהובלת אדר’ ליאת אתגר בריקס – סטודיו שנכנסתי אליו כסטודנטית בשנה ד’, ומבחינתי מעולם לא הסתיים. שם נחשפתי לאדריכלות כפרקטיקה אזרחית, חברתית ופוליטית, המחוברת לקהילה, למרחב ולשאלות של אחריות. בהמשך, כחלק מצוות ההקמה של פרויקט “מראה מקום”, חוויתי לראשונה את העוצמה של עשייה רב־תחומית במרחב הירושלמי, והעמקתי את החיבור שבין אדריכלות, קהילה ויצירה.</p>
+                    
+                    <p>לאחר סיום הלימודים פעלתי בשדה המקצועי – בתהליכי תכנון משתפים במסגרת עמותת “מרחב”, בעבודת שימור, ובמשרדה של פרופ’ ניצה סמוק, שהייתה עבורי בית ספר לחיים מקצועיים. העבודה בקנה המידה הבנייני, לצד חשיפה יומיומית למדיניות שימור עירונית, לימדה אותי לראות את הבניין כחלק ממערכת רחבה של החלטות, ערכים וכוחות. מתוך נקודת מבט זו, וכבת באר שבע, החלה להתגבש אצלי השאלה האזורית – על שימור, תכנון וצדק מרחבי גם מחוץ ל“מדינת תל אביב”.</p>
+                    
+                    <p>במטרה להעמיק, יצאתי ללימודים בחו״ל בזכות מלגת קלור–בצלאל. קבלת המלגה הייתה רגע מכונן – ביטוי לאמון של המוסד בי ולאפשרות לצאת לדרך מחקרית בינלאומית מתוך השתייכות עמוקה לבצלאל. יצאתי ללונדון כנציגה גאה של האקדמיה ללימודי מחקר ב־Royal College of Art. תקופה זו אפשרה לי להעמיק בשאלות של תכנון דמוקרטי, מדיניות עירונית ושיתוף ציבור.</p>
+                    
+                    <p>עם חזרתי לארץ, נעניתי להזמנה לדוקטורט יישומי בטכניון. ביחד עם המנחה שלי, פרופ’ מירב אהרון־גוטמן, הקמנו מעבדה מחקרית רב־תחומית שעסקה בפיתוח כלים דיגיטליים ומתודולוגיות חדשות. החזרה לבאר שבע והצטרפותי להקמת בית הספר לארכיטקטורה שם הייתה בחירה מודעת וערכית: לתרום לבניית תשתית אקדמית משמעותית בדרום.</p>
+                    
+                    <p>כיום אני חברת סגל ליבה בבית הספר, מובילה תחומים של עיצוב עירוני בעידן הדיגיטלי, מדע עירוני ופיתוח כלים תכנוניים מבוססי נתונים. החזרה לבצלאל כעת, בעמדה של הנהגה, היא הזדמנות לחבר בין ידע, ניסיון וחזון – ולהוביל את המוסד אל עבר השלב הבא שלו.</p>
+                </article>
+            </div>
+
+            <!-- SECTION 2: CV (DETAILED ACCORDIONS) -->
+            <div id="cv" class="tab-content animate-in fade-in duration-500">
+                <div class="border-t border-black">
+                    
+                    <!-- Accordion: Education -->
+                    <div class="accordion-item active">
+                        <div onclick="toggleAccordion(this)" class="accordion-header py-8 flex justify-between items-center px-2">
+                            <span class="text-xs font-black tracking-[0.3em] uppercase">01. השכלה אקדמית והצטיינות</span>
+                            <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="accordion-content px-4 pb-12 pt-6 grid md:grid-cols-2 gap-12">
+                            <div class="space-y-6">
+                                <div><h4 class="font-black text-xl">Ph.D., Architecture and Town Planning</h4><p class="text-sm opacity-60 italic">Technion, Haifa | 2019-2023</p></div>
+                                <div><h4 class="font-black text-xl">M.Res, Spatial Design</h4><p class="text-sm opacity-60 italic">Royal College of Art, London | 2017-2018</p></div>
+                                <div><h4 class="font-black text-xl">B.Arch, Architecture</h4><p class="text-sm opacity-60 italic">Bezalel Academy, Jerusalem | 2008-2013</p></div>
+                            </div>
+                            <div class="bg-gray-50 p-8 space-y-4 border border-gray-100">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest opacity-40">פרסי הצטיינות נבחרים</h5>
+                                <p class="text-sm font-bold">פרס חגית אדיב (2023) - מנהיגות בתכנון חברתי</p>
+                                <p class="text-sm font-bold">פרס גוטווירט (2022) - הצטיינות במחקר אקדמי</p>
+                                <p class="text-sm font-bold">מלגת קלור-בצלאל (2017) - מלגת מנהיגות ל-RCA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion: Instruction (הוראה) -->
+                    <div class="accordion-item">
+                        <div onclick="toggleAccordion(this)" class="accordion-header py-8 flex justify-between items-center px-2 opacity-50 hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-black tracking-[0.3em] uppercase">02. הוראה ופיתוח פדגוגי</span>
+                            <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="accordion-content px-4 pb-12 pt-6 space-y-10">
+                            <div class="grid md:grid-cols-3 gap-8">
+                                <div class="col-span-2 space-y-4">
+                                    <h4 class="font-black text-xl underline decoration-2">קורסים בהובלתי</h4>
+                                    <ul class="space-y-4 text-lg font-light italic">
+                                        <li>— עיצוב עירוני בטרנספורמציה דיגיטלית (B.Arch, שנה ג')</li>
+                                        <li>— יישומי HCI ו-GIS למהנדסי תוכנה (Software Engineering)</li>
+                                        <li>— כלים דיגיטליים של מדע עירוני (שיתוף פעולה SCE-MIT)</li>
+                                    </ul>
+                                </div>
+                                <div class="border-r border-black pr-6">
+                                    <h4 class="font-black text-xs uppercase tracking-widest opacity-40 mb-4">Teaching Philosophy</h4>
+                                    <p class="text-sm font-light leading-relaxed italic text-gray-500">הוראה המשלבת אוריינות דיגיטלית, ניתוח נתונים ורגישות חברתית כבסיס לעיצוב המרחב העכשווי.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion: Publications (מאמרים) -->
+                    <div class="accordion-item">
+                        <div onclick="toggleAccordion(this)" class="accordion-header py-8 flex justify-between items-center px-2 opacity-50 hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-black tracking-[0.3em] uppercase">03. פרסומים ומחקר אקדמי</span>
+                            <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="accordion-content px-4 pb-12 pt-6 space-y-12 max-w-4xl">
+                            
+                            <div class="group relative flex justify-between items-start border-r-4 border-black pr-8 py-2">
+                                <div>
+                                    <h4 class="font-black text-2xl leading-tight transition-all">The Place of Co-Production: A Physital Space for Collaborative Urban Government</h4>
+                                    <p class="text-[10px] font-bold opacity-40 uppercase mt-1 tracking-widest">Technological Forecasting & Social Change (2024)</p>
+                                    <p class="text-sm font-light mt-4 text-gray-500 italic max-w-2xl">מחקר המנתח כיצד מרחבים פיזיטליים (Physital) מייצרים דיאלוג חדש בין רשויות מקומיות לקהילה בעידן הדיגיטלי.</p>
+                                </div>
+                                <a href="https://doi.org/10.1016/j.techfore.2024.123748" target="_blank" class="p-3 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="group relative flex justify-between items-start border-r-4 border-black pr-8 py-2">
+                                <div>
+                                    <h4 class="font-black text-2xl leading-tight transition-all">The Social Digital Twin: The Social Turn in the Field of Smart Cities</h4>
+                                    <p class="text-[10px] font-bold opacity-40 uppercase mt-1 tracking-widest">Environment and Planning B: Urban Analytics (2023)</p>
+                                    <p class="text-sm font-light mt-4 text-gray-500 italic max-w-2xl">פיתוח קונספטואלי של 'תאום דיגיטלי חברתי' המשלב נתונים אנושיים בתוך תהליכי תכנון מבוססי אלגוריתם.</p>
+                                </div>
+                                <a href="#" target="_blank" class="p-3 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Accordion: Practice (פרקטיקה) -->
+                    <div class="accordion-item">
+                        <div onclick="toggleAccordion(this)" class="accordion-header py-8 flex justify-between items-center px-2 opacity-50 hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-black tracking-[0.3em] uppercase">04. פרקטיקה תכנונית וייזום</span>
+                            <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="accordion-content px-4 pb-12 pt-6 space-y-10">
+                            <div class="p-10 border-2 border-black bg-gray-50">
+                                <h4 class="text-3xl font-black italic mb-4 uppercase">Physital City Studio (Founder)</h4>
+                                <p class="text-lg font-light leading-relaxed">הקמת סטודיו המתמחה בשימוש במדע נתונים עירוני (Urban Data Science) לשיפור תהליכי קבלת החלטות. פרויקטים בולטים עבור מחלקת השימור של עיריית תל אביב והרשות לפיתוח ירושלים.</p>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="border-r border-black pr-6">
+                                    <h5 class="font-bold">Nitza Szmuk Architects (2013-2017)</h5>
+                                    <p class="text-sm opacity-60">אדריכלית וחוקרת עירונית במחלקת השימור.</p>
+                                </div>
+                                <div class="border-r border-black pr-6">
+                                    <h5 class="font-bold">Movement for Israeli Urbanism (MIU)</h5>
+                                    <p class="text-sm opacity-60">תכנון משתף ופיתוח מדיניות עירונית.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 3: VISION (THE MANIFESTO) -->
+            <div id="vision" class="tab-content animate-in fade-in duration-700">
+                <div class="max-w-4xl mx-auto space-y-12 py-10">
+                    <h2 class="text-5xl font-black uppercase tracking-tighter border-b-8 border-black pb-6">חזון לבית הספר לארכיטקטורה בבצלאל</h2>
+                    <div class="text-2xl font-light italic leading-relaxed text-gray-800 space-y-8">
+                        <p>האדריכלות של העשור הקרוב פועלת בתוך מרחב **Physital** – מרחב שבו הפיזי והדיגיטלי שזורים זה בזה. תפקיד האדריכל משתנה ממעצב צורה למעצב של מערכות.</p>
+                        <p>חזוני הוא להפוך את בית הספר למעבדה חיה של מחקר יישומי (Practice-based Research), המשלבת מחקר חברתי, עבודה עם נתונים וכלים חישוביים.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: PORTFOLIO -->
+            <div id="portfolio" class="tab-content py-20 text-center opacity-30 text-2xl font-light tracking-widest italic">Selected Projects from Physital Lab</div>
+
+        </main>
+
+        <!-- Footer: Bauhaus Style -->
+        <footer class="mt-40 border-t-8 border-black pt-12 pb-20 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-[12px] font-black tracking-[0.5em] uppercase opacity-40">DR. BATEL YOSSEF RAVID / BEZALEL 2026</div>
+            <div class="flex gap-12 text-[12px] font-black tracking-[0.2em] uppercase opacity-70">
+                <a href="https://www.nurlab.org/" target="_blank" class="hover:underline decoration-4">NUR LAB</a>
+                <a href="https://physital.studio/" target="_blank" class="hover:underline decoration-4">PHYSITAL STUDIO</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function openTab(tabName, element) {
+            var i, tabContent, tabLinks;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) { tabContent[i].classList.remove("active"); }
+            tabLinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tabLinks.length; i++) { tabLinks[i].classList.remove("active-tab"); }
+            document.getElementById(tabName).classList.add("active");
+            element.classList.add("active-tab");
+            window.scrollTo(0, 0);
+        }
+
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            if (!isActive) { item.classList.add('active'); } else { item.classList.remove('active'); }
+        }
+    </script>
+</body>
+</html>
