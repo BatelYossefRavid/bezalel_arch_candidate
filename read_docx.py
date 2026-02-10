@@ -27,8 +27,18 @@ def read_docx(file_path):
     except Exception as e:
         return f"Error: {str(e)}"
 
+import sys
+
 if __name__ == "__main__":
-    content = read_docx("חזון לבצלאל.docx")
-    with open("vision_content.txt", "w", encoding="utf-8") as f:
+    if len(sys.argv) < 2:
+        print("Usage: python read_docx.py <input_docx> [output_txt]")
+        sys.exit(1)
+        
+    input_file = sys.argv[1]
+    output_file = sys.argv[2] if len(sys.argv) > 2 else "extracted.txt"
+    
+    content = read_docx(input_file)
+    
+    with open(output_file, "w", encoding="utf-8") as f:
         f.write(content)
-    print("Done.")
+    print(f"Done. Content written to {output_file}")
