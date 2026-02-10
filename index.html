@@ -309,11 +309,11 @@
                 class="nav-btn w-full text-right px-4 py-3 text-sm font-bold tracking-wide hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-black">
                 07. מאמרים
             </button>
-            <button onclick="scrollToSection('urban-design')"
+            <button onclick="scrollToTab('articles', 'urban-design')"
                 class="nav-btn w-full text-right px-4 py-3 text-sm font-bold tracking-wide hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-black">
                 עיצוב עירוני בעידן הדיגיטלי
             </button>
-            <button onclick="scrollToSection('urban-science')"
+            <button onclick="scrollToTab('articles', 'urban-science')"
                 class="nav-btn w-full text-right px-4 py-3 text-sm font-bold tracking-wide hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-black">
                 מדע עירוני
             </button>
@@ -1925,6 +1925,19 @@
 
             btn.classList.add('bg-black', 'text-white', 'border-black', 'shadow-lg');
             btn.classList.remove('bg-white', 'text-gray-500', 'border-gray-200');
+        }
+
+        function scrollToTab(sectionId, tabId) {
+            // Scroll to section
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+            // Switch tab
+            setTimeout(() => {
+                const btn = document.getElementById('btn-' + tabId);
+                if (btn) switchPubTab(tabId, btn);
+            }, 600);
         }
     </script>
 </body>
