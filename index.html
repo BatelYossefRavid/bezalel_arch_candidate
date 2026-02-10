@@ -792,16 +792,14 @@
                     </div>
                 </div>
 
-                <!-- Project 4: Digital Conservation TLV (New!) -->
-                <div class="grid md:grid-cols-2 gap-12 items-center border-t border-gray-100 pt-12">
+                <!-- Project 4: Digital Preservation TLV -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div
-                        class="order-2 md:order-1 aspect-video bg-gray-100 rounded-lg overflow-hidden border border-gray-200 shadow-md group">
-                        <img src="assets/images/arch_levontin.webp"
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 block group-hover:hidden"
-                            alt="Digital Preservation TLV">
+                        class="order-2 md:order-1 relative h-96 group overflow-hidden bg-gray-50 flex items-center justify-center">
+                        <!-- Make sure image is aligned -->
                         <img src="assets/images/digital_preservation_tlv.png"
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hidden group-hover:block scale-110"
-                            alt="Digital Preservation TLV Map">
+                            class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700 block"
+                            alt="Digital Preservation TLV">
                     </div>
                     <div class="order-1 md:order-2">
                         <h3 class="text-2xl font-black mb-4 font-arch">תוכנית שימור דיגיטלית - ת"א</h3>
@@ -931,9 +929,9 @@
 
             <div class="space-y-20">
 
-                <!-- Project 1: Nitza Smuk (Carousel) -->
-                <div class="grid md:grid-cols-12 gap-12 items-center">
-                    <div class="md:col-span-4">
+                <!-- Project 1: Nitza Smuk (Stacked Layout) -->
+                <div class="flex flex-col gap-12">
+                    <div class="max-w-4xl">
                         <h3 class="text-2xl font-black mb-4 font-arch">אדריכלית ניצה סמוק 2013-2017</h3>
                         <span
                             class="inline-block bg-white border border-gray-200 text-gray-600 text-[10px] font-bold px-2 py-1 mb-4">ניהול
@@ -948,59 +946,58 @@
                         </a>
                     </div>
 
-                    <!-- Carousel Container -->
-                    <div
-                        class="md:col-span-8 overflow-hidden relative group rounded-sm bg-gray-50 border border-gray-100 p-2">
+                    <!-- Carousel Container (Full Width Below) -->
+                    <div class="w-full overflow-hidden relative group rounded-sm bg-gray-50 border border-gray-100 p-2">
                         <div class="flex gap-4 animate-scroll-belt w-max">
                             <!-- Image Set 1 -->
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_01.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 1">
                             </div>
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_02.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 2">
                             </div>
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_03.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 3">
                             </div>
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_04.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 4">
                             </div>
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_05.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 5">
                             </div>
 
                             <!-- Image Set 2 (Duplicate for Loop) -->
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_01.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 1">
                             </div>
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_02.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 2">
                             </div>
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_03.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 3">
                             </div>
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_04.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 4">
                             </div>
-                            <div class="relative w-64 h-48 flex-shrink-0 group/img">
+                            <div class="relative w-96 h-64 flex-shrink-0 group/img">
                                 <img src="assets/images/nitza_05.jpg"
                                     class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-500"
                                     alt="Nitza Smuk Project 5">
@@ -1023,20 +1020,7 @@
                         </a>
                     </div>
                     <div>
-                        <h3 class="text-xl font-black mb-2 font-arch">תיק תיעוד: באר שבע 2011</h3>
-                        <span class="inline-block bg-black text-white text-[10px] font-bold px-2 py-1 mb-2">עיריית באר
-                            שבע</span>
-                        <p class="text-gray-600 leading-relaxed mb-4 font-light text-sm">
-                            תיק תיעוד מרקמי עבור השכונות הותיקות. הפרויקט שילב מחקר היסטורי מעמיק על התפתחות העיר
-                            המודרניסטית.
-                        </p>
-                        <a href="https://br7-my.sharepoint.com/personal/revitalo_br7_org_il/_layouts/15/onedrive.aspx?ga=1&LOF=1&id=%2Fpersonal%2Frevitalo%5Fbr7%5Forg%5Fil%2FDocuments%2F%D7%9E%D7%97%D7%9C%D7%A7%D7%AA%20%D7%A9%D7%99%D7%9E%D7%95%D7%A8%2D%20%D7%AA%D7%99%D7%A7%D7%99%D7%94%20%D7%9E%D7%A9%D7%95%D7%AA%D7%A4%D7%AA%2F%D7%AA%D7%99%D7%A7%D7%99%20%D7%AA%D7%99%D7%A2%D7%95%D7%93%20%D7%9E%D7%90%D7%95%D7%A9%D7%A8%D7%99%D7%9D%20%D7%9C%D7%94%D7%A4%D7%A6%D7%94%20%D7%A4%D7%95%D7%9E%D7%91%D7%99%D7%AA%2F%D7%98%D7%9C%D7%99%D7%94%20%D7%9E%D7%A8%D7%92%D7%9C%D7%99%D7%AA%2D%20%D7%91%D7%90%D7%A8%20%D7%A9%D7%91%D7%A2%20%D7%94%D7%A2%D7%99%D7%A8%20%D7%94%D7%9E%D7%95%D7%93%D7%A8%D7%A0%D7%99%D7%AA%2Epdf&parent=%2Fpersonal%2Frevitalo%5Fbr7%5Forg%5Fil%2FDocuments%2F%D7%9E%D7%97%D7%9C%D7%A7%D7%AA%20%D7%A9%D7%99%D7%9E%D7%95%D7%A8%2D%20%D7%AA%D7%99%D7%A7%D7%99%D7%94%20%D7%9E%D7%A9%D7%95%D7%AA%D7%A4%D7%AA%2F%D7%AA%D7%99%D7%A7%D7%99%20%D7%AA%D7%99%D7%A2%D7%95%D7%93%20%D7%9E%D7%90%D7%95%D7%A9%D7%A8%D7%99%D7%9D%20%D7%9C%D7%94%D7%A4%D7%A6%D7%94%20%D7%A4%D7%95%D7%9E%D7%91%D7%99%D7%AA"
-                            target="_blank" class="text-xs font-bold underline hover:text-green-700">
-                            למסמך המלא (PDF) ->
-                        </a>
-                    </div>
-                </div>
-            </div>
+
 
         </section>
 
@@ -1246,13 +1230,7 @@
 
 
         <!-- Closing Vision -->
-        <div class="bg-black text-white p-10 text-center mt-16 rounded-sm">
-            <h4 class="text-xl font-bold mb-4">חזון לעתיד</h4>
-            <p class="text-lg font-light leading-relaxed max-w-2xl mx-auto opacity-90">
-                כיום החזון שלי הוא להעביר את החומרים האלו למדיה דיגיטלית ודינמית, המאפשרת מחקר המשכי, פתוח
-                ומתפתח.
-            </p>
-        </div>
+
         </div>
         </section>
 
@@ -1523,7 +1501,45 @@
                     </div>
 
                     <!-- Tab Content: Reports & Projects -->
+                    <!-- Tab Content: Reports & Projects -->
                     <div id="tab-reports" class="pub-tab-content hidden space-y-12 animate-fade-in">
+
+                        <!-- Digital Tools for Complexity (Jan 2025) -->
+                        <div class="grid md:grid-cols-4 gap-8 items-start border-b border-gray-100 pb-12">
+                            <div class="md:col-span-1">
+                                <span class="text-xs font-bold text-gray-400 mb-1 block">עיריית ת"א, איגוד המתכננים, יד
+                                    הנדיב</span>
+                                <span class="text-[10px] font-mono text-gray-300">Jan 2025</span>
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="font-bold text-xl mb-2">העבר כבר מאחורינו, העתיד כבר כאן</h4>
+                                <p class="text-gray-600 mb-4 font-light text-sm leading-relaxed">
+                                    כלים דיגיטליים להתמודדות עם מורכבות תכנונית. המאמר עוסק בתפקידם של כלים דיגיטליים
+                                    ומבוססי־נתונים בהתמודדות עם מורכבות תכנונית.
+                                </p>
+                                <a href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:aca4724c-073a-495e-b92a-e709dd5d31f5"
+                                    target="_blank" class="text-xs font-bold underline hover:text-blue-600">לקריאה
+                                    -></a>
+                            </div>
+                        </div>
+
+                        <!-- Innovation Districts (Sep 2024) -->
+                        <div class="grid md:grid-cols-4 gap-8 items-start border-b border-gray-100 pb-12">
+                            <div class="md:col-span-1">
+                                <span class="text-xs font-bold text-gray-400 mb-1 block">סטודיו עיצוב עירוני בנגב</span>
+                                <span class="text-[10px] font-mono text-gray-300">Sep 2024</span>
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="font-bold text-xl mb-2">מהו רובע חדשנות?</h4>
+                                <p class="text-gray-600 mb-4 font-light text-sm leading-relaxed">
+                                    מיפוי השוואתי של רובעי חדשנות ברחבי העולם. העבודה כוללת סקירה השוואתית והונגשה
+                                    למקבלי החלטות.
+                                </p>
+                                <a href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:aca4724c-073a-495e-b92a-e709dd5d31f5"
+                                    target="_blank" class="text-xs font-bold underline hover:text-blue-600">לקריאה
+                                    -></a>
+                            </div>
+                        </div>
                         <!-- TAMA 35 -->
                         <div class="grid md:grid-cols-4 gap-8 items-start border-b border-gray-100 pb-12">
                             <div class="md:col-span-1">
@@ -1621,10 +1637,124 @@
                     </div>
 
                     <!-- Tab Content: Media -->
+                    <!-- Tab Content: Media -->
                     <div id="tab-media" class="pub-tab-content hidden space-y-12 animate-fade-in">
                         <div class="grid md:grid-cols-3 gap-8">
+
+                            <!-- Erev Rav (Dec 2024) -->
+                            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:653811ac-ac13-4d6a-8b7d-fdd81be3bcac?viewer%21megaVerb=group-discover"
+                                target="_blank"
+                                class="block group relative overflow-hidden bg-white border border-gray-200 aspect-[4/5] p-8 hover:border-black transition-all">
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-5 font-black text-6xl pointer-events-none group-hover:scale-110 transition-transform">
+                                    EREV RAV</div>
+                                <h4 class="font-bold text-xl mb-4 group-hover:underline relative z-10">ערב רב</h4>
+                                <p class="text-xs text-white bg-black px-2 py-1 inline-block mb-4 relative z-10">Dec
+                                    2024</p>
+                                <p class="text-sm opacity-60 relative z-10">מציאות מקוטעת, אזורים דינמיים: חשיבה מחודשת
+                                    על מפת ישראל.</p>
+                                <div
+                                    class="mt-auto pt-8 flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase relative z-10">
+                                    קרא עוד <span class="group-hover:translate-x-1 transition-transform">-></span>
+                                </div>
+                            </a>
+
+                            <!-- Urbanology (Apr 2024) - Question -->
+                            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:653811ac-ac13-4d6a-8b7d-fdd81be3bcac?viewer%21megaVerb=group-discover"
+                                target="_blank"
+                                class="block group relative overflow-hidden bg-white border border-gray-200 aspect-[4/5] p-8 hover:border-black transition-all">
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-5 font-black text-6xl pointer-events-none group-hover:scale-110 transition-transform">
+                                    URBAN</div>
+                                <h4 class="font-bold text-xl mb-4 group-hover:underline relative z-10">Urbanology</h4>
+                                <p class="text-xs text-white bg-black px-2 py-1 inline-block mb-4 relative z-10">Apr
+                                    2024</p>
+                                <p class="text-sm opacity-60 relative z-10">סליחה, אבל מה בעצם השאלה שלך? הצעה
+                                    למתודולוגיה חדשה לשיתוף ציבור.</p>
+                                <div
+                                    class="mt-auto pt-8 flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase relative z-10">
+                                    קרא עוד <span class="group-hover:translate-x-1 transition-transform">-></span>
+                                </div>
+                            </a>
+
+                            <!-- Urbanology (Apr 2024) - Smart City -->
+                            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:653811ac-ac13-4d6a-8b7d-fdd81be3bcac?viewer%21megaVerb=group-discover"
+                                target="_blank"
+                                class="block group relative overflow-hidden bg-white border border-gray-200 aspect-[4/5] p-8 hover:border-black transition-all">
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-5 font-black text-6xl pointer-events-none group-hover:scale-110 transition-transform">
+                                    URBAN</div>
+                                <h4 class="font-bold text-xl mb-4 group-hover:underline relative z-10">Urbanology</h4>
+                                <p class="text-xs text-white bg-black px-2 py-1 inline-block mb-4 relative z-10">Apr
+                                    2024</p>
+                                <p class="text-sm opacity-60 relative z-10">שיתוף ציבור בתכנון בעידן העיר החכמה.</p>
+                                <div
+                                    class="mt-auto pt-8 flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase relative z-10">
+                                    קרא עוד <span class="group-hover:translate-x-1 transition-transform">-></span>
+                                </div>
+                            </a>
+
+                            <!-- Globes (Dec 2019) -->
+                            <a href="https://www.globes.co.il/news/article.aspx?did=1001305495" target="_blank"
+                                class="block group relative overflow-hidden bg-white border border-gray-200 aspect-[4/5] p-8 hover:border-pink-600 transition-all">
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-5 font-black text-6xl pointer-events-none group-hover:scale-110 transition-transform">
+                                    GLOBES</div>
+                                <h4 class="font-bold text-xl mb-4 group-hover:underline relative z-10">גלובס</h4>
+                                <p class="text-xs text-white bg-pink-600 px-2 py-1 inline-block mb-4 relative z-10">Dec
+                                    2019</p>
+                                <p class="text-sm opacity-60 relative z-10">כל מה שרציתם לדעת על הודעה לפי חוק התכנון
+                                    והבנייה.</p>
+                                <div
+                                    class="mt-auto pt-8 flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase relative z-10">
+                                    קרא עוד <span class="group-hover:translate-x-1 transition-transform">-></span>
+                                </div>
+                            </a>
+
+                            <!-- ALondon (Dec 2018) -->
+                            <a href="https://alondon.net/%D7%A0%D7%93%D7%9C%D7%9F-%D7%91%D7%91%D7%A8%D7%99%D7%98%D7%A0%D7%99%D7%94-%D7%AA%D7%A0%D7%95%D7%A4%D7%AA-%D7%91%D7%A0%D7%99%D7%99%D7%94-%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99%D7%AA/"
+                                target="_blank"
+                                class="block group relative overflow-hidden bg-white border border-gray-200 aspect-[4/5] p-8 hover:border-red-600 transition-all">
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-5 font-black text-6xl pointer-events-none group-hover:scale-110 transition-transform">
+                                    LONDON</div>
+                                <h4 class="font-bold text-xl mb-4 group-hover:underline relative z-10">ALondon</h4>
+                                <p class="text-xs text-white bg-red-600 px-2 py-1 inline-block mb-4 relative z-10">Dec
+                                    2018</p>
+                                <p class="text-sm opacity-60 relative z-10">נדל״ן בבריטניה: תנופת בנייה דמוקרטית.</p>
+                                <div
+                                    class="mt-auto pt-8 flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase relative z-10">
+                                    קרא עוד <span class="group-hover:translate-x-1 transition-transform">-></span>
+                                </div>
+                            </a>
+
+                            <!-- Sfat Rechov (Sep 2018) -->
+                            <a href="https://www.stlanguage.com/%D7%9C%D7%95%D7%A0%D7%93%D7%95%D7%9F-2040-%D7%90%D7%99%D7%9A-%D7%AA%D7%A8%D7%90%D7%94-%D7%94%D7%91%D7%99%D7%A8%D7%94-%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99%D7%AA-%D7%91%D7%A2%D7%AA%D7%99%D7%93/"
+                                target="_blank"
+                                class="block group relative overflow-hidden bg-white border border-gray-200 aspect-[4/5] p-8 hover:border-yellow-600 transition-all">
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-5 font-black text-6xl pointer-events-none group-hover:scale-110 transition-transform">
+                                    STREET</div>
+                                <h4 class="font-bold text-xl mb-4 group-hover:underline relative z-10">שפת רחוב</h4>
+                                <p class="text-xs text-white bg-yellow-600 px-2 py-1 inline-block mb-4 relative z-10">
+                                    Sep 2018</p>
+                                <p class="text-sm opacity-60 relative z-10">לונדון 2040: כיצד תיראה הבירה הבריטית בעתיד?
+                                </p>
+                                <div
+                                    class="mt-auto pt-8 flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase relative z-10">
+                                    קרא עוד <span class="group-hover:translate-x-1 transition-transform">-></span>
+                                </div>
+                            </a>
                             <!-- Portfolio -->
-                            <a href="https://www.prtfl.co.il/archives/220540" target="_blank" וחברה.</p>
+                            <a href="https://www.prtfl.co.il/archives/220540" target="_blank"
+                                class="block group relative overflow-hidden bg-white border border-gray-200 aspect-[4/5] p-8 hover:border-purple-600 transition-all">
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-5 font-black text-6xl pointer-events-none group-hover:scale-110 transition-transform">
+                                    PRTFL</div>
+                                <h4 class="font-bold text-xl mb-4 group-hover:underline relative z-10">פורטפוליו</h4>
+                                <p class="text-xs text-white bg-purple-600 px-2 py-1 inline-block mb-4 relative z-10">
+                                    Interview</p>
+                                <p class="text-sm opacity-60 relative z-10">ראיון על תכנון, חברה והמרחב הדיגיטלי.</p>
                                 <div
                                     class="mt-auto pt-8 flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase relative z-10">
                                     קרא עוד <span class="group-hover:translate-x-1 transition-transform">-></span>
@@ -1668,7 +1798,19 @@
                                 </div>
                             </a>
                         </div>
+                        <h3 class="text-xl font-black mb-2 font-arch">תיק תיעוד: באר שבע 2011</h3>
+                        <span class="inline-block bg-black text-white text-[10px] font-bold px-2 py-1 mb-2">עיריית באר
+                            שבע</span>
+                        <p class="text-gray-600 leading-relaxed mb-4 font-light text-sm">
+                            תיק תיעוד מרקמי עבור השכונות הותיקות. הפרויקט שילב מחקר היסטורי מעמיק על התפתחות העיר
+                            המודרניסטית.
+                        </p>
+                        <a href="https://br7-my.sharepoint.com/personal/revitalo_br7_org_il/_layouts/15/onedrive.aspx?ga=1&LOF=1&id=%2Fpersonal%2Frevitalo%5Fbr7%5Forg%5Fil%2FDocuments%2F%D7%9E%D7%97%D7%9C%D7%A7%D7%AA%20%D7%A9%D7%99%D7%9E%D7%95%D7%A8%2D%20%D7%AA%D7%99%D7%A7%D7%99%D7%94%20%D7%9E%D7%A9%D7%95%D7%AA%D7%A4%D7%AA%2F%D7%AA%D7%99%D7%A7%D7%99%20%D7%AA%D7%99%D7%A2%D7%95%D7%93%20%D7%9E%D7%90%D7%95%D7%A9%D7%A8%D7%99%D7%9D%20%D7%9C%D7%94%D7%A4%D7%A6%D7%94%20%D7%A4%D7%95%D7%9E%D7%91%D7%99%D7%AA%2F%D7%98%D7%9C%D7%99%D7%94%20%D7%9E%D7%A8%D7%92%D7%9C%D7%99%D7%AA%2D%20%D7%91%D7%90%D7%A8%20%D7%A9%D7%91%D7%A2%20%D7%94%D7%A2%D7%99%D7%A8%20%D7%94%D7%9E%D7%95%D7%93%D7%A8%D7%A0%D7%99%D7%AA%2Epdf&parent=%2Fpersonal%2Frevitalo%5Fbr7%5Forg%5Fil%2FDocuments%2F%D7%9E%D7%97%D7%9C%D7%A7%D7%AA%20%D7%A9%D7%99%D7%9E%D7%95%D7%A8%2D%20%D7%AA%D7%99%D7%A7%D7%99%D7%94%20%D7%9E%D7%A9%D7%95%D7%AA%D7%A4%D7%AA%2F%D7%AA%D7%99%D7%A7%D7%99%20%D7%AA%D7%99%D7%A2%D7%95%D7%93%20%D7%9E%D7%90%D7%95%D7%A9%D7%A8%D7%99%D7%9D%20%D7%9C%D7%94%D7%A4%D7%A6%D7%94%20%D7%A4%D7%95%D7%9E%D7%91%D7%99%D7%AA"
+                            target="_blank" class="text-xs font-bold underline hover:text-green-700">
+                            למסמך המלא (PDF) ->
+                        </a>
                     </div>
+                </div>
 
         </section>
 
