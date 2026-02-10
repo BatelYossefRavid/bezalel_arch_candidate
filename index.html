@@ -309,12 +309,12 @@
                 class="nav-btn w-full text-right px-4 py-3 text-sm font-bold tracking-wide hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-black">
                 07. מאמרים
             </button>
-            <button onclick="scrollToTab('articles', 'urban-design')"
-                class="nav-btn w-full text-right px-4 py-3 text-sm font-bold tracking-wide hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-black">
+            <button onclick="scrollToTab('articles', 'reports')"
+                class="nav-btn w-full text-right px-8 py-2 text-xs font-medium tracking-wide text-gray-500 hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-gray-300">
                 עיצוב עירוני בעידן הדיגיטלי
             </button>
-            <button onclick="scrollToTab('articles', 'urban-science')"
-                class="nav-btn w-full text-right px-4 py-3 text-sm font-bold tracking-wide hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-black">
+            <button onclick="scrollToTab('articles', 'academic')"
+                class="nav-btn w-full text-right px-8 py-2 text-xs font-medium tracking-wide text-gray-500 hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-gray-300">
                 מדע עירוני
             </button>
             <button onclick="scrollToSection('vision')"
@@ -1240,97 +1240,218 @@
                         </button>
                     </div>
 
-                    <!-- Tab Content: Academic Papers -->
-                    <div id="tab-academic" class="pub-tab-content space-y-8 animate-fade-in block">
+                    <!-- Tab Content: Academic Papers (Grid Layout) -->
+                    <div id="tab-academic" class="pub-tab-content grid md:grid-cols-2 gap-8 animate-fade-in block">
                         <!-- 2026 -->
-                        <div class="group border-b border-gray-100 pb-8">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">2026
-                                • Accepted (Not Published Yet)</span>
-                            <h4 class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors">
+                        <div
+                            class="group bg-white border border-gray-100 p-8 hover:shadow-lg transition-all relative flex flex-col h-full">
+                            <div class="absolute top-6 left-6 text-gray-300 group-hover:text-black transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <h4
+                                class="font-bold text-xl mb-3 pr-8 leading-tight group-hover:text-blue-600 transition-colors">
                                 Smarter Participation: Co-Governing Urban Aging with a Neighborhood Digital Twin
                             </h4>
-                            <p class="text-sm text-gray-600 mb-2 font-mono">Urban Technology</p>
-                            <p class="text-gray-600 mb-2 text-sm">Yossef Ravid, B., Axel, A., Aharon-Gutman, M.</p>
+
+                            <div
+                                class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6">
+                                <span>2026</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>Urban Technology</span>
+                            </div>
+
+                            <p
+                                class="text-gray-600 font-light text-sm leading-relaxed mt-auto border-t border-gray-100 pt-4">
+                                <b>השתתפות חכמה:</b> המאמר מציג מודל של 'תאום דיגיטלי' שכונתי המאפשר לקשישים לקחת חלק
+                                פעיל בעיצוב סביבת חייהם.
+                            </p>
                         </div>
 
-                        <!-- 2025 -->
-                        <div class="group border-b border-gray-100 pb-8">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">2025
-                                • Accepted</span>
-                            <h4 class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors">
-                                NegevPulse: Crowdsourced Digital Mapping for Visibility in Unrecognized Bedouin Villages
+                        <!-- 2025 NegevPulse -->
+                        <div
+                            class="group bg-white border border-gray-100 p-8 hover:shadow-lg transition-all relative flex flex-col h-full">
+                            <div class="absolute top-6 left-6 text-gray-300 group-hover:text-black transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <h4
+                                class="font-bold text-xl mb-3 pr-8 leading-tight group-hover:text-blue-600 transition-colors">
+                                NegevPulse: Crowdsourced Digital Mapping for Visibility
                             </h4>
-                            <p class="text-sm text-gray-600 mb-2 font-mono">SAUC - Street Art & Urban Creativity Journal
-                                (Special Issue)</p>
-                            <p class="text-gray-600 mb-2 text-sm">Chassidim, H., Shnaiwer, T., ... Yosef Ravid, B.</p>
+
+                            <div
+                                class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6">
+                                <span>2025</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>SAUC Journal</span>
+                            </div>
+
+                            <p
+                                class="text-gray-600 font-light text-sm leading-relaxed mt-auto border-t border-gray-100 pt-4">
+                                <b>דופק הנגב:</b> מיפוי דיגיטלי מבוסס המונים להגברת הנראות בכפרים הבדואים הלא מוכרים.
+                            </p>
                         </div>
 
-                        <div class="group border-b border-gray-100 pb-8">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">2025
-                                • Accepted</span>
-                            <h4 class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors">
-                                <a href="https://scifat.com/geography-research-forum/" target="_blank"
-                                    class="hover:underline">Towards Regionalism in Israel: Coping with Political Rift
-                                    and War</a>
-                            </h4>
-                            <p class="text-sm text-gray-600 mb-2 font-mono">Geography Research Forum (GRF), Vol 44</p>
-                            <p class="text-gray-600 mb-2 text-sm">Yossef Ravid, B., Savin Ben Shoshan, L.</p>
-                        </div>
+                        <!-- 2025 Regionalism -->
+                        <a href="https://scifat.com/geography-research-forum/" target="_blank"
+                            class="group bg-white border border-gray-100 p-8 hover:shadow-lg transition-all relative flex flex-col h-full">
+                            <div class="absolute top-6 left-6 text-gray-300 group-hover:text-black transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </div>
 
-                        <div class="group border-b border-gray-100 pb-8">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">2025
-                                • Accepted</span>
-                            <h4 class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors">
-                                <a href="https://docs.google.com/document/d/1m3QXfBW280AXkyaPSE00RYqX9Xg/edit?usp=sharing"
-                                    target="_blank" class="hover:underline">Which Social Secrets Can an Algorithm Based
-                                    on Urban Data Reveal?</a>
+                            <h4
+                                class="font-bold text-xl mb-3 pr-8 leading-tight group-hover:text-blue-600 transition-colors">
+                                Towards Regionalism in Israel: Coping with Political Rift and War
                             </h4>
-                            <p class="text-sm text-gray-600 mb-2 font-mono">Handbook of Disruptive Urban Technologies
-                                and Society</p>
-                            <p class="text-gray-600 mb-2 text-sm">Yossef Ravid, B., Haskell, S., Ram, I., ...</p>
-                        </div>
 
-                        <!-- 2024 -->
-                        <div class="group border-b border-gray-100 pb-8">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">2024
-                                • Published</span>
-                            <h4 class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors">
-                                <a href="https://doi.org/10.1016/j.techfore.2024.123748" target="_blank"
-                                    class="hover:underline">The Place of Co-Production: A Physital Space for
-                                    Collaborative Urban Government</a>
-                            </h4>
-                            <p class="text-sm text-gray-600 mb-2 font-mono">Technological Forecasting & Social Change,
-                                Vol 209</p>
-                            <p class="text-gray-600 mb-2 text-sm">Yossef Ravid, B., Aharon Gutman, M.</p>
-                        </div>
+                            <div
+                                class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6">
+                                <span>2025</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>Geog. Research Forum</span>
+                            </div>
 
-                        <!-- 2023 -->
-                        <div class="group border-b border-gray-100 pb-8">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">2023
-                                • Published</span>
-                            <h4 class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors">
-                                <a href="https://journals.sagepub.com/home/epb" target="_blank"
-                                    class="hover:underline">Place-Bound Planning Support Systems for Deliberation</a>
-                            </h4>
-                            <p class="text-sm text-gray-600 mb-2 font-mono">Environment and Planning B: Urban Analytics
-                                and City Science</p>
-                            <p class="text-gray-600 mb-2 text-sm">Weiner, R., Mello Rose, F., Yossef Ravid, B., ...</p>
-                        </div>
+                            <p
+                                class="text-gray-600 font-light text-sm leading-relaxed mt-auto border-t border-gray-100 pt-4">
+                                <b>לקראת אזוריות:</b> התמודדות עם השסע הפוליטי והמלחמה באמצעות חשיבה אזורית מחודשת.
+                            </p>
+                        </a>
 
-                        <!-- 2022 -->
-                        <div class="group border-b border-gray-100 pb-8">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">2022
-                                • Published</span>
-                            <h4 class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors">
-                                <a href="https://journals.sagepub.com/doi/10.1177/23998083221142277" target="_blank"
-                                    class="hover:underline">The Social Digital Twin: The Social Turn in the Field of
-                                    Smart Cities</a>
+                        <!-- 2025 Algorithms -->
+                        <a href="https://docs.google.com/document/d/1m3QXfBW280AXkyaPSE00RYqX9Xg/edit?usp=sharing"
+                            target="_blank"
+                            class="group bg-white border border-gray-100 p-8 hover:shadow-lg transition-all relative flex flex-col h-full">
+                            <div class="absolute top-6 left-6 text-gray-300 group-hover:text-black transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <h4
+                                class="font-bold text-xl mb-3 pr-8 leading-tight group-hover:text-blue-600 transition-colors">
+                                Which Social Secrets Can an Algorithm Based on Urban Data Reveal?
                             </h4>
-                            <p class="text-sm text-gray-600 mb-2 font-mono">Environment and Planning B: Urban Analytics
-                                and City Science, Vol 50(6)</p>
-                            <p class="text-gray-600 mb-2 text-sm">Yossef Ravid, B., Aharon-Gutman, M.</p>
-                        </div>
+
+                            <div
+                                class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6">
+                                <span>2025</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>Disruptive Tech</span>
+                            </div>
+
+                            <p
+                                class="text-gray-600 font-light text-sm leading-relaxed mt-auto border-t border-gray-100 pt-4">
+                                <b>סודות חברתיים:</b> אלו תובנות על המרקם החברתי יכולים אלגוריתמים מבוססי נתונים
+                                עירוניים לחשוף?
+                            </p>
+                        </a>
+
+                        <!-- 2024 Co-Production -->
+                        <a href="https://doi.org/10.1016/j.techfore.2024.123748" target="_blank"
+                            class="group bg-white border border-gray-100 p-8 hover:shadow-lg transition-all relative flex flex-col h-full">
+                            <div class="absolute top-6 left-6 text-gray-300 group-hover:text-black transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <h4
+                                class="font-bold text-xl mb-3 pr-8 leading-tight group-hover:text-blue-600 transition-colors">
+                                The Place of Co-Production: A Physital Space for Collaborative Urban Government
+                            </h4>
+
+                            <div
+                                class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6">
+                                <span>2024</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>Tech. Forecasting</span>
+                            </div>
+
+                            <p
+                                class="text-gray-600 font-light text-sm leading-relaxed mt-auto border-t border-gray-100 pt-4">
+                                <b>מרחב השיתוף:</b> מודל תאורטי ופרקטי למרחבים היברידיים (פיזיטליים) המאפשרים שיתוף
+                                ציבור יעיל יותר בעידן הדיגיטלי.
+                            </p>
+                        </a>
+
+                        <!-- 2023 Planning Support -->
+                        <a href="https://journals.sagepub.com/home/epb" target="_blank"
+                            class="group bg-white border border-gray-100 p-8 hover:shadow-lg transition-all relative flex flex-col h-full">
+                            <div class="absolute top-6 left-6 text-gray-300 group-hover:text-black transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <h4
+                                class="font-bold text-xl mb-3 pr-8 leading-tight group-hover:text-blue-600 transition-colors">
+                                Place-Bound Planning Support Systems for Deliberation
+                            </h4>
+
+                            <div
+                                class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6">
+                                <span>2023</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>Env. & Planning B</span>
+                            </div>
+
+                            <p
+                                class="text-gray-600 font-light text-sm leading-relaxed mt-auto border-t border-gray-100 pt-4">
+                                <b>מערכות תומכות תכנון:</b> כיצד מערכות דיגיטליות מקומיות יכולות לשפר תהליכי קבלת החלטות
+                                דמוקרטיים.
+                            </p>
+                        </a>
+
+                        <!-- 2022 Social Digital Twin -->
+                        <a href="https://journals.sagepub.com/doi/10.1177/23998083221142277" target="_blank"
+                            class="group bg-white border border-gray-100 p-8 hover:shadow-lg transition-all relative flex flex-col h-full md:col-span-2">
+                            <div class="absolute top-6 left-6 text-gray-300 group-hover:text-black transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <h4
+                                class="font-bold text-2xl mb-3 pr-8 leading-tight group-hover:text-blue-600 transition-colors">
+                                The Social Digital Twin: The Social Turn in the Field of Smart Cities
+                            </h4>
+
+                            <div
+                                class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6">
+                                <span>2022</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>Env. & Planning B</span>
+                            </div>
+
+                            <p
+                                class="text-gray-600 font-light text-lg leading-relaxed mt-auto border-t border-gray-100 pt-4">
+                                <b>התאום הדיגיטלי החברתי:</b> מחקר פורץ דרך המגדיר מחדש את המושג "תאום דיגיטלי" לא רק
+                                ככלי הנדסי, אלא ככלי חברתי המשלב ידע מקומי (Tacit Knowledge).
+                            </p>
+                        </a>
                     </div>
+
 
                     <!-- Tab Content: Books -->
                     <div id="tab-books" class="pub-tab-content hidden space-y-8 animate-fade-in">
