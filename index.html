@@ -309,14 +309,7 @@
                 class="nav-btn w-full text-right px-4 py-3 text-sm font-bold tracking-wide hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-black">
                 07. מאמרים
             </button>
-            <button onclick="scrollToTab('articles', 'reports')"
-                class="nav-btn w-full text-right px-8 py-2 text-xs font-medium tracking-wide text-gray-500 hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-gray-300">
-                עיצוב עירוני בעידן הדיגיטלי
-            </button>
-            <button onclick="scrollToTab('articles', 'academic')"
-                class="nav-btn w-full text-right px-8 py-2 text-xs font-medium tracking-wide text-gray-500 hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-gray-300">
-                מדע עירוני
-            </button>
+
             <button onclick="scrollToSection('vision')"
                 class="nav-btn w-full text-right px-4 py-3 text-sm font-bold tracking-wide hover:bg-gray-50 transition-all border-r-4 border-transparent hover:border-black">
                 08. חזון לביה"ס
@@ -1144,47 +1137,105 @@
             </div>
 
             <div class="space-y-16">
-                <!-- Main Philosophy -->
-                <div class="max-w-4xl">
-                    <p class="text-2xl font-light leading-relaxed text-gray-800 mb-8">
-                        "דרך התחום של עיצוב עירוני בעידן הדיגיטלי, קורסים במדע עירוני והנדסת תוכנה, אנחנו מגדירים כיצד
-                        מלמדים אדריכלות ממבט של הדרום."
+                <div class="max-w-4xl border-l-4 border-black pl-8 ml-8">
+                    <p class="text-xl font-light leading-loose text-gray-800 mb-6">
+                        "הוראה היא עבורי מרחב מחקרי חי — מעבדה פתוחה שבה תיאוריה, פרקטיקה, כלים דיגיטליים ושאלות חברתיות
+                        נפגשים ומתעצבים יחד..."
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        הפדגוגיה שלי נשענת על עיצוב עירוני כתחום רב־תחומי, המחבר בין תכנון, דאטה, טכנולוגיה, חברה
+                        ומדיניות.
                     </p>
                 </div>
 
-                <!-- Timeline of Teaching -->
-                <div class="grid md:grid-cols-3 gap-8 border-t border-black pt-8">
-                    <!-- Period 3: SCE -->
-                    <div class="space-y-4">
-                        <span class="text-4xl font-black text-gray-200">03</span>
-                        <h4 class="font-bold text-xl">SCE: ביה"ס לארכיטקטורה בנגב</h4>
-                        <span class="text-xs font-mono bg-black text-white px-2 py-1">2024 — הווה</span>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            חברת סגל קבוע. מובילה את תחומי <strong>עיצוב עירוני חישובי</strong>, מדע עירוני ושילוב כלי
-                            הנדסת תוכנה בהכשרת האדריכל.
-                        </p>
+                <!-- 1. Negev (SCE) -->
+                <div class="relative pl-12 border-l border-gray-200">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full border-4 border-white shadow-lg">
                     </div>
+                    <h3 class="text-2xl font-black mb-2">SCE - המכללה האקדמית להנדסה ע"ש סמי שמעון</h3>
+                    <span class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 block">בית הספר
+                        לארכיטקטורה - נגב | המחלקה להנדסת תוכנה</span>
 
-                    <!-- Period 2: Technion -->
-                    <div class="space-y-4">
-                        <span class="text-4xl font-black text-gray-200">02</span>
-                        <h4 class="font-bold text-xl">הטכניון</h4>
-                        <span class="text-xs font-mono bg-gray-100 px-2 py-1">2021 — 2023</span>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            מרצה מן החוץ בפקולטה לארכיטקטורה. הוראה בסטודיו לעיצוב עירוני המשלב סטודנטים לאדריכלות
-                            ואדריכלות נוף.
-                        </p>
+                    <div class="space-y-8 mt-8">
+                        <div class="group">
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">סטודיו תכנון
+                                עירוני בעידן הטרנספורמציה הדיגיטלית</h4>
+                            <span class="text-xs text-gray-400 block mb-2">2023–היום | שנה ג' | מרצה מובילה וראש
+                                תחום</span>
+                            <p class="text-sm text-gray-600">פיתוח חשיבה ותכנון בעידן של דאטה ובינה מלאכותית. קריאה
+                                ביקורתית, ניתוח מנגנונים ופיתוח תרחישים אסטרטגיים.</p>
+                        </div>
+                        <div class="group">
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">כלים
+                                דיגיטליים במדע עירוני (City Science)</h4>
+                            <span class="text-xs text-gray-400 block mb-2">2023–היום | בשיתוף NUR Lab ו-MIT</span>
+                            <p class="text-sm text-gray-600">יישום כלי GIS, דאשבורדים ומיפוי דינמי למחקר ותכנון. פיתוח
+                                אפליקציות וכלי קוד למרחב העירוני.</p>
+                        </div>
+                        <div class="group">
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">יישומי HCI
+                                ו-GIS לעירוניות</h4>
+                            <span class="text-xs text-gray-400 block mb-2">2025–היום | המחלקה להנדסת תוכנה</span>
+                            <p class="text-sm text-gray-600">פיתוח פלטפורמות מבוססות נתונים לקבלת החלטות. חיבור בין
+                                הנדסת תוכנה למרקם העירוני.</p>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Period 1: Bezalel -->
-                    <div class="space-y-4">
-                        <span class="text-4xl font-black text-gray-200">01</span>
-                        <h4 class="font-bold text-xl">בצלאל</h4>
-                        <span class="text-xs font-mono bg-gray-100 px-2 py-1">2013 — 2017</span>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            אסיסטנטית בסטודיו לאדריכלות אזרחית.
-                            "הסטודיו שהיה לי לבית". המקום בו התחדדה הזיקה שבין אדריכלות, חברה ומרחב ירושלמי.
-                        </p>
+                <!-- 2. Technion -->
+                <div class="relative pl-12 border-l border-gray-200">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-gray-200 rounded-full border-4 border-white"></div>
+                    <h3 class="text-2xl font-black mb-2">הטכניון - מכון טכנולוגי לישראל</h3>
+                    <span class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 block">הפקולטה
+                        לארכיטקטורה ובינוי ערים</span>
+
+                    <div class="space-y-8 mt-8">
+                        <div class="group">
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">סטודיו תכנון
+                                עירוני – "סטודיו מקרוב"</h4>
+                            <span class="text-xs text-gray-400 block mb-2">2021–2023 | שנה ב' | מרצה</span>
+                            <p class="text-sm text-gray-600">סטודיו משותף לאדריכלות ונוף בשכונת הדר בחיפה. לימוד מתוך
+                                השטח ועבודה עם הקהילה.</p>
+                        </div>
+                        <div class="group">
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">מבוא לתכנון
+                                עירוני</h4>
+                            <span class="text-xs text-gray-400 block mb-2">2020–2022 | שנה ב' | מרצה</span>
+                            <p class="text-sm text-gray-600">קישור בין תיאוריה לפרקטיקה. הקניית כלים להבנת המרחב ותהליכי
+                                תכנון רב-קנה מידה.</p>
+                        </div>
+                        <div class="group">
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">תכנון חברתי:
+                                דור 2.0</h4>
+                            <span class="text-xs text-gray-400 block mb-2">2020–2021 | תואר שני | עוזרת הוראה</span>
+                            <p class="text-sm text-gray-600">היבטים סוציולוגיים של תכנון ופיתוח תסקיר חברתי ככלי תכנוני.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Bezalel -->
+                <div class="relative pl-12 border-l border-gray-200">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-gray-200 rounded-full border-4 border-white"></div>
+                    <h3 class="text-2xl font-black mb-2">בצלאל - אקדמיה לאמנות ועיצוב</h3>
+                    <span class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 block">המחלקה
+                        לארכיטקטורה</span>
+
+                    <div class="space-y-8 mt-8">
+                        <div class="group">
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">יחידת המחקר
+                                לאדריכלות אזרחית</h4>
+                            <span class="text-xs text-gray-400 block mb-2">2013–2015 | שנה ה' (פרויקט גמר) | עוזרת
+                                הוראה</span>
+                            <p class="text-sm text-gray-600">ליווי פרויקטים מחקריים העוסקים במוסדות ציבור ויחסי
+                                מרחב-חברה.</p>
+                        </div>
+                        <div class="group">
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">"מראה מקום"
+                            </h4>
+                            <span class="text-xs text-gray-400 block mb-2">2013–2015 | רב-תחומי | עוזרת הוראה</span>
+                            <p class="text-sm text-gray-600">חשיבה מרחבית וייצוג חזותי.</p>
+                        </div>
                     </div>
                 </div>
             </div>
