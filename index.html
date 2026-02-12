@@ -18,9 +18,14 @@
             /* Clean white */
             color: #111;
             -webkit-font-smoothing: antialiased;
-            font-size: 18px;
             /* Global font size boost */
             line-height: 1.6;
+        }
+
+        /* Force Prose Full Width */
+        .prose-full-width,
+        .prose-full-width>* {
+            max-width: 100% !important;
         }
 
         /* Landing Page Styles */
@@ -113,7 +118,7 @@
 
         @media (min-width: 768px) {
             body.site-active main {
-                margin-right: 500px;
+                margin-right: 400px;
                 /* Match sidebar width */
                 transition: margin-right 1s cubic-bezier(0.77, 0, 0.175, 1);
             }
@@ -404,7 +409,7 @@
 
     <!-- Sidebar: Navigation & Identity (Hebrew) -->
     <aside
-        class="w-[500px] h-screen bg-white/95 backdrop-blur-md border-l border-gray-200 flex flex-col justify-between p-12 fixed right-0 top-0 z-40 shadow-[-4px_0_24px_rgba(0,0,0,0.02)] overflow-y-auto transform translate-x-full transition-transform duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]">
+        class="w-full lg:w-[400px] h-screen bg-white/95 backdrop-blur-md border-l border-gray-200 flex flex-col justify-between p-8 lg:p-12 fixed right-0 top-0 z-40 shadow-[-4px_0_24px_rgba(0,0,0,0.02)] overflow-y-auto transform translate-x-full transition-transform duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]">
 
         <!-- Identity -->
         <div class="space-y-10">
@@ -484,9 +489,10 @@
 
     <!-- Main Content Area: The "Paper" -->
     <main
-        class="mr-[500px] w-full h-screen overflow-y-auto bg-[#f8f9fa] p-8 md:p-12 scroll-smooth opacity-0 translate-y-8 transition-all duration-1000 delay-500">
+        class="lg:mr-[400px] h-screen overflow-y-auto bg-[#f8f9fa] p-0 scroll-smooth opacity-0 translate-y-8 transition-all duration-1000 delay-500">
 
-        <div class="max-w-[95%] mx-auto bg-white min-h-[1200px] shadow-sm p-16 md:p-24 border border-gray-100 relative">
+        <div class="w-full max-w-none bg-white min-h-[1200px] shadow-sm p-8 md:p-12 border border-gray-100 relative"
+            style="width: 100%; max-width: none;">
 
             <!-- Watermark / Background Grid -->
             <div class="absolute inset-0 bauhaus-grid opacity-[0.03] pointer-events-none"></div>
@@ -514,7 +520,8 @@
                     הדיגיטלי</h2>
 
                 <article
-                    class="prose prose-xl prose-gray font-light leading-relaxed max-w-7xl w-full border-l-4 border-black pl-8 text-gray-900">
+                    class="prose prose-xl prose-gray font-light leading-relaxed !max-w-none w-full min-w-full border-l-4 border-black pl-8 text-gray-900"
+                    style="max-width: none !important; width: 100% !important;">
                     <p class="font-medium text-2xl leading-relaxed text-black mb-8">
                         יש רגעים שהם לא רק צעד מקצועי, אלא סגירת מעגל. המועמדות הזו עבורי היא רגע כזה.
                     </p>
@@ -871,10 +878,10 @@
 
             <div class="space-y-20">
 
-                <p class="text-2xl font-light leading-relaxed max-w-4xl text-gray-800">
-                    "הקמתי את הסטודיו מתוך הבנה שהעולם הפיזי והדיגיטלי אינם נפרדים עוד. אנחנו חיים במרחב 'פיזיטלי',
-                    והמתודולוגיות שלנו חייבות לשקף את זה. הסטודיו הוא המעבדה שבה אני מיישמת את המחקר האקדמי שלי
-                    בפרויקטים אמיתיים."
+                <p class="text-2xl font-light leading-relaxed max-w-5xl text-gray-800">
+                    הסטודיו הוקם מתוך הבנה עמוקה כי העולם הפיזי והדיגיטלי אינם נפרדים עוד, אלא שזורים זה בזה במרחב
+                    'פיזיטלי' אחד. אנו מאמינים כי מתודולוגיות התכנון חייבות לשקף מציאות זו. הסטודיו משמש כמעבדה יוצרת,
+                    המתרגמת מחקר אקדמי וטכנולוגי מתקדם לכדי פרקטיקה אדריכלית ופרויקטים ממשיים המשפיעים על המרחב.
                 </p>
 
                 <!-- Project 1: TAMA 35 (Full Width) -->
@@ -949,17 +956,14 @@
                             </ul>
                         </div>
                         <div class="w-full md:w-1/2">
-                            <div class="grid grid-cols-2 gap-4">
-                                <img src="assets/images/participation_guide.jpg"
-                                    class="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-500 shadow-sm"
-                                    alt="Guide Cover">
-                                <img src="assets/images/participation_ui.jpg"
-                                    class="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-500 shadow-sm"
-                                    alt="Digital Tool UI">
+                            <div class="bg-gray-100 rounded-lg overflow-hidden border border-gray-200 shadow-sm mb-6">
+                                <img src="assets/images/regionalism_preview.png"
+                                    class="w-full h-64 object-cover hover:scale-105 transition-transform duration-700"
+                                    alt="Public Participation Tool Interface">
                             </div>
-                            <div class="mt-6 p-6 bg-blue-50 rounded-lg border border-blue-100">
+                            <div class="p-6 bg-blue-50 rounded-lg border border-blue-100">
                                 <h4 class="font-bold text-blue-900 mb-2">הכלי הדיגיטלי: בוט שיתוף</h4>
-                                <p class="text-xs text-blue-800 mb-4">פיתחתי כלי (AI Bot) המבוסס על המדריך,
+                                <p class="text-sm text-blue-800 mb-4">פיתחתי כלי (AI Bot) המבוסס על המדריך,
                                     המאפשר נגישות גבוהה יותר לתהליכי תכנון בזמן אמת.</p>
                                 <a href="https://participatory-assist.physital.studio/" target="_blank"
                                     class="relative z-10 inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest bg-blue-600 text-white px-6 py-3 hover:bg-blue-700 transition-colors shadow-lg hover:shadow-blue-500/30 rounded-full">
@@ -1071,28 +1075,7 @@
         </div>
 
         <!-- Project 6: Local Culture (Pardes Hanna) -->
-        <div class="grid md:grid-cols-12 gap-8 items-center border-t border-gray-100 pt-12">
-            <div class="md:col-span-4">
-                <h3 class="text-xl font-black mb-2 font-arch">תרבות מקומית: פרדס חנה</h3>
-                <p class="text-xs text-gray-500 font-bold tracking-wider mb-4">מיפוי Soft Culture</p>
-                <a href="https://docs.google.com/document/d/1ri7-denCHJmmiDiUvVGPxHLL-Wbd4nO5RUUQkMDkNK8/edit?tab=t.0"
-                    target="_blank"
-                    class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b border-black pb-1 hover:text-green-700 hover:border-green-700 transition-colors">
-                    למסמך האפיון המלא
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                </a>
-            </div>
-            <div class="md:col-span-8">
-                <p class="text-gray-600 leading-relaxed text-sm">
-                    מיפוי "תרבות רכה" בפרדס חנה ויצירת מדיניות תכנון תומכת. פיתחתי כלי Crowdsourcing המאפשר
-                    לתושבים לסמן מוקדי תרבות מקומיים, והצלבת הנתונים חושפת את הקשר בין תכנון עירוני ליצירת
-                    תרבות.
-                </p>
-            </div>
-        </div>
+
 
         </div>
 
@@ -1137,7 +1120,7 @@
                 <!-- Project 1: Nitza Smuk (Stacked Layout) -->
                 <div class="flex flex-col gap-12">
                     <div class="max-w-4xl">
-                        <h3 class="text-2xl font-black mb-4 font-arch">אדריכלית ניצה סמוק 2013-2017</h3>
+                        <h3 class="text-2xl font-black mb-4 font-arch">2013-2017 משרד שימור פרופ' ניצה סמוק</h3>
                         <span
                             class="inline-block bg-white border border-gray-200 text-gray-600 text-[10px] font-bold px-2 py-1 mb-4">ניהול
                             פרויקטים ושימור</span>
@@ -1227,7 +1210,7 @@
             <!-- Project 2 & 3: Merhav & Be'er Sheva -->
             <div class="grid md:grid-cols-2 gap-12 border-t border-gray-100 pt-12">
                 <div>
-                    <h3 class="text-xl font-black mb-2 font-arch">אורבניסטית: עמותת מרחב 2012</h3>
+                    <h3 class="text-xl font-black mb-2 font-arch">2012 עמותת מרחב</h3>
                     <p class="text-gray-600 leading-relaxed mb-6 font-light text-sm">
                         במסגרת עמותת מרחב למדתי מהי עירוניות הלכה למעשה וכיצד מייצרים תהליכי תכנון משתפים.
                         כאדריכלית צעירה, השתמשתי בכלים אדריכליים כדי ליצור דימויים עירוניים עתידיים.
@@ -1366,7 +1349,6 @@
                     </p>
                 </div>
 
-                <!-- 1. Negev (SCE) -->
                 <div class="relative pl-12 border-l border-gray-200">
                     <div class="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full border-4 border-white shadow-lg">
                     </div>
@@ -1374,31 +1356,68 @@
                     <span class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 block">בית הספר
                         לארכיטקטורה - נגב | המחלקה להנדסת תוכנה</span>
 
-                    <div class="space-y-8 mt-8">
-                        <div class="group">
-                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">סטודיו
-                                תכנון
-                                עירוני בעידן הטרנספורמציה הדיגיטלית</h4>
-                            <span class="text-xs text-gray-400 block mb-2">2023–היום | שנה ג' | מרצה מובילה וראש
-                                תחום</span>
-                            <p class="text-sm text-gray-600">פיתוח חשיבה ותכנון בעידן של דאטה ובינה מלאכותית. קריאה
-                                ביקורתית, ניתוח מנגנונים ופיתוח תרחישים אסטרטגיים.</p>
+                    <div class="space-y-12 mt-8">
+                        <!-- Course 1 -->
+                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">סטודיו
+                                    תכנון עירוני בעידן הטרנספורמציה הדיגיטלית</h4>
+                                <span class="text-xs text-gray-400 block mb-4">2023–היום | שנה ג' | מרצה מובילה וראש
+                                    תחום</span>
+                                <p class="text-sm text-gray-800 font-medium mb-2">פיתוח חשיבה ותכנון בעידן של דאטה ובינה
+                                    מלאכותית.</p>
+                                <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                                    הסטודיו עוסק בפיתוח מתודולוגיות תכנון חדשניות המשלבות ניתוח נתונים וכלים חישוביים.
+                                    אנו בוחנים מקרי מבחן גלובליים: ג'קרטה, ניירובי, סאו פאולו, סנטיאגו, עמאן, קזבלנקה,
+                                    וקייפטאון.
+                                </p>
+                            </div>
+                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                                <!-- Placeholder for Studio Image from PDF preview -->
+                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                                    תמונה: סטודיו SCE
+                                </div>
+                            </div>
                         </div>
-                        <div class="group">
-                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">כלים
-                                דיגיטליים במדע עירוני (City Science)</h4>
-                            <span class="text-xs text-gray-400 block mb-2">2023–היום | בשיתוף NUR Lab ו-MIT</span>
-                            <p class="text-sm text-gray-600">יישום כלי GIS, דאשבורדים ומיפוי דינמי למחקר ותכנון.
-                                פיתוח
-                                אפליקציות וכלי קוד למרחב העירוני.</p>
+
+                        <!-- Course 2 -->
+                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">כלים
+                                    דיגיטליים במדע עירוני (City Science)</h4>
+                                <span class="text-xs text-gray-400 block mb-4">2023–היום | בשיתוף NUR Lab ו-MIT</span>
+                                <p class="text-sm text-gray-800 font-medium mb-2">יישום כלי GIS, דאשבורדים ומיפוי דינמי
+                                    למחקר ותכנון.</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    הקורס מקנה כלים מעשיים לפיתוח אפליקציות וכלי קוד למרחב העירוני, תוך דגש על איסוף,
+                                    ניתוח והצגה של נתונים מרחביים בזמן אמת.
+                                </p>
+                            </div>
+                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                                    תמונה: מדע עירוני
+                                </div>
+                            </div>
                         </div>
-                        <div class="group">
-                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">יישומי
-                                HCI
-                                ו-GIS לעירוניות</h4>
-                            <span class="text-xs text-gray-400 block mb-2">2025–היום | המחלקה להנדסת תוכנה</span>
-                            <p class="text-sm text-gray-600">פיתוח פלטפורמות מבוססות נתונים לקבלת החלטות. חיבור בין
-                                הנדסת תוכנה למרקם העירוני.</p>
+
+                        <!-- Course 3 -->
+                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">יישומי
+                                    HCI ו-GIS לעירוניות</h4>
+                                <span class="text-xs text-gray-400 block mb-4">2025–היום | המחלקה להנדסת תוכנה</span>
+                                <p class="text-sm text-gray-800 font-medium mb-2">פיתוח פלטפורמות מבוססות נתונים לקבלת
+                                    החלטות.</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    קורס מתקדם המחבר בין עקרונות הנדסת תוכנה וממשק אדם-מחשב (HCI) לבין המורכבות של
+                                    המרקם העירוני, ליצירת פתרונות טכנולוגיים חכמים.
+                                </p>
+                            </div>
+                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                                    תמונה: הנדסת תוכנה
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1411,33 +1430,64 @@
                     <span class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 block">הפקולטה
                         לארכיטקטורה ובינוי ערים</span>
 
-                    <div class="space-y-8 mt-8">
-                        <div class="group">
-                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">סטודיו
-                                תכנון
-                                עירוני – "סטודיו מקרוב"</h4>
-                            <span class="text-xs text-gray-400 block mb-2">2021–2023 | שנה ב' | מרצה</span>
-                            <p class="text-sm text-gray-600">סטודיו משותף לאדריכלות ונוף בשכונת הדר בחיפה. לימוד
-                                מתוך
-                                השטח ועבודה עם הקהילה.</p>
+                    <div class="space-y-12 mt-8">
+                        <!-- Course 1 -->
+                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">סטודיו
+                                    תכנון עירוני – "סטודיו מקרוב"</h4>
+                                <span class="text-xs text-gray-400 block mb-4">2021–2023 | שנה ב' | מרצה</span>
+                                <p class="text-sm text-gray-800 font-medium mb-2">סטודיו משותף לאדריכלות ונוף בשכונת הדר
+                                    בחיפה.</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    הסטודיו התמקד בלימוד מתוך השטח ועבודה צמודה עם הקהילה המקומית, תוך הבנת המורכבויות
+                                    החברתיות והפיזיות של השכונה.
+                                </p>
+                            </div>
+                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                                    תמונה: סטודיו מקרוב
+                                </div>
+                            </div>
                         </div>
-                        <div class="group">
-                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">מבוא
-                                לתכנון
-                                עירוני</h4>
-                            <span class="text-xs text-gray-400 block mb-2">2020–2022 | שנה ב' | מרצה</span>
-                            <p class="text-sm text-gray-600">קישור בין תיאוריה לפרקטיקה. הקניית כלים להבנת המרחב
-                                ותהליכי
-                                תכנון רב-קנה מידה.</p>
+
+                        <!-- Course 2 -->
+                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">מבוא
+                                    לתכנון עירוני</h4>
+                                <span class="text-xs text-gray-400 block mb-4">2020–2022 | שנה ב' | מרצה</span>
+                                <p class="text-sm text-gray-800 font-medium mb-2">קישור בין תיאוריה לפרקטיקה.</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    הקורס מקנה ידע תיאורטי וכלים מעשיים להבנת המרחב העירוני, תוך ניתוח תהליכי תכנון
+                                    רב-קנה מידה והיכרות עם המערכת התכנונית בישראל.
+                                </p>
+                            </div>
+                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                                    תמונה: מבוא לתכנון
+                                </div>
+                            </div>
                         </div>
-                        <div class="group">
-                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">תכנון
-                                חברתי:
-                                דור 2.0</h4>
-                            <span class="text-xs text-gray-400 block mb-2">2020–2021 | תואר שני | עוזרת הוראה</span>
-                            <p class="text-sm text-gray-600">היבטים סוציולוגיים של תכנון ופיתוח תסקיר חברתי ככלי
-                                תכנוני.
-                            </p>
+
+                        <!-- Course 3 -->
+                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">תכנון
+                                    חברתי: דור 2.0</h4>
+                                <span class="text-xs text-gray-400 block mb-4">2020–2021 | תואר שני | עוזרת הוראה</span>
+                                <p class="text-sm text-gray-800 font-medium mb-2">היבטים סוציולוגיים של תכנון ופיתוח
+                                    תסקיר חברתי.</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    קורס המתמקד בהיבטים החברתיים של התכנון העירוני, ופיתוח "תסקיר חברתי" ככלי תכנוני
+                                    מרכזי להערכת השפעות חברתיות של תוכניות.
+                                </p>
+                            </div>
+                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                                    תמונה: תכנון חברתי
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1450,22 +1500,45 @@
                     <span class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 block">המחלקה
                         לארכיטקטורה</span>
 
-                    <div class="space-y-8 mt-8">
-                        <div class="group">
-                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">יחידת
-                                המחקר
-                                לאדריכלות אזרחית</h4>
-                            <span class="text-xs text-gray-400 block mb-2">2013–2015 | שנה ה' (פרויקט גמר) | עוזרת
-                                הוראה</span>
-                            <p class="text-sm text-gray-600">ליווי פרויקטים מחקריים העוסקים במוסדות ציבור ויחסי
-                                מרחב-חברה.</p>
+                    <div class="space-y-12 mt-8">
+                        <!-- Course 1 -->
+                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">יחידת
+                                    המחקר לאדריכלות אזרחית</h4>
+                                <span class="text-xs text-gray-400 block mb-4">2013–2015 | שנה ה' (פרויקט גמר) | עוזרת
+                                    הוראה</span>
+                                <p class="text-sm text-gray-800 font-medium mb-2">ליווי פרויקטים מחקריים העוסקים במוסדות
+                                    ציבור.</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    הנחיית סטודנטים בפרויקט הגמר, תוך התמקדות באדריכלות אזרחית ובחינת יחסי הגומלין בין
+                                    המרחב הבנוי לחברה הישראלית.
+                                </p>
+                            </div>
+                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                                    תמונה: אדריכלות אזרחית
+                                </div>
+                            </div>
                         </div>
-                        <div class="group">
-                            <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">"מראה
-                                מקום"
-                            </h4>
-                            <span class="text-xs text-gray-400 block mb-2">2013–2015 | רב-תחומי | עוזרת הוראה</span>
-                            <p class="text-sm text-gray-600">חשיבה מרחבית וייצוג חזותי.</p>
+
+                        <!-- Course 2 -->
+                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">"מראה
+                                    מקום"</h4>
+                                <span class="text-xs text-gray-400 block mb-4">2013–2015 | רב-תחומי | עוזרת הוראה</span>
+                                <p class="text-sm text-gray-800 font-medium mb-2">חשיבה מרחבית וייצוג חזותי.</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    קורס רב-תחומי העוסק בפיתוח חשיבה מרחבית, וביטוי רעיונות תכנוניים באמצעות כלי ייצוג
+                                    חזותיים מגוונים.
+                                </p>
+                            </div>
+                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                                    תמונה: מראה מקום
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2070,7 +2143,7 @@
         </div>
 
         <article
-            class="prose prose-xl prose-gray font-light leading-relaxed space-y-8 max-w-7xl mx-auto w-full text-gray-900">
+            class="prose prose-xl prose-gray font-light leading-relaxed space-y-8 max-w-none mx-auto w-full text-gray-900">
             <p class="font-medium text-2xl leading-relaxed text-black mb-8">
                 אני מכירה, מעריכה ומכבדת עמוקות את המסורת ארוכת השנים של בצלאל. בית הספר לאדריכלות נבנה על מצוינות
                 עיצובית, חשיבה ביקורתית, עצמאות אינטלקטואלית ואומץ תרבותי. הוא עיצב שפה אדריכלית ייחודית, עמוקה ובעלת

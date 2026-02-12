@@ -1,0 +1,138 @@
+import json
+
+# Define the comprehensive network data manually based on v1.html content
+data = {
+    "nodes": [
+        # --- PERSON ---
+        { "id": "batel", "label": "Dr. Bat-El Yossef Ravid", "type": "Person", "size": 20, "description": "Architect, Urban Planner, Researcher. Head of Architecture School Candidacy." },
+
+        # --- THEMES (Concepts) ---
+        { "id": "th_udt", "label": "Urban Digital Twin", "type": "Theme", "description": "Digital replicas of physical environments for social simulation." },
+        { "id": "th_participation", "label": "Participatory Planning", "type": "Theme", "description": "Engaging communities in urban design processes." },
+        { "id": "th_regionalism", "label": "New Regionalism", "type": "Theme", "description": "Thinking beyond the city scale: borders, cooperation, and conflict." },
+        { "id": "th_critical_map", "label": "Critical Cartography", "type": "Theme", "description": "Maps as power structures and tools for visibility." },
+        { "id": "th_smart_city", "label": "Smart Cities", "type": "Theme", "description": "Technology in the service of urban life." },
+        { "id": "th_social_justice", "label": "Social Justice", "type": "Theme", "description": "Planning for equity and inclusion." },
+        { "id": "th_housing", "label": "Housing Policy", "type": "Theme", "description": "Strategies for affordable and accessible housing." },
+        { "id": "th_ai", "label": "AI in Planning", "type": "Theme", "description": "Generative design and algorithmic analysis." },
+        
+        # --- INSTITUTIONS ---
+        { "id": "inst_technion", "label": "Technion", "type": "Institution", "description": "Israel Institute of Technology" },
+        { "id": "inst_bezalel", "label": "Bezalel Academy", "type": "Institution", "description": "Jerusalem Academy of Arts and Design" },
+        { "id": "inst_sce", "label": "SCE Negev", "type": "Institution", "description": "Shamoon College of Engineering" },
+        { "id": "inst_mit", "label": "MIT Media Lab", "type": "Institution", "description": "City Science Group" },
+        { "id": "inst_hcu", "label": "HafenCity Univ", "type": "Institution", "description": "Hamburg, Germany" },
+        { "id": "inst_csh", "label": "Complexity Science Hub", "type": "Institution", "description": "Vienna, Austria" },
+        { "id": "inst_plan_admin", "label": "Planning Administration", "type": "PolicyBody", "description": "Israel Planning Administration (Minhal Hatichnun)" },
+        { "id": "inst_tlv", "label": "Tel Aviv Municipality", "type": "PolicyBody", "description": "Conservation Department" },
+        { "id": "inst_merhav", "label": "Merhav", "type": "Institution", "description": "Movement for Urbanism in Israel" },
+        { "id": "inst_nitza", "label": "Nitza Smuk Arch", "type": "Institution", "description": "Conservation Architecture Office" },
+
+        # --- LABS ---
+        { "id": "lab_nur", "label": "NUR Lab", "type": "Lab", "description": "Negev Urban Research Lab. International collaboration." },
+        { "id": "lab_smart_social", "label": "Smart Social Strategy", "type": "Lab", "description": "Lab at the Technion." },
+
+        # --- PROJECTS (Physital Studio & Practice) ---
+        { "id": "prj_tama35", "label": "TAMA 35 Monitoring", "type": "Project", "description": "Digital monitoring of National Master Plan 35. Data-driven consultation." },
+        { "id": "prj_preservation_tlv", "label": "Digital Preservation TLV", "type": "Project", "description": "AI tool for brutalist architecture conservation in Tel Aviv." },
+        { "id": "prj_votes120", "label": "Votes120", "type": "Project", "description": "Regional elections simulation tool." },
+        { "id": "prj_geodata", "label": "GeoData", "type": "Project", "description": "Regional analysis research tool." },
+        { "id": "prj_part_assist", "label": "Participatory Assist", "type": "Project", "description": "AI Bot for real-time planning consultation." },
+        { "id": "prj_soft_culture", "label": "Soft Culture Mapping", "type": "Project", "description": "Crowdsourcing cultural assets in Pardes Hanna." },
+        { "id": "prj_levontin", "label": "Levontin 14", "type": "Project", "description": "Conservation project with Nitza Smuk." },
+        { "id": "prj_mikve", "label": "Mikve Israel 19", "type": "Project", "description": "Conservation project with Nitza Smuk." },
+
+        # --- COURSES ---
+        { "id": "crs_studio5", "label": "Studio 5: Urban Design", "type": "Course", "description": "SCE Negev. Urban transformation in the digital age." },
+        { "id": "crs_city_sci", "label": "City Science Tools", "type": "Course", "description": "SCE Negev. GIS, Dashboards, and dynamic mapping." },
+        { "id": "crs_studio_makrov", "label": "Studio Makrov", "type": "Course", "description": "Technion. Community-based planning in Hadar, Haifa." },
+        { "id": "crs_intro_plan", "label": "Intro to Urban Planning", "type": "Course", "description": "Technion. Theory and practice of multi-scale planning." },
+        { "id": "crs_civil_arch", "label": "Civil Architecture Unit", "type": "Course", "description": "Bezalel. Research unit on public institutions." },
+
+        # --- PUBLICATIONS ---
+        { "id": "pub_smarter_part", "label": "Smarter Participation (2026)", "type": "Publication", "meta": { "year": 2026, "venue": "Urban Technology" } },
+        { "id": "pub_negev_pulse", "label": "NegevPulse (2025)", "type": "Publication", "meta": { "year": 2025, "venue": "SAUC Journal" } },
+        { "id": "pub_regionalism", "label": "Towards Regionalism (2025)", "type": "Publication", "meta": { "year": 2025, "venue": "Geog. Research Forum" } },
+        { "id": "pub_social_secrets", "label": "Social Secrets & Algorithms", "type": "Publication", "meta": { "year": 2025, "venue": "Disruptive Tech" } },
+        { "id": "pub_coproduction", "label": "Place of Co-Production (2024)", "type": "Publication", "meta": { "year": 2024, "venue": "Tech. Forecasting" } },
+        { "id": "pub_pss", "label": "Place-Bound PSS (2023)", "type": "Publication", "meta": { "year": 2023, "venue": "Env. & Planning B" } },
+        { "id": "pub_sdt", "label": "The Social Digital Twin (2022)", "type": "Publication", "meta": { "year": 2022, "venue": "Env. & Planning B" } },
+        { "id": "conf_vienna", "label": "Vienna Living Lab", "type": "Publication", "meta": { "year": 2025, "venue": "Conference" } },
+        { "id": "conf_social_table", "label": "Putting Social on Table", "type": "Publication", "meta": { "year": 2023, "venue": "Conference" } },
+        { "id": "conf_thinking_reg", "label": "Thinking Regionally", "type": "Publication", "meta": { "year": 2024, "venue": "Conference" } }
+    ],
+    "links": [
+        # --- Bat-El Connections ---
+        { "source": "batel", "target": "lab_nur", "type": "leads" },
+        { "source": "batel", "target": "inst_sce", "type": "teaches" },
+        { "source": "batel", "target": "inst_technion", "type": "researches" },
+        { "source": "batel", "target": "inst_bezalel", "type": "collaborates" },
+        { "source": "batel", "target": "inst_plan_admin", "type": "advises" },
+        
+        # --- Lab Connections ---
+        { "source": "lab_nur", "target": "inst_sce", "type": "part_of" },
+        { "source": "lab_nur", "target": "inst_mit", "type": "collaborates" },
+        { "source": "lab_nur", "target": "th_udt", "type": "researches" },
+        { "source": "lab_nur", "target": "th_regionalism", "type": "researches" },
+        
+        # --- Project Connections ---
+        { "source": "prj_tama35", "target": "inst_plan_admin", "type": "for" },
+        { "source": "prj_tama35", "target": "th_smart_city", "type": "related" },
+        
+        { "source": "prj_preservation_tlv", "target": "inst_tlv", "type": "for" },
+        { "source": "prj_preservation_tlv", "target": "th_udt", "type": "uses" },
+        { "source": "prj_preservation_tlv", "target": "th_ai", "type": "uses" },
+        
+        { "source": "prj_votes120", "target": "th_regionalism", "type": "explores" },
+        { "source": "prj_votes120", "target": "th_social_justice", "type": "related" },
+        
+        { "source": "prj_geodata", "target": "th_regionalism", "type": "explores" },
+        
+        { "source": "prj_part_assist", "target": "th_participation", "type": "enables" },
+        { "source": "prj_part_assist", "target": "th_ai", "type": "uses" },
+        
+        { "source": "prj_soft_culture", "target": "th_participation", "type": "uses" },
+        { "source": "prj_soft_culture", "target": "th_critical_map", "type": "uses" },
+        
+        # --- Practice Connections ---
+        { "source": "prj_levontin", "target": "inst_nitza", "type": "part_of" },
+        { "source": "prj_mikve", "target": "inst_nitza", "type": "part_of" },
+        { "source": "inst_merhav", "target": "th_participation", "type": "promotes" },
+        
+        # --- Course Connections ---
+        { "source": "crs_studio5", "target": "inst_sce", "type": "at" },
+        { "source": "crs_studio5", "target": "th_udt", "type": "teaches" },
+        
+        { "source": "crs_city_sci", "target": "inst_sce", "type": "at" },
+        { "source": "crs_city_sci", "target": "lab_nur", "type": "linked" },
+        { "source": "crs_city_sci", "target": "th_smart_city", "type": "teaches" },
+        
+        { "source": "crs_studio_makrov", "target": "inst_technion", "type": "at" },
+        { "source": "crs_studio_makrov", "target": "th_social_justice", "type": "teaches" },
+        
+        # --- Publication Connections ---
+        { "source": "pub_smarter_part", "target": "th_udt", "type": "topic" },
+        { "source": "pub_smarter_part", "target": "th_participation", "type": "topic" },
+        
+        { "source": "pub_negev_pulse", "target": "th_critical_map", "type": "topic" },
+        { "source": "pub_negev_pulse", "target": "lab_nur", "type": "output" },
+        
+        { "source": "pub_sdt", "target": "th_udt", "type": "defines" },
+        { "source": "pub_sdt", "target": "th_social_justice", "type": "topic" },
+        
+        { "source": "pub_thinking_regionally", "target": "th_regionalism", "type": "topic" },
+        { "source": "pub_thinking_regionally", "target": "inst_sce", "type": "venue" },
+        
+        { "source": "conf_vienna", "target": "inst_csh", "type": "host" },
+        { "source": "conf_vienna", "target": "th_smart_city", "type": "topic" },
+        
+        { "source": "conf_social_table", "target": "inst_hcu", "type": "host" },
+        { "source": "conf_social_table", "target": "inst_technion", "type": "host" }
+    ]
+}
+
+# Write to file
+with open('c:/git/bezalel_arch_candidate/assets/data/network_data.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+print("Successfully generated network_data.json with", len(data['nodes']), "nodes and", len(data['links']), "links.")

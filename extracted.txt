@@ -1,49 +1,40 @@
-Peer reviewed papers )acadmic)
- 
-2025 (Accepted). Chassidim, H., Shnaiwer, T., Algergawi, I., Abu Samor, S., Yosef Ravid, B.“NegevPulse: Crowdsourced Digital Mapping for Visibility in Unrecognized Bedouin Villages.” Submitted to SAUC - Street Art & Urban Creativity Journal, Special Issue (in collaboration with Smart City Expo World Congress): Generative AI, Digital Twin Simulators for Advanced Urban Efficiency, Quality of Life, and Resiliency.
- 
-2025 (Accepted). Yossef Ravid, B., Savin Ben Shoshan, L. “Towards Regionalism in Israel Coping with Political Rift and War.” Geography Research Forum (GRF), Special Issue on Regionalism. Full publication expected April 2025. Vol 44 No 1 (2025): TOWARDS NEW REGIONALISM IN ISRAEL 
- 
-2025 (Accepted- not published yet). Yossef Ravid, B., Haskell, S., Ram, I., Avrahami, A., Aharon-Gutman, M. “Which Social Secrets Can an Algorithm Based on Urban Data Reveal? Exploring the Correlation Between Social and Physical Data in Urban Spaces.” Handbook of Disruptive Urban Technologies and Society.
-https://docs.google.com/document/d/1m3QXfBW280AXkyaPSE00RYqX9m69X9Xg/edit?usp=sharing&ouid=112771960077069951893&rtpof=true&sd=true
-2026 (Accepted-not published yet). Yossef Ravid, B., Axel, A., Aharon-Gutman, M. “Smarter Participation: Co-Governing Urban Aging with a Neighborhood Digital Twin.” Urban Technology.
- 
-2024 (Accepted). Yossef Ravid, B., Aharon Gutman, M. “The Place of Co-Production: A Physital Space for Collaborative Urban Government.” Technological Forecasting & Social Change, Volume 209, December 2024, Article 123748.
- 
-2023 (Accepted). Weiner, R., Mello Rose, F., Yossef Ravid, B., Aharon-Gutman, M., Noennig, J. “Place-Bound Planning Support Systems for Deliberation: Affording Better Communication and Comprehension.” Environment and Planning B: Urban Analytics and City Science, published online November 30, 2023.
- 
-2022 (Accepted). Yossef Ravid, B., Aharon-Gutman, M. “The Social Digital Twin: The Social Turn in the Field of Smart Cities.” Environment and Planning B: Urban Analytics and City Science, Volume 50, Issue 6, July 2023, pp. 1455–1470.
- 
-2025 (Under Review - Revise and Resubmit) Bat-El Yosef Ravid, Shahar Hasechel, Meirav Aharon Gutman, Hagit Na’ali Yosef, Michal Sutin, Timna Hurgis Golan The "Social Block: A Scale for Organizing Social Data in Data-Driven Spatial Models” Submitted to Planning (Tichnun)
- 
-2025 (Under Review - Revise and Resubmit). Yossef Ravid, B. Savin Ben Shoshan, L., Tzfadia, E., “Displacement and Sumud-  Informal Bedouin Settlements and the Politics of Digital Mapping and Design".” URBAN DESIGN International 
- 
-2023 (Under Review - Revise and Resubmit). Yossef Ravid, B., Axel, A.,  Aharon-Gutman, M. “The Language of Technology: Using Smart City Tools for Collaborative Decision Making.” Planning Theory and Practice.
-May 2023 – Yossef Ravid, B., "Smart Neighborhood? Decentralizing the Smart City Paradigm by Shifting Power from the City to the Local Neighborhood.” International Conference on Urbanism and Urbanization, Bezalel Academy of Art and Design, Jerusalem.
-ספרים- 
-Ben-Zaken, A., Cohen, M., Savin Ben-Shoshan, L., Yossef Ravid, B., & Avitar, Y. (2025). Israel’s New Regionalism: From Polarization to Cohesion. The Institute for Israeli Thought.(link)
- 
-לא אקדמים-
-1.1.  
-January 2025- “The Past Is Gone, the Future Already Here: Digital Tools for Navigating Planning Complexity”. In: Planning Knowledge Development for Shaping the Renewed Neighborhood Concept – Research Learning Group Report (p. 27). Tel Aviv: Tel Aviv–Yafo Municipality, Israel Planners Association, Yad Hanadiv.(link)
- https://drive.google.com/file/d/1Qbd6_T0s_AetTB78ksmg0GPCbQzMczyB/view?usp=sharing
-December 2024 – "Fragmented Reality, Dynamic Regions: Rethinking the Israeli Map through the Lens of Regional Division." Proposal for the Future Israeli Pavilion, Erev Rav Journal, written in collaboration with Dr. Liat Sabin Ben-Shoshan. (link)
- 
-September 2024 – "What is an innovation district?" A Comparative Mapping of Innovation Districts around the World. (link)
- 
-April 2024 – "Excuse me, but what is your question?" Proposal for a new methodology of public participation in planning. Urbanology. (link)
- 
-April 2024 – " Public participation in planning in the era of the Smart City”. Urbanology.(link)
- 
-December 2019 – "Everything You Wanted to Know about a Planning and Construction Announcement.” Globes. (link)
- 
-December 2018 – “Real Estate in the UK: Democracy-based Construction.” ALondon. (link)
- 
-September 2018 – “Neighborhood Planning London.” The Marker.
- 
-September 2018 – “London 2040: What will the British capital look like in the future.” stlanguage. (link)
- 
-כתבו עלי-
-https://www.prtfl.co.il/archives/220540
-https://www.davar1.co.il/404160/
-https://www.pinat.co.il/post/%D7%9E%D7%94-%D7%94%D7%9E%D7%A6%D7%91-%D7%90%D7%9C-%D7%97%D7%93%D7%A8-%D7%94%D7%9E%D7%A6%D7%91-%D7%94%D7%97%D7%91%D7%A8%D7%AA%D7%99-%D7%91%D7%94%D7%93%D7%A8%D7%99%D7%95%D7%9F
+זה עדין בעבודה- יש על ז עוד רב עבוד של תכנים ועיצוב. אבל קודם כל יצרתי מקום- אז כל החומרים יופעו כאן. 
+https://bezalel-arch-candidate.physital.studio/
+ראשית דבר
+יש רגעים שהם לא רק צעד מקצועי, אלא סגירת מעגל. המועמדות הזו עבורי היא רגע כזה.
+אני זוכרת את היום שבו התקבלתי לבצלאל. את המתח, את תחושת הבלתי־אפשרי, את הרגע שבו נפתחה המעטפה והבנתי שהעולם שאני חולמת עליו — הופך למציאות. עבורי זו לא הייתה רק קבלה ללימודים; זו הייתה כניסה למרחב של יצירה, של ביקורת, של מחשבה עמוקה ושל אחריות. בצלאל פתחה בפניי לא רק מקצוע, אלא אפשרות לעצב מציאות.
+מאז עברו שנים של עבודה אינטנסיבית והתפתחות מתמדת. תואר שני בלונדון, שהתאפשר בזכות מלגה מבצלאל, הרחיב את המבט הבינלאומי. הדוקטורט בטכניון חידד את החשיבה המערכתית והמחקרית. לאורך כל הדרך עבדתי קשה — באקדמיה ובפרקטיקה במקביל — לא מתוך צורך להוכיח, אלא מתוך אמונה שעיצוב, מחקר והוראה הם שליחות מקצועית.
+לאורך השנים פעלתי בזירות רבות: הוראה, מחקר יישומי, פיתוח כלים דיגיטליים, שיתופי פעולה בינלאומיים, תהליכי שיתוף ציבור, בניית תשתיות ארגוניות ותפיסתיות. מבחוץ זה אולי נראה כמו ריבוי עולמות; עבורי זה מארג אחד. חקירה מתמשכת של האופן שבו אנחנו חושבים, מתכננים ופועלים בתוך מרחב משתנה.
+הטכנולוגיה נכנסה אל תוך העבודה שלי לא כגימיק, אלא כאתגר אמיתי. אני חווה באופן יומיומי עד כמה מה שהיה רלוונטי בתחילת סמסטר יכול להשתנות עד סופו. השנה פתחתי קורס עם מערך כלים מסוים, וסיימתי אותו עם יכולות טכנולוגיות חדשות ששינו מן היסוד את תהליך העבודה והחשיבה. המציאות הדיגיטלית אינה תוספת לשדה — היא משנה את השדה עצמו.
+בתיק העבודות המצורף בחרתי להציג את הפרויקטים והמחקרים המרכזיים שמייצגים את דרכי המקצועית. לא כרשימת הישגים, אלא כתמונה של תהליך: מהכשרה אדריכלית יסודית, דרך מחקר מתקדם, ועד הובלת תהליכים מערכתיים רחבי היקף.
+עבורי זו אינה רק מועמדות לתפקיד. זו אחריות — להחזיר למקום שממנו צמחתי, ולהוביל אותו אל השלב הבא.
+חזון לבית הספר לאדריכלות
+מסורת, מורכבות והנהגה לעתיד
+אני מכירה, מעריכה ומכבדת עמוקות את המסורת ארוכת השנים של בצלאל. בית הספר לאדריכלות נבנה על מצוינות עיצובית, חשיבה ביקורתית, עצמאות אינטלקטואלית ואומץ תרבותי. הוא עיצב שפה אדריכלית ייחודית, עמוקה ובעלת עמדה. המסורת הזו איננה רק עבר שיש לשמר; היא תשתית חיה שממנה ניתן להמשיך ולהתפתח.
+דווקא מתוך הכבוד למסורת הזו, יש להתבונן במציאות שבתוכה האדריכלות פועלת כיום — ולבחון מה נדרש מבית ספר מוביל בתוך תנאים שהשתנו באופן מהותי.
+האדריכלות מתקיימת היום בתוך מה שניתן לכנות Complexity City — עיר של מורכבות מואצת. מרחב צפוף יותר, רב־שכבתי יותר, תלת־ממדי יותר, שבו תשתיות, תחבורה, אנרגיה, מידע ומערכות דיגיטליות שזורות זו בזו. העיר אינה רק פיזית ואינה רק תכנונית; היא מערכת חיה של יחסים, נתונים, טכנולוגיות וקונפליקטים.
+המרחב נעשה אינטנסיבי יותר. בנייה לגובה ולעומק תת־קרקעי מתרחבת. התחדשות עירונית מתקיימת לצד פיתוח חדש. אזורים תפקודיים חוצים גבולות מנהליים. מערכות מורכבות פועלות בו־זמנית ומשפיעות זו על זו. מורכבות זו אינה רק פיזית — היא מוסדית, חברתית ודיגיטלית.
+בתוך Complexity City, האדריכלות נעשית יותר ויותר פיזיטלית — שילוב בלתי נפרד של פיזי ודיגיטלי. המרחב אינו רק חומר ובטון; הוא גם שכבות מידע, אלגוריתמים, סימולציות, תאומים דיגיטליים ותהליכי קבלת החלטות מבוססי דאטה. התכנון אינו מתרחש רק באתר הבנייה, אלא גם במערכות חישוביות ובפלטפורמות דיגיטליות.
+WHY — למה נדרש שינוי תפיסתי עכשיו?
+האדריכלות אינה פועלת עוד במרחב יציב. העולם שבתוכו אנו מתכננים נעשה מורכב יותר, מהיר יותר ותלוי מערכות יותר מאי פעם. משבר האקלים מחייב אחריות סביבתית עמוקה. שיקולים חברתיים אינם תוספת ערכית אלא סטנדרט מקצועי מחייב. ריבוי השחקנים גדל והצורך באמון ציבורי ובהשתתפות אמיתית מתעצם.
+ובתוך כל אלה — קצב השינויים הטכנולוגיים מואץ באופן חסר תקדים.
+מה שרלוונטי בתחילת שנה אקדמית עשוי להשתנות עד סופה. כלים דיגיטליים, בינה מלאכותית, מערכות חישוביות ותאומים דיגיטליים אינם עוד תוספת לארגז הכלים — הם משנים את אופן החשיבה, את מבנה הידע ואת יחסי הכוחות בשדה. האדריכלות נעשית פיזיטלית במהותה.
+המשמעות איננה רק צורך בהכשרה טכנית מעודכנת. המשמעות היא שינוי תפיסתי עמוק: כיצד מכשירים אדריכלים ואדריכליות לפעול בתוך Complexity City פיזיטלית — מבלי לאבד עומק תרבותי, ביקורתי ועיצובי?
+אם בית ספר לאדריכלות לא יוביל את ההתמודדות עם המורכבות הזו, הוא יסתפק בתגובה מאוחרת לשינויים שמוגדרים מחוץ לו. בצלאל, כבעלת מסורת של חשיבה עצמאית, יכולה וצריכה להיות המקום שבו מנוסחת תגובה עמוקה — לא טכנית, אלא תפיסתית.
+WHAT — מה נדרש לבנות?
+נדרש להרחיב את גבולות הדיסציפלינה מבלי לוותר על עומקה.
+נדרש רצף אקדמי מלא וברור — מהסטודיו ועד מחקר מתקדם. חיזוק התארים המתקדמים ופיתוח תשתית שתאפשר בעתיד דוקטורט מבוסס עיצוב הם מהלך אסטרטגי שממצב את האדריכלות כתחום ידע עמוק ומשפיע. דוקטורט שבו הפרויקט הוא מחקר, והמחקר פועל בעולם פיזיטלי, מחבר בין תיאוריה, תכנון ומערכות חיות.
+נדרש לבסס מחקר יישומי כעמוד שדרה. בעולם של Complexity City, שבו תכנון פועל בתוך מערכות נתונים, תשתיות וקונפליקטים, האקדמיה צריכה לפתח כלים, מתודולוגיות ופלטפורמות פעולה. לא כהשלמה מאוחרת למציאות, אלא כהובלה שלה.
+נדרש להקים מרחבי Co-Production — פלטפורמות עבודה מתמשכות שבהן ידע נוצר יחד עם גופים ציבוריים, פרקטיקה וחברה אזרחית. במציאות פיזיטלית, ידע אינו מיוצר במקום אחד בלבד; הוא נוצר דרך חיבורים.
+ונדרשת אינטגרציה דיגיטלית מהותית בתוך החשיבה האדריכלית. לא כקורס טכנולוגי מבודד, אלא כהרחבת השפה עצמה כך שתוכל לפעול באופן ביקורתי, יצירתי ואחראי במרחב פיזיטלי.
+HOW — כיצד הדבר יתממש בפועל?
+הובלה בתוך מציאות מורכבת אינה מתרחשת דרך שינוי נקודתי של קורס או הוספת כלי טכנולוגי. היא מתרחשת דרך בניית מסגרות פעולה יציבות שמאפשרות עומק מתמשך.
+אחד המודלים המרכזיים שאני מבקשת להביא לבית הספר הוא מודל ה-Living Lab. במהלך עבודתי כחלק מקבוצת המחקר של תכנית Erasmus בוינה, חקרנו ופיתחנו את המושג לא רק כפורמט ניסיוני, אלא כמתודולוגיה סדורה: מרחב שבו מחקר, תכנון ופעולה מתקיימים בו־זמנית, בשיתוף גורמים ציבוריים, מקצועיים וקהילתיים, ובזמן אמת.
+Living Lab איננו "סטודיו עם שותף חיצוני". הוא תשתית מתמשכת. הוא יוצר מסגרת שבה בית הספר פועל בתוך המציאות ולא מדמה אותה בלבד. הוא מאפשר מחקר יישומי, פיתוח כלים, בדיקה של תהליכי שיתוף ציבור, והטמעת חשיבה פיזיטלית — תוך כדי עשייה.
+אני רואה בבית הספר פוטנציאל להקים מספר צירי פעולה קבועים — קבוצות חשיבה ועבודה משותפות — שיפעלו לאורך זמן ולא כסדנאות נקודתיות. קבוצות אלו יחברו בין מרצים, חוקרים, סטודנטים מתקדמים ואנשי פרקטיקה, ויעסוקו בנושאים שבהם האדריכלות פוגשת מציאות מורכבת: תכנון אזורי, חוסן אקלימי, תהליכי שיתוף ציבור, אינטגרציה של כלים דיגיטליים ותכנון פיזיטלי.
+המטרה אינה לייצר עוד שיח, אלא לייצר מנגנון עבודה. מנגנון שמפתח ידע, מייצר תוצרים, מושך משאבים ומעמיק את מעמדו האקדמי של בית הספר.
+במקביל, יש לבסס תשתית ברורה לתארים מתקדמים שתתחבר למסגרות הללו. סטודנטים לתואר שני ולמחקר מתקדם יהיו חלק אינטגרלי מקבוצות העבודה וה-Living Labs. כך נבנה רצף אמיתי בין הוראה, מחקר והשפעה ציבורית.
+האינטגרציה הדיגיטלית תוטמע בתוך המסגרות הללו לא כקישוט טכנולוגי, אלא כחלק מהשפה האדריכלית. עבודה עם דאטה, סימולציות, בינה מלאכותית וכלי תכנון דיגיטליים תתקיים בתוך הקשר עיצובי, ביקורתי וציבורי. הפיזי והדיגיטלי — הפיזיטלי — יפעלו יחד.
+הובלה כזו מחייבת גם תרבות ארגונית שמאפשרת עומק, שיתופיות וגמישות. לא ריצה אחרי טרנדים, אלא בניית מבנה שמסוגל להכיל שינוי מתמשך מבלי לאבד זהות.
+סיכום
+בית הספר לאדריכלות של בצלאל מחזיק במסורת עמוקה וביסודות אינטלקטואליים חזקים. השלב הבא איננו ויתור עליהם, אלא הרחבה שלהם כך שיוכלו לפעול בתוך מציאות מורכבת, משתנה ופיזיטלית.

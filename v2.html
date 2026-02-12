@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bat-El Yossef Ravid | Network Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/force-graph"></script>
+    <script src="//unpkg.com/d3"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            margin: 0;
+            overflow: hidden;
+            background-color: #FFFFFF;
+        }
+
+        #graph-container {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Introduction Overlay */
+        #intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            transition: opacity 1.5s ease-out;
+            pointer-events: none;
+            /* Allows click through after fade */
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+
+        /* Drawer Overlay */
+        #drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 450px;
+            max-width: 90vw;
+            height: 100vh;
+            background: white;
+            box-shadow: 5px 0 30px rgba(0, 0, 0, 0.05);
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 20;
+            overflow-y: auto;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        #drawer.open {
+            transform: translateX(0);
+        }
+
+        /* UI Controls */
+        #ui-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            /* Let children dictate height */
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .interactive {
+            pointer-events: auto;
+        }
+
+        /* Custom Scrollbar */
+        #drawer::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #drawer::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        #drawer::-webkit-scrollbar-thumb {
+            background: #e5e7eb;
+            border-radius: 3px;
+        }
+
+        .type-tag {
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body class="text-gray-900">
+
+    <!-- Graph Container -->
+    <div id="graph-container"></div>
+
+    <!-- Intro Overlay -->
+    <div id="intro-overlay">
+        <h1 class="text-4xl md:text-5xl font-light mb-4 text-center tracking-wide">זאת לא תיק עבודות. זאת רשת.</h1>
+        <p class="text-xl text-gray-500 font-light max-w-lg text-center leading-relaxed">
+            כל פרויקט, קורס ומאמר הם נקודה במערכת אחת <br> שמחברת סטודיו, מחקר ומדיניות.
+        </p>
+    </div>
+
+    <!-- UI Layer -->
+    <div id="ui-layer" class="pointer-events-none fixed inset-0 z-10 flex flex-col justify-between p-8">
+
+        <!-- Header: Identity -->
+        <div class="pointer-events-auto self-start">
+            <h1 class="text-2xl font-black tracking-tighter">ד"ר אדר' בת-אל יוסף רביד</h1>
+            <p class="text-sm font-bold text-gray-400 tracking-widest uppercase mt-1">Network Portfolio v3.0</p>
+        </div>
+
+        <!-- Sidebar: Chapter Navigation -->
+        <div
+            class="pointer-events-auto absolute top-1/2 right-12 transform -translate-y-1/2 flex flex-col items-end gap-6">
+            <nav class="flex flex-col gap-4 text-right">
+                <button onclick="focusCategory('vision')"
+                    class="nav-item group flex items-center gap-4 justify-end transition-all opacity-60 hover:opacity-100">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest hidden group-hover:block transition-all">חזון
+                        וראשית דבר</span>
+                    <span class="text-xl font-black">01</span>
+                </button>
+                <button onclick="focusCategory('cv')"
+                    class="nav-item group flex items-center gap-4 justify-end transition-all opacity-60 hover:opacity-100">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest hidden group-hover:block transition-all">קורות
+                        חיים</span>
+                    <span class="text-xl font-black">02</span>
+                </button>
+                <button onclick="focusCategory('practice_now')"
+                    class="nav-item group flex items-center gap-4 justify-end transition-all opacity-60 hover:opacity-100">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest hidden group-hover:block transition-all">פרקטיקה
+                        הווה</span>
+                    <span class="text-xl font-black">03</span>
+                </button>
+                <button onclick="focusCategory('practice_past')"
+                    class="nav-item group flex items-center gap-4 justify-end transition-all opacity-60 hover:opacity-100">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest hidden group-hover:block transition-all">פרקטיקה
+                        עבר</span>
+                    <span class="text-xl font-black">04</span>
+                </button>
+                <button onclick="focusCategory('research')"
+                    class="nav-item group flex items-center gap-4 justify-end transition-all opacity-60 hover:opacity-100">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest hidden group-hover:block transition-all">מחקר
+                        ומעבדה</span>
+                    <span class="text-xl font-black">05</span>
+                </button>
+                <button onclick="focusCategory('teaching')"
+                    class="nav-item group flex items-center gap-4 justify-end transition-all opacity-60 hover:opacity-100">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest hidden group-hover:block transition-all">הוראה</span>
+                    <span class="text-xl font-black">06</span>
+                </button>
+                <button onclick="focusCategory('articles')"
+                    class="nav-item group flex items-center gap-4 justify-end transition-all opacity-60 hover:opacity-100">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest hidden group-hover:block transition-all">מאמרים</span>
+                    <span class="text-xl font-black">07</span>
+                </button>
+                <button onclick="focusCategory('school_vision')"
+                    class="nav-item group flex items-center gap-4 justify-end transition-all opacity-60 hover:opacity-100">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest hidden group-hover:block transition-all">חזון
+                        לביה"ס</span>
+                    <span class="text-xl font-black">08</span>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Footer: Search & Controls -->
+        <div class="pointer-events-auto self-start flex gap-4 items-center">
+            <div
+                class="bg-white/80 border border-gray-200 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm backdrop-blur-sm">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input type="text" placeholder="חיפוש ברשת..."
+                    class="bg-transparent text-sm outline-none w-48 font-bold">
+            </div>
+            <button onclick="Graph.zoomToFit(1000, 50)"
+                class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-colors shadow-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Drawer Panel -->
+    <div id="drawer"
+        class="fixed top-0 left-0 w-[500px] h-full bg-white shadow-2xl transform -translate-x-full transition-transform duration-500 z-50 flex flex-col border-r border-gray-100">
+        <!-- Drawer Header -->
+        <div class="p-8 pb-4 bg-white sticky top-0 z-10 border-b border-gray-50">
+            <button id="close-drawer"
+                class="absolute top-8 right-8 p-2 hover:bg-gray-100 rounded-full transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <span id="drawer-type"
+                class="text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-2 block">Project</span>
+            <h2 id="drawer-title" class="text-3xl font-black leading-tight mb-2">Network View</h2>
+            <div class="w-12 h-1 bg-black mt-4"></div>
+        </div>
+
+        <!-- Drawer Body -->
+        <div id="drawer-body"
+            class="p-8 space-y-6 overflow-y-auto flex-grow prose prose-sm max-w-none prose-headings:font-black prose-p:font-light prose-p:text-gray-600">
+            <p>Select a node to view details.</p>
+        </div>
+
+        <!-- Drawer Footer -->
+        <div class="p-8 border-t border-gray-100 bg-gray-50">
+            <button
+                class="w-full py-4 bg-black text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-gray-800 transition-colors">
+                לפרויקט המלא ->
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. CONFIGURATION ---
+        const NODE_COLORS = {
+            Person: '#000000',      // Black key nodes
+            Theme: '#333333',
+            Project: '#666666',
+            Lab: '#000000',
+            Course: '#444444',
+            Institution: '#9CA3AF',
+            Publication: '#D1D5DB', // Very light gray
+            PolicyBody: '#000000'
+        };
+
+        const NODE_SIZES = {
+            Person: 16,
+            Lab: 10,
+            Project: 8,
+            Theme: 7,
+            Institution: 9,
+            Default: 5
+        };
+
+        // Mapping Chapters to Node IDs
+        const CATEGORY_MAP = {
+            'vision': 'batel', // Center
+            'cv': 'batel',
+            'practice_now': 'inst_plan_admin', // Representing current practice
+            'practice_past': 'inst_nitza', // Nitza Smuk
+            'research': 'lab_nur',
+            'teaching': 'inst_sce', // Or 'crs_studio5'
+            'articles': 'pub_smarter_part', // One of the pubs, or create a 'Publications' hub node?
+            'school_vision': 'th_udt' // Conceptual anchor
+        };
+
+        // --- 2. DATA LOADING & STATE ---
+        let rawData = { nodes: [], links: [] };
+        let graphData = { nodes: [], links: [] };
+
+        const Graph = ForceGraph()
+            (document.getElementById('graph-container'));
+
+        // Load Data
+        fetch('assets/data/network_data.json')
+            .then(res => res.json())
+            .then(data => {
+                rawData = data;
+                graphData = JSON.parse(JSON.stringify(data));
+                initGraph(graphData);
+                startEntrySequence();
+            });
+
+        // --- NAVIGATION LOGIC ---
+        function focusCategory(catId) {
+            const nodeId = CATEGORY_MAP[catId];
+            const node = graphData.nodes.find(n => n.id === nodeId);
+
+            if (node) {
+                // Highlight mechanics
+                hoverNode = node;
+
+                // Camera mechanics
+                Graph.centerAt(node.x, node.y, 1000);
+                Graph.zoom(3, 2000);
+
+                // Optional: Auto open drawer?
+                // openDrawer(node); 
+            }
+        }
+
+        function initGraph(data) {
+            Graph
+                .graphData(data)
+                .backgroundColor('#FFFFFF')
+
+                // --- VISUAL STYLING ---
+                .nodeVal(node => NODE_SIZES[node.type] || NODE_SIZES.Default)
+                .nodeColor(node => NODE_COLORS[node.type] || '#000000')
+                .nodeRelSize(1)
+
+                // --- CUSTOM RENDERER (Clean Architectural Circles) ---
+                .nodeCanvasObject((node, ctx, globalScale) => {
+                    const label = node.label;
+                    const size = (NODE_SIZES[node.type] || NODE_SIZES.Default);
+
+                    // Draw Node
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, size, 0, 2 * Math.PI, false);
+                    ctx.fillStyle = NODE_COLORS[node.type] || '#000';
+                    ctx.fill();
+
+                    // Ring for "Focus" nodes (Person, Lab)
+                    if (['Person', 'Lab'].includes(node.type)) {
+                        ctx.beginPath();
+                        ctx.arc(node.x, node.y, size + 2, 0, 2 * Math.PI, false);
+                        ctx.strokeStyle = '#000';
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+
+                    // LOD Labels
+                    const isHovered = node === hoverNode;
+                    const isKeyNode = ['Theme', 'Person', 'Lab', 'Institution'].includes(node.type);
+                    const showLabel = isHovered || (globalScale > 1.2) || (globalScale > 0.6 && isKeyNode);
+
+                    if (showLabel) {
+                        const fontSize = isKeyNode ? (14 / globalScale) : (10 / globalScale);
+                        ctx.font = `${isKeyNode ? '700' : '400'} ${fontSize}px "Assistant", sans-serif`;
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+
+                        // Label Background
+                        const textWidth = ctx.measureText(label).width;
+                        const labelY = node.y + size + fontSize;
+
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+                        ctx.fillRect(node.x - textWidth / 2 - 4, labelY - fontSize / 2 - 2, textWidth + 8, fontSize + 4);
+
+                        ctx.fillStyle = isHovered ? '#000' : '#444';
+                        ctx.fillText(label, node.x, labelY);
+                    }
+                })
+
+                // --- INTERACTION ---
+                .onNodeHover(node => {
+                    hoverNode = node;
+                    document.getElementById('graph-container').style.cursor = node ? 'pointer' : null;
+                })
+                .onNodeClick(node => {
+                    focusCategory('vision'); // Dummy fallthrough check
+                    openDrawer(node);
+                    Graph.centerAt(node.x, node.y, 1000);
+                    Graph.zoom(3, 2000);
+                })
+
+                // --- PHYSICS (Tight & Systemic) ---
+                .d3Force('charge', d3.forceManyBody().strength(-100))
+                .d3Force('link', d3.forceLink().id(d => d.id).distance(40))
+                .d3Force('collide', d3.forceCollide(node => (NODE_SIZES[node.type] || 4) + 5))
+
+                // --- LINKS ---
+                .linkColor(link => {
+                    if (hoverNode) {
+                        return (link.source === hoverNode || link.target === hoverNode) ? '#000' : 'rgba(0,0,0,0.05)';
+                    }
+                    return 'rgba(0,0,0,0.15)'; // Visible gray connections
+                })
+                .linkWidth(link => (hoverNode && (link.source === hoverNode || link.target === hoverNode)) ? 1.5 : 0.5)
+
+            // Start Breathing
+            startBreathing();
+        }
+
+        let hoverNode = null;
+
+        // --- ANIMATION ---
+        function startBreathing() {
+            let growing = true;
+            setInterval(() => {
+                Graph.d3Force('charge').strength(growing ? -120 : -80);
+                Graph.d3ReheatSimulation();
+                growing = !growing;
+            }, 5000);
+        }
+
+        function startEntrySequence() {
+            setTimeout(() => {
+                const overlay = document.getElementById('intro-overlay');
+                if (overlay) overlay.classList.add('fade-out');
+                setTimeout(() => { if (overlay) overlay.style.display = 'none'; }, 1500);
+            }, 2000);
+        }
+
+        // --- DRAWER ---
+        const drawer = document.getElementById('drawer');
+        const closeBtn = document.getElementById('close-drawer');
+
+        function openDrawer(node) {
+            drawer.classList.remove('-translate-x-full');
+            document.getElementById('drawer-title').innerText = node.label;
+            document.getElementById('drawer-type').innerText = node.type;
+
+            // Generate content... (Simplified for brevity, same logic as before)
+            document.getElementById('drawer-body').innerHTML = `
+                <p class="text-xl font-light leading-relaxed">${node.description || 'Details coming soon...'}</p>
+                ${node.meta ? `<div class="mt-8 pt-8 border-t border-gray-100"><p class="font-bold">Metadata</p><pre class="text-xs text-gray-400 mt-2">${JSON.stringify(node.meta, null, 2)}</pre></div>` : ''}
+            `;
+        }
+
+        closeBtn.addEventListener('click', () => {
+            drawer.classList.add('-translate-x-full');
+            Graph.zoomToFit(1000, 50);
+        });
+
+        window.addEventListener('resize', () => Graph.width(window.innerWidth).height(window.innerHeight));
+    </script>
+</body>
+
+</html>
