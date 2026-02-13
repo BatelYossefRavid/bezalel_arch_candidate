@@ -1,0 +1,9 @@
+
+*.mp4
+*.m4a
+*.zip
+__pycache__/
+*.pyc
+.DS_Store
+extracted_media/
+temp_extracted/

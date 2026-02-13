@@ -150,6 +150,50 @@
             font-weight: 800;
         }
 
+        /* Custom Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slowZoom {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-slow-zoom {
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
         /* Accordion Logic */
         .accordion-content {
             max-height: 0;
@@ -326,14 +370,15 @@
 
             // Update buttons
             document.querySelectorAll('.pub-tab-btn').forEach(btn => {
-                btn.classList.remove('bg-black', 'text-white', 'border-black', 'shadow-lg');
-                btn.classList.add('bg-white', 'text-gray-500', 'border-gray-200');
+                // Reset to inactive state
+                btn.classList.remove('border-black', 'text-black');
+                btn.classList.add('border-transparent', 'text-gray-400');
             });
 
             // Set active button
             if (btnElement) {
-                btnElement.classList.remove('bg-white', 'text-gray-500', 'border-gray-200');
-                btnElement.classList.add('bg-black', 'text-white', 'border-black', 'shadow-lg');
+                btnElement.classList.remove('border-transparent', 'text-gray-400');
+                btnElement.classList.add('border-black', 'text-black');
             }
         }
 
@@ -342,65 +387,56 @@
     </script>
 </head>
 
-<body
-    class="bg-[#f2f2f2] text-black min-h-screen flex selection:bg-black selection:text-white overflow-hidden font-sans"
+<body class="bg-white text-black min-h-screen flex selection:bg-black selection:text-white overflow-hidden font-sans"
     dir="rtl">
 
     <!-- BACKGROUND: Three.js Container -->
     <div id="canvas-container" class="fixed inset-0 z-0 bg-white"></div>
 
     <div id="landing-overlay"
-        class="flex flex-col justify-center items-center text-center z-50 bg-white/30 backdrop-blur-sm transition-opacity duration-1000 h-screen w-screen fixed top-0 left-0">
+        class="flex flex-col justify-center items-center text-center z-50 transition-opacity duration-1000 h-screen w-screen fixed top-0 left-0 overflow-hidden bg-white/10 backdrop-blur-[2px]">
 
-        <!-- Background Massive Text: User Name in English -->
-        <div
-            class="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none z-0">
-            <h1
-                class="text-[10vw] font-black text-black opacity-5 tracking-tighter leading-none whitespace-nowrap animate-pulse">
-                BATEL YOSSEF RAVID
-            </h1>
+        <!-- Background Image (User Request) -->
+        <div class="absolute inset-0 z-0 opacity-40 select-none pointer-events-none">
+            <img src="assets/images/landing_bg.jpg"
+                class="w-full h-full object-cover animate-slow-zoom grayscale contrast-125" alt="Background Texture"
+                onerror="this.style.display='none'">
         </div>
 
-        <div class="relative z-10 p-10 max-w-5xl">
+        <div class="relative z-10 p-10 max-w-4xl">
             <!-- Main Title (Hebrew) -->
-            <h2 class="text-6xl md:text-8xl font-black mb-2 tracking-tight leading-none mix-blend-multiply"
+            <h1 class="text-7xl md:text-8xl font-black mb-6 tracking-tight leading-none text-black font-sans"
                 style="opacity: 0; animation: slideUp 0.8s forwards 0.2s;">
                 ד״ר אדר׳<br>בת-אל<br>יוסף רביד
-            </h2>
-
-            <!-- Roles / Keywords: Urban Data Science -->
-            <div class="flex flex-wrap justify-center gap-4 md:gap-8 mt-6 mb-12"
-                style="opacity: 0; animation: fadeIn 1s forwards 0.8s;">
-                <span
-                    class="px-3 py-1 bg-black text-white text-xs md:text-sm font-mono font-bold tracking-widest uppercase">Urban
-                    Data Science</span>
-                <span
-                    class="px-3 py-1 bg-black text-white text-xs md:text-sm font-mono font-bold tracking-widest uppercase">Smart
-                    Cities</span>
-                <span
-                    class="px-3 py-1 bg-black text-white text-xs md:text-sm font-mono font-bold tracking-widest uppercase">Urban
-                    Design</span>
-                <span
-                    class="px-3 py-1 bg-black text-white text-xs md:text-sm font-mono font-bold tracking-widest uppercase">AI
-                    & Innovation</span>
-            </div>
+            </h1>
 
             <!-- Description: Candidate for Head of School -->
-            <p class="text-xl md:text-3xl font-light text-gray-900 mb-16 font-sans max-w-3xl mx-auto leading-relaxed"
-                style="opacity: 0; animation: slideUp 0.8s forwards 1.2s;">
-                <span class="font-black text-2xl md:text-4xl block mb-4">מועמדת לתפקיד ראש המחלקה לארכיטקטורה,
-                    בצלאל.</span>
-                <span class="font-bold text-lg md:text-xl mt-2 block">מובילה חדשנות מבוססת נתונים ועיצוב.</span>
+            <p class="text-xl md:text-2xl font-light text-gray-900 mb-8 font-sans max-w-2xl mx-auto leading-relaxed"
+                style="opacity: 0; animation: slideUp 0.8s forwards 0.5s;">
+                מועמדת לתפקיד ראש המחלקה לארכיטקטורה, בצלאל.<br>
+                <span class="text-gray-500 text-lg mt-2 block">אדריכלות • מחקר • חדשנות עירונית</span>
             </p>
 
-            <!-- Enter Button -->
+            <!-- Roles / Keywords: Clean Text Line -->
+            <div class="flex flex-wrap justify-center gap-6 mb-16 text-xs font-bold uppercase tracking-[0.2em] text-gray-400"
+                style="opacity: 0; animation: fadeIn 1s forwards 0.8s;">
+                <span>Urban Data Science</span>
+                <span class="text-gray-300">•</span>
+                <span>Smart Cities</span>
+                <span class="text-gray-300">•</span>
+                <span>Coproduction</span>
+                <span class="text-gray-300">•</span>
+                <span>Social Digital Reality</span>
+            </div>
+
+            <!-- Enter Button: Minimal Text Link -->
             <button id="enter-site-btn" onclick="enterSite()"
-                class="group relative inline-flex items-center gap-4 text-sm font-bold uppercase tracking-[0.3em] px-12 py-6 bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all shadow-xl hover:shadow-2xl cursor-pointer z-50 pointer-events-auto"
-                style="opacity: 0; animation: fadeIn 1s forwards 1.5s;">
-                <span class="relative z-10">כניסה לתיק</span>
-                <svg class="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="group relative inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.3em] text-black hover:text-gray-600 transition-colors cursor-pointer z-50 pointer-events-auto"
+                style="opacity: 0; animation: fadeIn 1s forwards 1.2s;">
+                <span class="border-b border-black pb-1 group-hover:border-gray-600 transition-all">כניסה לתיק</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
             </button>
@@ -706,11 +742,12 @@
                                 </div>
                                 <div>
                                     <h4 class="text-xl font-bold group-hover:text-blue-600 transition-colors">חברת
-                                        סגל
-                                        קבוע (Tenured)</h4>
-                                    <div class="text-base font-medium text-gray-600 mb-2">ביה"ס לארכיטקטורה בנגב,
+                                        סגל</h4>
+                                    <a href="https://www.sce.ac.il/faculty/batel_yossef_ravid" target="_blank"
+                                        class="text-base font-medium text-gray-600 mb-2 hover:text-blue-600 hover:underline">ביה"ס
+                                        לארכיטקטורה בנגב,
                                         SCE
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -728,9 +765,11 @@
                                     <h4 class="text-xl font-bold group-hover:text-blue-600 transition-colors">מנהלת
                                         מחקר
                                         (Director of Research)</h4>
-                                    <div class="text-base font-medium text-gray-600 mb-2">NUR Lab (Negev Urban
+                                    <a href="https://www.nurlab.org/" target="_blank"
+                                        class="text-base font-medium text-gray-600 mb-2 hover:text-blue-600 hover:underline">NUR
+                                        Lab (Negev Urban
                                         Research)
-                                    </div>
+                                    </a>
                                     <p class="text-sm text-gray-600 mt-2">שיתוף פעולה בינלאומי: MIT Media Lab,
                                         אוניברסיטת בן-גוריון, ו-SCE.</p>
                                 </div>
@@ -749,7 +788,9 @@
                                     <h4 class="text-xl font-bold group-hover:text-blue-600 transition-colors">עמיתת
                                         מחקר
                                         (Associate Fellow)</h4>
-                                    <div class="text-base font-medium text-gray-600 mb-2">המכון למחשבה ישראלית</div>
+                                    <a href="https://israelithought.co.il/" target="_blank"
+                                        class="text-base font-medium text-gray-600 mb-2 hover:text-blue-600 hover:underline">המכון
+                                        למחשבה ישראלית</a>
                                 </div>
                             </div>
                         </div>
@@ -940,20 +981,9 @@
                             <span class="inline-block bg-black text-white text-xs font-bold px-2 py-1">אגף
                                 אסטרטגיה, מינהל תכנון</span>
                             <p class="text-lg text-gray-700">
-                                אפיין "מהו שיתוף ציבור בעידן הדיגיטלי?", בניית מדריך שיתוף ציבור וארגז כלים
-                                דיגיטלי. המדריך מגדיר סטנדרטים חדשים ליצירת דיאלוג בין רשויות לתושבים.
+                                הובלת מהלך להגדרת שיתוף ציבור בעידן הדיגיטלי ופיתוח ארגז כלים טכנולוגי לשימוש הרשויות.
+                                המהלך כלל פיתוח בוט (AI) ועזרי תכנון להנגשת תהליכים מורכבים לציבור הרחב.
                             </p>
-                            <ul class="space-y-2 text-sm font-medium">
-                                <li class="flex items-center gap-2">
-                                    <div class="w-1.5 h-1.5 bg-black rounded-full"></div>נגישות דיגיטלית
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <div class="w-1.5 h-1.5 bg-black rounded-full"></div>שקיפות תהליכית
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <div class="w-1.5 h-1.5 bg-black rounded-full"></div>כלים אינטראקטיביים
-                                </li>
-                            </ul>
                         </div>
                         <div class="w-full md:w-1/2">
                             <div class="bg-gray-100 rounded-lg overflow-hidden border border-gray-200 shadow-sm mb-6">
@@ -1113,6 +1143,15 @@
             <div class="flex flex-col items-start mb-16 border-b-4 border-black pb-8">
                 <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">04. פרקטיקה עבר</span>
                 <h2 class="text-4xl font-black tracking-tight">פרויקטים אדריכלים</h2>
+            </div>
+
+            <div class="max-w-4xl mb-16">
+                <p class="text-xl font-light leading-relaxed text-gray-800 border-r-4 border-black pr-6">
+                    "פרק זה מייצג את יסודות הידע האדריכלי והתכנוני ה'קלאסי' שלי, כפי שנצברו בעבודה המעשית לפני הלימודים
+                    לתואר שני בלונדון.
+                    העבודה במשרדים מובילים אפשרה לי להעמיק בפרקטיקה של תכנון, רישוי ושימור, ולהבין לעומק את המורכבויות
+                    של יצירת מרחב פיזי ועירוני."
+                </p>
             </div>
 
             <div class="space-y-20">
@@ -1358,24 +1397,324 @@
 
                     <div class="space-y-12 mt-8">
                         <!-- Course 1 -->
-                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
-                            <div>
-                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">סטודיו
+                        <div class="group grid md:grid-cols-12 gap-8 items-start">
+                            <div class="md:col-span-5 order-2 md:order-1">
+                                <h4 class="font-bold text-2xl mb-2 group-hover:text-blue-600 transition-colors">סטודיו
                                     תכנון עירוני בעידן הטרנספורמציה הדיגיטלית</h4>
-                                <span class="text-xs text-gray-400 block mb-4">2023–היום | שנה ג' | מרצה מובילה וראש
+                                <span class="text-sm text-gray-400 block mb-6">2023–היום | שנה ג' | מרצה מובילה וראש
                                     תחום</span>
-                                <p class="text-sm text-gray-800 font-medium mb-2">פיתוח חשיבה ותכנון בעידן של דאטה ובינה
-                                    מלאכותית.</p>
-                                <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                                    הסטודיו עוסק בפיתוח מתודולוגיות תכנון חדשניות המשלבות ניתוח נתונים וכלים חישוביים.
-                                    אנו בוחנים מקרי מבחן גלובליים: ג'קרטה, ניירובי, סאו פאולו, סנטיאגו, עמאן, קזבלנקה,
-                                    וקייפטאון.
-                                </p>
+
+                                <div class="space-y-6">
+                                    <!-- Teaching Team -->
+                                    <div class="bg-gray-50 border-r-4 border-black p-4">
+                                        <h4 class="font-bold text-sm mb-2">צוות ההוראה:</h4>
+                                        <p class="text-sm text-gray-700 leading-relaxed">
+                                            <span class="font-bold">מנחה:</span> דר' אדר' בת-אל יוסף רביד<br>
+                                            <span class="font-bold">מנטורים:</span> אדר' אריאל פרמן, אדר' אברהם דרזין,
+                                            דר' מריק שטרן, מתכננת ערים שירה בינמיני
+                                        </p>
+                                    </div>
+
+                                    <!-- Manifesto Intro -->
+                                    <div>
+                                        <h4 class="font-black text-lg mb-2">מניפסט הסטודיו</h4>
+                                        <p class="text-gray-700 text-base leading-relaxed">
+                                            העיר של ימינו כבר איננה מערכת קבועה של רחובות ומבנים, אלא אורגניזם מתהווה של
+                                            תנועה, מידע ויחסים אנושיים. היא נוצרת מתוך נתונים, רשתות, אינטראקציות
+                                            וזיכרון קולקטיבי — ומתעצבת בכל רגע מחדש.
+                                        </p>
+                                    </div>
+
+                                    <!-- Collapsible Full Content -->
+                                    <details class="group">
+                                        <summary
+                                            class="cursor-pointer text-xs font-black uppercase tracking-widest border-b-2 border-transparent border-black hover:border-blue-600 hover:text-blue-600 transition-colors inline-block pb-1 select-none">
+                                            לקריאת הסילבוס המלא (מתודולוגיה ותוצרים) +
+                                        </summary>
+
+                                        <div
+                                            class="mt-6 space-y-6 text-sm text-gray-600 leading-relaxed max-h-[500px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                                            <p>
+                                                בעידן הדיגיטלי, תכנון עירוני נדרש להתרחב מעבר למרחב הפיזי: לא רק לצייר
+                                                צורות, אלא לקרוא את הדינמיקות המורכבות שמרכיבות את העיר, להבין את
+                                                המתחים, הדפוסים והזרימות שמעצבים אותה.
+                                                מתוך הבנה זו הסטודיו מבקש לפתח מתודולוגיות חדשות לעיצוב עירוני בעידן
+                                                מבוסס נתונים. נבחן כיצד איסוף, ניתוח ויזואליזציה של מידע מרחבי יכולים
+                                                לשמש לא רק למדידה, אלא גם להבנה ביקורתית ולפעולה עיצובית.
+                                            </p>
+
+                                            <p>
+                                                <strong>נקודת המבט הדרומזרחית</strong> משמשת בסטודיו כעדשה פרשנית וכבסיס
+                                                לחשיבה. היא פותחת פתח להבנת עירוניות שנולדת מתנאים של אי־ודאות, ריבוי
+                                                תרבויות וחדשנות מקומית. ערים בדרום הגלובלי — כמו ג׳קרטה, בנגלור או סאו
+                                                פאולו — מציעות שיעור חשוב בתכנון: כיצד להתמודד עם מורכבות, כיצד לייצר
+                                                יציבות מתוך תנודות, וכיצד להשתמש במשאבים מוגבלים כדי לעצב סביבות
+                                                עירוניות חכמות, פתוחות ומשתנות.
+                                            </p>
+
+                                            <h5 class="font-bold text-black text-base pt-2">תיאור הסטודיו</h5>
+                                            <p>
+                                                במהלך הסטודיו נפתח מתודולוגיות חדשות לקריאה ולעיצוב של העיר בעידן מבוסס
+                                                נתונים. נחקור כיצד כלים של מחקר מרחבי דיגיטלי – ניתוח נתונים, מיפוי,
+                                                הדמיה וייצוג – יכולים לשמש לא רק לתיעוד המציאות, אלא להבנייתה מחדש.
+                                                במהלך הסמסטר נתמקד בעיר אחת בדרום הגלובלי ונבחן בה תהליכים של שינוי
+                                                עירוני דרך שכבות מידע שונות – תשתיות, תחבורה, קרקע, סביבה וחברה.
+                                            </p>
+
+                                            <h5 class="font-bold text-black text-base pt-2">המחזוריות – מתודולוגיה של
+                                                מסע מתגלגל</h5>
+                                            <p>
+                                                הסטודיו פועל כמרחב למידה, חקירה ויצירה. הוא מבוסס על מתודולוגיה מחזורית
+                                                – תהליך מתגלגל שבו כל שלב מזין את הבא אחריו:
+                                            </p>
+                                            <ul class="list-disc list-inside space-y-2 mr-2">
+                                                <li><strong>Digital Spatial Research:</strong> הבנת העיר דרך נתונים, GIS
+                                                    ומקורות פתוחים.</li>
+                                                <li><strong>Critical Spatial Reading:</strong> קריאה ביקורתית של המרחב
+                                                    וההקשרים התרבותיים.</li>
+                                                <li><strong>Urban Speculations:</strong> בניית תרחישים ספקולטיביים
+                                                    ועיצוב עתידים אפשריים.</li>
+                                                <li><strong>Design Development:</strong> תרגום המחקר והספקולציה להצעה
+                                                    תכנונית בקנה מידה עירוני ואדריכלי.</li>
+                                            </ul>
+
+                                            <h5 class="font-bold text-black text-base pt-2">תוצרי למידה והערכה</h5>
+                                            <ul class="list-disc list-inside space-y-2 mr-2">
+                                                <li>מחקר מרחבי דיגיטלי (GIS & Spatial Data Analysis).</li>
+                                                <li>הבנה מערכתית של תכנון עירוני ומדיניות מרחבית.</li>
+                                                <li>תרגום ידע ונתונים למבע אדריכלי ותכנוני.</li>
+                                                <li>פיתוח הצעה עירונית חדשנית ורגישה להקשר.</li>
+                                                <li>חשיבה ספקולטיבית וחדשנות מתודולוגית.</li>
+                                            </ul>
+                                        </div>
+                                    </details>
+                                </div>
                             </div>
-                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
-                                <!-- Placeholder for Studio Image from PDF preview -->
-                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
-                                    תמונה: סטודיו SCE
+
+                            <!-- Carousel Container -->
+                            <div class="md:col-span-7 order-1 md:order-2 h-[500px]">
+                                <div
+                                    class="relative w-full h-full bg-gray-900 rounded-lg shadow-2xl overflow-hidden group/carousel border border-gray-800">
+                                    <div id="sce-studio-carousel" class="relative w-full h-full">
+                                        <!-- Slides (PDF Embeds) -->
+                                        <!-- Slide 1: Jakarta -->
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 transition-opacity duration-700 opacity-100 z-10"
+                                            data-slide="0">
+                                            <iframe
+                                                src="public/סטודיו עיצוב עירוני סמי שמעון/גקרטה.pdf#view=FitH&toolbar=0&navpanes=0"
+                                                class="w-full h-full border-none" title="Jakarta Project"></iframe>
+                                            <div
+                                                class="absolute bottom-12 left-0 right-0 text-center pointer-events-none z-20">
+                                                <h5
+                                                    class="text-4xl font-black text-black/20 mb-2 font-arch select-none">
+                                                    ג'קרטה</h5>
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 2: Nairobi -->
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 transition-opacity duration-700 opacity-0 pointer-events-none z-0"
+                                            data-slide="1">
+                                            <iframe
+                                                data-src="public/סטודיו עיצוב עירוני סמי שמעון/ניירובי.pdf#view=FitH&toolbar=0&navpanes=0"
+                                                class="w-full h-full border-none" title="Nairobi Project"></iframe>
+                                            <div
+                                                class="absolute bottom-12 left-0 right-0 text-center pointer-events-none z-20">
+                                                <h5
+                                                    class="text-4xl font-black text-black/20 mb-2 font-arch select-none">
+                                                    ניירובי</h5>
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 3: Sao Paulo -->
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 transition-opacity duration-700 opacity-0 pointer-events-none z-0"
+                                            data-slide="2">
+                                            <iframe
+                                                data-src="public/סטודיו עיצוב עירוני סמי שמעון/סאו פאולו .pdf#view=FitH&toolbar=0&navpanes=0"
+                                                class="w-full h-full border-none" title="Sao Paulo Project"></iframe>
+                                            <div
+                                                class="absolute bottom-12 left-0 right-0 text-center pointer-events-none z-20">
+                                                <h5
+                                                    class="text-4xl font-black text-black/20 mb-2 font-arch select-none">
+                                                    סאו פאולו</h5>
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 4: Santiago -->
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 transition-opacity duration-700 opacity-0 pointer-events-none z-0"
+                                            data-slide="3">
+                                            <iframe
+                                                data-src="public/סטודיו עיצוב עירוני סמי שמעון/סאנטיגו.pdf#view=FitH&toolbar=0&navpanes=0"
+                                                class="w-full h-full border-none" title="Santiago Project"></iframe>
+                                            <div
+                                                class="absolute bottom-12 left-0 right-0 text-center pointer-events-none z-20">
+                                                <h5
+                                                    class="text-4xl font-black text-black/20 mb-2 font-arch select-none">
+                                                    סנטיאגו</h5>
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 5: Amman -->
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 transition-opacity duration-700 opacity-0 pointer-events-none z-0"
+                                            data-slide="4">
+                                            <iframe
+                                                data-src="public/סטודיו עיצוב עירוני סמי שמעון/עמאן.pdf#view=FitH&toolbar=0&navpanes=0"
+                                                class="w-full h-full border-none" title="Amman Project"></iframe>
+                                            <div
+                                                class="absolute bottom-12 left-0 right-0 text-center pointer-events-none z-20">
+                                                <h5
+                                                    class="text-4xl font-black text-black/20 mb-2 font-arch select-none">
+                                                    עמאן</h5>
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 6: Casablanca -->
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 transition-opacity duration-700 opacity-0 pointer-events-none z-0"
+                                            data-slide="5">
+                                            <iframe
+                                                data-src="public/סטודיו עיצוב עירוני סמי שמעון/קזבלנקה.pdf#view=FitH&toolbar=0&navpanes=0"
+                                                class="w-full h-full border-none" title="Casablanca Project"></iframe>
+                                            <div
+                                                class="absolute bottom-12 left-0 right-0 text-center pointer-events-none z-20">
+                                                <h5
+                                                    class="text-4xl font-black text-black/20 mb-2 font-arch select-none">
+                                                    קזבלנקה</h5>
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 7: Cape Town -->
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 transition-opacity duration-700 opacity-0 pointer-events-none z-0"
+                                            data-slide="6">
+                                            <iframe
+                                                data-src="public/סטודיו עיצוב עירוני סמי שמעון/קייפטאון.pdf#view=FitH&toolbar=0&navpanes=0"
+                                                class="w-full h-full border-none" title="Cape Town Project"></iframe>
+                                            <div
+                                                class="absolute bottom-12 left-0 right-0 text-center pointer-events-none z-20">
+                                                <h5
+                                                    class="text-4xl font-black text-black/20 mb-2 font-arch select-none">
+                                                    קייפטאון</h5>
+                                            </div>
+                                        </div>
+
+                                        <!-- Navigation Dots -->
+                                        <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-30">
+                                            <button
+                                                class="w-3 h-3 rounded-full bg-black opacity-100 shadow-lg hover:scale-125 transition-transform"
+                                                data-index="0"></button>
+                                            <button
+                                                class="w-3 h-3 rounded-full bg-black opacity-30 shadow-lg hover:scale-125 transition-transform"
+                                                data-index="1"></button>
+                                            <button
+                                                class="w-3 h-3 rounded-full bg-black opacity-30 shadow-lg hover:scale-125 transition-transform"
+                                                data-index="2"></button>
+                                            <button
+                                                class="w-3 h-3 rounded-full bg-black opacity-30 shadow-lg hover:scale-125 transition-transform"
+                                                data-index="3"></button>
+                                            <button
+                                                class="w-3 h-3 rounded-full bg-black opacity-30 shadow-lg hover:scale-125 transition-transform"
+                                                data-index="4"></button>
+                                            <button
+                                                class="w-3 h-3 rounded-full bg-black opacity-30 shadow-lg hover:scale-125 transition-transform"
+                                                data-index="5"></button>
+                                            <button
+                                                class="w-3 h-3 rounded-full bg-black opacity-30 shadow-lg hover:scale-125 transition-transform"
+                                                data-index="6"></button>
+                                        </div>
+
+                                        <!-- Controls -->
+                                        <div class="absolute top-1/2 left-2 transform -translate-y-1/2 z-30">
+                                            <button id="prev-slide"
+                                                class="bg-white/80 hover:bg-white text-black p-2 rounded-full shadow-lg transition-colors">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="absolute top-1/2 right-2 transform -translate-y-1/2 z-30">
+                                            <button id="next-slide"
+                                                class="bg-white/80 hover:bg-white text-black p-2 rounded-full shadow-lg transition-colors">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Lazy Load & Carousel Script -->
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', () => {
+                                            const container = document.getElementById('sce-studio-carousel');
+                                            const slides = container.querySelectorAll('[data-slide]');
+                                            const dots = container.querySelectorAll('.bottom-4 button');
+                                            const prevBtn = document.getElementById('prev-slide');
+                                            const nextBtn = document.getElementById('next-slide');
+                                            let current = 0;
+                                            let autoPlayInterval;
+
+                                            function showSlide(index) {
+                                                // Handle wrapping
+                                                if (index < 0) index = slides.length - 1;
+                                                if (index >= slides.length) index = 0;
+                                                current = index;
+
+                                                slides.forEach((slide, i) => {
+                                                    const iframe = slide.querySelector('iframe');
+
+                                                    if (i === current) {
+                                                        // Activate slide
+                                                        slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+                                                        slide.classList.add('opacity-100', 'z-10');
+                                                        dots[i].classList.replace('opacity-30', 'opacity-100');
+
+                                                        // Lazy Load PDF
+                                                        if (iframe.dataset.src) {
+                                                            iframe.src = iframe.dataset.src;
+                                                            iframe.removeAttribute('data-src');
+                                                        }
+                                                    } else {
+                                                        // Deactivate slide
+                                                        slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+                                                        slide.classList.remove('opacity-100', 'z-10');
+                                                        dots[i].classList.replace('opacity-100', 'opacity-30');
+                                                    }
+                                                });
+                                            }
+
+                                            function nextSlide() { showSlide(current + 1); }
+                                            function prevSlide() { showSlide(current - 1); }
+
+                                            // Event Listeners
+                                            nextBtn.addEventListener('click', () => {
+                                                nextSlide();
+                                                resetTimer();
+                                            });
+                                            prevBtn.addEventListener('click', () => {
+                                                prevSlide();
+                                                resetTimer();
+                                            });
+
+                                            dots.forEach((dot, idx) => {
+                                                dot.addEventListener('click', () => {
+                                                    showSlide(idx);
+                                                    resetTimer();
+                                                });
+                                            });
+
+                                            // Auto Play (slower for PDF reading)
+                                            function startTimer() {
+                                                autoPlayInterval = setInterval(nextSlide, 8000);
+                                            }
+                                            function resetTimer() {
+                                                clearInterval(autoPlayInterval);
+                                                startTimer();
+                                            }
+
+                                            startTimer();
+                                        });
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -1383,15 +1722,77 @@
                         <!-- Course 2 -->
                         <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
                             <div>
-                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">כלים
-                                    דיגיטליים במדע עירוני (City Science)</h4>
+                                <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">מדע
+                                    עירוני (Urban Science)</h4>
                                 <span class="text-xs text-gray-400 block mb-4">2023–היום | בשיתוף NUR Lab ו-MIT</span>
-                                <p class="text-sm text-gray-800 font-medium mb-2">יישום כלי GIS, דאשבורדים ומיפוי דינמי
-                                    למחקר ותכנון.</p>
-                                <p class="text-sm text-gray-600 leading-relaxed">
-                                    הקורס מקנה כלים מעשיים לפיתוח אפליקציות וכלי קוד למרחב העירוני, תוך דגש על איסוף,
-                                    ניתוח והצגה של נתונים מרחביים בזמן אמת.
-                                </p>
+
+                                <div class="space-y-4">
+                                    <!-- Quote -->
+                                    <blockquote
+                                        class="border-l-2 border-black pl-4 py-1 italic text-gray-500 text-xs font-serif bg-gray-50 pr-2">
+                                        "Every city is a projection — a reflection of our desires, fears, and the data
+                                        we choose to see."
+                                        <footer class="text-[10px] mt-1 font-bold not-italic">— Carlo Ratti</footer>
+                                    </blockquote>
+
+                                    <!-- Short Intro -->
+                                    <p class="text-sm text-gray-800 font-medium">
+                                        העיר העכשווית אינה רק מקום פיזי — היא מערכת חיה של נתונים, אינטראקציות וחישה.
+                                        הקורס מזמין את הסטודנטים לפעול כחוקרים־מעצבים: לחקור תופעות עירוניות דרך נתונים
+                                        ולתרגם ממצאים לכלים חזותיים.
+                                    </p>
+
+                                    <!-- Collapsible Full Syllabus -->
+                                    <details class="group">
+                                        <summary
+                                            class="cursor-pointer text-xs font-black uppercase tracking-widest border-b-2 border-transparent border-black hover:border-blue-600 hover:text-blue-600 transition-colors inline-block pb-1 select-none">
+                                            לקריאת תיאור הקורס המלא +
+                                        </summary>
+
+                                        <div
+                                            class="mt-6 space-y-6 text-sm text-gray-600 leading-relaxed max-h-[500px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                                            <p>
+                                                בעידן הדיגיטלי, המרחב העירוני הופך לתאום דיגיטלי (Urban Digital Twin) של
+                                                עצמו. מדע עירוני (Urban Science) הוא תחום מחקר ועשייה בין־תחומי המשלב
+                                                תכנון, מדע נתונים, טכנולוגיה ודמיון אדריכלי.
+                                            </p>
+
+                                            <h5 class="font-bold text-black text-base pt-2">תהליך העבודה</h5>
+                                            <p>במהלך הסמסטר הסטודנטים יעברו תהליך תלת־שלבי:</p>
+                                            <ul class="list-disc list-inside space-y-2 mr-2">
+                                                <li><strong>ויזואליזציה דינמית (Dynamic Data Visualization):</strong>
+                                                    קריאה, ניתוח והצגת דפוסים עירוניים.</li>
+                                                <li><strong>פיתוח דאשבורד עירוני (Urban Data Dashboard):</strong> יצירת
+                                                    ממשק אינטראקטיבי המספר סיפור עירוני.</li>
+                                                <li><strong>עיצוב אב־טיפוס (Application Prototype):</strong> תרגום
+                                                    תובנות לממשק פעולה או כלי קהילתי.</li>
+                                            </ul>
+
+                                            <h5 class="font-bold text-black text-base pt-2">מטרות הקורס</h5>
+                                            <ul class="list-disc list-inside space-y-2 mr-2">
+                                                <li>להבין את העיר כישות פיזית־דיגיטלית.</li>
+                                                <li>לפתח אוריינות נתונים (Data Literacy).</li>
+                                                <li>לתרגם תופעות חברתיות־מרחביות לשפה חזותית.</li>
+                                                <li>עבודה עם כלים אינטראקטיביים (Mapbox, Flourish, Figma).</li>
+                                                <li>עיסוק באתיקה, צדק ונראות במרחב הדיגיטלי.</li>
+                                            </ul>
+
+                                            <div class="pt-4 border-t border-gray-100 mt-4">
+                                                <a href="https://explorer.morphocode.com/mapk" target="_blank"
+                                                    class="text-xs font-bold bg-black text-white px-3 py-2 hover:bg-gray-800 transition-colors inline-flex items-center gap-2">
+                                                    <span>השראה: Urban Explorer</span>
+                                                    <svg class="w-3 h-3" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                                        </path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </details>
+                                </div>
                             </div>
                             <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
                                 <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
@@ -1401,21 +1802,85 @@
                         </div>
 
                         <!-- Course 3 -->
-                        <div class="group grid md:grid-cols-[1fr_240px] gap-8 items-start">
+                        <div class="group grid md:grid-cols-[1fr_300px] gap-8 items-start">
                             <div>
                                 <h4 class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors">יישומי
                                     HCI ו-GIS לעירוניות</h4>
-                                <span class="text-xs text-gray-400 block mb-4">2025–היום | המחלקה להנדסת תוכנה</span>
+                                <span class="text-xs text-gray-400 block mb-4">2025–היום | שנה ג' | המחלקה להנדסת
+                                    תוכנה</span>
                                 <p class="text-sm text-gray-800 font-medium mb-2">פיתוח פלטפורמות מבוססות נתונים לקבלת
                                     החלטות.</p>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <p class="text-sm text-gray-600 leading-relaxed mb-4">
                                     קורס מתקדם המחבר בין עקרונות הנדסת תוכנה וממשק אדם-מחשב (HCI) לבין המורכבות של
-                                    המרקם העירוני, ליצירת פתרונות טכנולוגיים חכמים.
+                                    המרקם העירוני. הסטודנטים מפתחים כלי ניתוח ויזואליים מתקדמים למקבלי החלטות.
                                 </p>
+                                <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                                    <h5 class="text-xs font-bold uppercase text-gray-400 mb-2">פרויקט מצטיין:
+                                        CrimeStatistics</h5>
+                                    <p class="text-xs text-gray-600 mb-3">
+                                        אפליקציה לניתוח נתוני פשיעה במרחב העירוני, המאפשרת סינון ופילוח לפי אזורים,
+                                        זמנים וסוגי עבירות, להנגשת מידע לציבור ולמתכננים.
+                                    </p>
+                                    <a href="https://github.com/hamuzi/CrimeStatistics" target="_blank"
+                                        class="inline-flex items-center gap-2 text-xs font-bold bg-black text-white px-3 py-1.5 hover:bg-gray-800 transition-colors rounded">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        צפה בקוד ב-GitHub
+                                    </a>
+                                </div>
                             </div>
-                            <div class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
-                                <div class="w-full h-full flex items-center justify-center text-gray-400 text-xs">
-                                    תמונה: הנדסת תוכנה
+                            <div
+                                class="aspect-video bg-gray-100 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                                <img src="https://github.com/user-attachments/assets/95250438-e4b7-4a00-84a8-6f17e0b50304"
+                                    alt="ממשק CrimeStatistics" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Course 4: Layers in Urban Space -->
+                        <div class="group grid md:grid-cols-12 gap-8 items-start border-t border-gray-100 pt-12">
+                            <div class="md:col-span-4">
+                                <h4 class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors">שכבות
+                                    במרחב האורבני</h4>
+                                <span class="text-xs text-gray-500 block mb-4 font-bold">
+                                    קורס רב־תחומי: המחלקה לארכיטקטורה + המחלקה לתקשורת חזותית<br>
+                                    בשיתוף המעצב נמרוד אשכנזי
+                                </span>
+
+                                <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                                    קורס מולטידיסציפלינרי ייחודי המפגיש סטודנטים לאדריכלות ולעיצוב חזותי לעבודה משותפת.
+                                    הקורס עוסק בחשיפת הרבדים הסמויים של העיר — ההיסטוריים, החברתיים והדיגיטליים —
+                                    וביצירת התערבויות המשלבות מרחב פיזי ותקשורת חזותית.
+                                </p>
+
+                                <a href="https://www.prtfl.co.il/archives/220540" target="_blank"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-black border-b-2 border-black pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
+                                    לקריאת הכתבה במגזין פורטפוליו
+                                    <svg class="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="md:col-span-8 grid grid-cols-3 gap-4">
+                                <div
+                                    class="aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                                    <img src="https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/user/.gemini/antigravity/brain/0c72382d-edd0-4620-81a0-ec51c2d14fc8/media__1770927240522.png"
+                                        alt="סטודנטים בסיור שטח" class="w-full h-full object-cover">
+                                </div>
+                                <div
+                                    class="aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                                    <img src="https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/user/.gemini/antigravity/brain/0c72382d-edd0-4620-81a0-ec51c2d14fc8/media__1770927268319.png"
+                                        alt="תוצרים ויזואליים" class="w-full h-full object-cover">
+                                </div>
+                                <div
+                                    class="aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                                    <img src="https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/user/.gemini/antigravity/brain/0c72382d-edd0-4620-81a0-ec51c2d14fc8/media__1770927300024.png"
+                                        alt="אפליקציה עירונית" class="w-full h-full object-cover">
                                 </div>
                             </div>
                         </div>
@@ -1569,27 +2034,27 @@
                         <h2 class="text-4xl font-black tracking-tight">מאמרים, דוחות ופרויקטים</h2>
                     </div>
 
-                    <!-- Tabs Navigation -->
-                    <div class="flex overflow-x-auto gap-4 mb-16 border-b border-gray-200 pb-1 scrollbar-hide">
+                    <!-- Tabs Navigation: Minimal -->
+                    <div class="flex flex-wrap gap-8 mb-16 border-b border-gray-100 pb-0">
                         <button onclick="switchPubTab('academic', this)" id="btn-academic"
-                            class="pub-tab-btn flex-shrink-0 px-6 py-3 text-sm font-bold uppercase tracking-widest bg-black text-white border border-black shadow-lg transition-all">
+                            class="pub-tab-btn pb-4 text-sm font-bold uppercase tracking-widest border-b-2 border-black text-black transition-all">
                             מאמרים אקדמיים
                         </button>
                         <button onclick="switchPubTab('books', this)" id="btn-books"
-                            class="pub-tab-btn flex-shrink-0 px-6 py-3 text-sm font-bold uppercase tracking-widest bg-white text-gray-500 border border-gray-200 hover:border-black transition-all">
+                            class="pub-tab-btn pb-4 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-gray-400 hover:text-black transition-all">
                             ספרים ופרקים
                         </button>
                         <button onclick="switchPubTab('reports', this)" id="btn-reports"
-                            class="pub-tab-btn flex-shrink-0 px-6 py-3 text-sm font-bold uppercase tracking-widest bg-white text-gray-500 border border-gray-200 hover:border-black transition-all">
+                            class="pub-tab-btn pb-4 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-gray-400 hover:text-black transition-all">
                             דוחות ופרויקטים
                         </button>
-                        <button onclick="switchPubTab('media', this)" id="btn-media"
-                            class="pub-tab-btn flex-shrink-0 px-6 py-3 text-sm font-bold uppercase tracking-widest bg-white text-gray-500 border border-gray-200 hover:border-black transition-all">
-                            מדיה ועיתונות
-                        </button>
                         <button onclick="switchPubTab('conferences', this)" id="btn-conferences"
-                            class="pub-tab-btn flex-shrink-0 px-6 py-3 text-sm font-bold uppercase tracking-widest bg-white text-gray-500 border border-gray-200 hover:border-black transition-all">
+                            class="pub-tab-btn pb-4 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-gray-400 hover:text-black transition-all">
                             כנסים והרצאות
+                        </button>
+                        <button onclick="switchPubTab('media', this)" id="btn-media"
+                            class="pub-tab-btn pb-4 text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-gray-400 hover:text-black transition-all">
+                            מדיה ועיתונות
                         </button>
                     </div>
 
@@ -2301,40 +2766,33 @@
 
         // --- Three.js Logic ---
         let scene, camera, renderer, animationId;
-        let physicalCity, digitalCity;
-        let scanPlanePhysical, scanPlaneDigital, scanLineVisual;
-        let reduceDynamism = false;
+        let cityGroup;
 
         function initThreeJS() {
             const container = document.getElementById('canvas-container');
             if (!container) return;
 
-            // Reduce dynamism after 60 seconds
-            setTimeout(() => {
-                reduceDynamism = true;
-            }, 60000);
-
             // Scene
             scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xffffff); // White background
-            scene.fog = new THREE.FogExp2(0xffffff, 0.002);
+            scene.background = new THREE.Color(0xffffff);
+            scene.fog = new THREE.FogExp2(0xffffff, 0.0035); // Heavier fog for subtlety
 
             // Camera
-            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-            camera.position.set(0, 100, 200);
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.set(0, 150, 300);
             camera.lookAt(0, 0, 0);
 
             // Renderer
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.localClippingEnabled = true; // Enable clipping
+            renderer.setPixelRatio(window.devicePixelRatio);
             container.appendChild(renderer.domElement);
 
             // Light
-            const ambientLight = new THREE.AmbientLight(0xcccccc);
+            const ambientLight = new THREE.AmbientLight(0xe5e5e5); // Very soft
             scene.add(ambientLight);
-            const dirLight = new THREE.DirectionalLight(0xffffff, 0.6);
-            dirLight.position.set(100, 200, 100);
+            const dirLight = new THREE.DirectionalLight(0xffffff, 0.3); // Subtle directional
+            dirLight.position.set(100, 200, 50);
             scene.add(dirLight);
 
             // --- Create City ---
@@ -2347,172 +2805,59 @@
         }
 
         function createCity() {
+            cityGroup = new THREE.Group();
+            scene.add(cityGroup);
+
             // Geometries
             const boxGeo = new THREE.BoxGeometry(1, 1, 1);
             boxGeo.translate(0, 0.5, 0); // Pivot at bottom
 
-            // Materials
-            const physicalMat = new THREE.MeshLambertMaterial({
-                color: 0xeeeeee,
-            });
-            const digitalMat = new THREE.PointsMaterial({
-                color: 0x22d3ee, // Cyan base
-                size: 2,
-                sizeAttenuation: true,
-                vertexColors: true
-            });
+            // Material: Edges (Black/Dark Gray)
+            const edgesMat = new THREE.LineBasicMaterial({ color: 0x111111, transparent: true, opacity: 0.4 });
 
-            // Instanced Mesh for Physical
-            const count = 3000;
-            physicalCity = new THREE.InstancedMesh(boxGeo, physicalMat, count);
+            // Material: Points (Darker Dots)
+            const pointsMat = new THREE.PointsMaterial({ color: 0x000000, size: 3, sizeAttenuation: true });
 
-            // BufferGeometry for Digital Points
-            const digitalGeo = new THREE.BufferGeometry();
-            const positions = [];
-            const colors = [];
-            const dummy = new THREE.Object3D();
+            // Reusable geometry
+            const geometry = new THREE.BoxGeometry(1, 1, 1);
+            geometry.translate(0, 0.5, 0);
 
-            for (let i = 0; i < count; i++) {
-                // Random position grid-like
-                const x = (Math.random() - 0.5) * 400;
-                const z = (Math.random() - 0.5) * 400;
-                const h = Math.random() * Math.random() * 80 + 5; // Height bias to low
-                const w = Math.random() * 10 + 5;
-                const d = Math.random() * 10 + 5;
+            // Grid Generation
+            const gridSize = 40;
+            const spread = 6;
 
-                // Physical Instance
-                dummy.position.set(x, 0, z);
-                dummy.scale.set(w, h, d);
-                dummy.updateMatrix();
-                physicalCity.setMatrixAt(i, dummy.matrix);
+            for (let x = -gridSize; x <= gridSize; x++) {
+                for (let z = -gridSize; z <= gridSize; z++) {
+                    const dist = Math.sqrt(x * x + z * z);
+                    if (dist > gridSize) continue;
 
-                // Digital Points (Vertices of the box)
-                for (let j = 0; j < 5; j++) {
-                    positions.push(
-                        x + (Math.random() - 0.5) * w,
-                        Math.random() * h,
-                        z + (Math.random() - 0.5) * d
-                    );
+                    if (Math.random() > 0.8) { // Sparse but clustered
+                        const height = Math.random() * Math.random() * 50 + 5;
 
-                    // Color: Mix Cyan (#22d3ee) and Pink (#ec4899)
-                    const color = new THREE.Color();
-                    color.setHex(Math.random() > 0.5 ? 0x22d3ee : 0xec4899);
-                    colors.push(color.r, color.g, color.b);
-                }
-            }
+                        // Edges (Wireframe)
+                        const edges = new THREE.EdgesGeometry(geometry);
+                        const line = new THREE.LineSegments(edges, edgesMat);
+                        line.position.set(x * spread, 0, z * spread);
+                        line.scale.set(spread * 0.8, height, spread * 0.8);
+                        cityGroup.add(line);
 
-            physicalCity.instanceMatrix.needsUpdate = true;
-            scene.add(physicalCity);
-
-            digitalGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-            digitalGeo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-            digitalCity = new THREE.Points(digitalGeo, digitalMat);
-            scene.add(digitalCity);
-
-            // --- Clipping Planes (The Scan Effect) ---
-            // Physical: Visible when x < scanX. (Normal -1, 0, 0).
-            scanPlanePhysical = new THREE.Plane(new THREE.Vector3(-1, 0, 0), 0);
-            physicalMat.clippingPlanes = [scanPlanePhysical];
-
-            // Digital: Visible when x > scanX. (Normal 1, 0, 0).
-            scanPlaneDigital = new THREE.Plane(new THREE.Vector3(1, 0, 0), 0);
-            digitalMat.clippingPlanes = [scanPlaneDigital];
-
-            // Scan Line Visual (Blue Plane/Line)
-            const lineGeo = new THREE.PlaneGeometry(2, 600);
-            const lineMat = new THREE.MeshBasicMaterial({
-                color: 0x22d3ee,
-                transparent: true,
-                opacity: 0.5,
-                side: THREE.DoubleSide
-            });
-            scanLineVisual = new THREE.Mesh(lineGeo, lineMat);
-            scanLineVisual.rotation.y = Math.PI / 2; // Facing X
-            scene.add(scanLineVisual);
-
-            // --- AI Network Layer (Floating Nodes) ---
-            createNetwork();
-        }
-
-        // Global Network Reference
-        let networkGroup;
-
-        function createNetwork() {
-            networkGroup = new THREE.Group();
-
-            // Nodes
-            const nodeGeo = new THREE.BufferGeometry();
-            const nodeCount = 150;
-            const nodePos = [];
-            const nodeVel = []; // Velocity for movement
-
-            for (let i = 0; i < nodeCount; i++) {
-                const x = (Math.random() - 0.5) * 300;
-                const y = Math.random() * 100 + 50; // Above city
-                const z = (Math.random() - 0.5) * 300;
-                nodePos.push(x, y, z);
-
-                // Random drift velocity
-                nodeVel.push((Math.random() - 0.5) * 0.2, (Math.random() - 0.5) * 0.2, (Math.random() - 0.5) * 0.2);
-            }
-            nodeGeo.setAttribute('position', new THREE.Float32BufferAttribute(nodePos, 3));
-
-            const nodeMat = new THREE.PointsMaterial({
-                color: 0xffffff,
-                size: 3,
-                transparent: true,
-                opacity: 0.8
-            });
-            const nodes = new THREE.Points(nodeGeo, nodeMat);
-            nodes.userData = { velocities: nodeVel }; // Store for animation
-            networkGroup.add(nodes);
-            networkGroup.userData = { nodes: nodes, positions: nodePos }; // Ref for lines
-
-            // Lines (Connections) - Dynamic creation in animation loop is expensive, 
-            // instead we create a fixed set of potential lines or use a simpler visual.
-            // Let's use a static set of lines for performance, but rotating.
-
-            const lineGeo = new THREE.BufferGeometry();
-            const linePos = [];
-
-            // Connect close nodes (brute force once)
-            for (let i = 0; i < nodeCount; i++) {
-                for (let j = i + 1; j < nodeCount; j++) {
-                    const dx = nodePos[i * 3] - nodePos[j * 3];
-                    const dy = nodePos[i * 3 + 1] - nodePos[j * 3 + 1];
-                    const dz = nodePos[i * 3 + 2] - nodePos[j * 3 + 2];
-                    const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
-
-                    if (dist < 60) {
-                        linePos.push(
-                            nodePos[i * 3], nodePos[i * 3 + 1], nodePos[i * 3 + 2],
-                            nodePos[j * 3], nodePos[j * 3 + 1], nodePos[j * 3 + 2]
-                        );
+                        // Points (Top of buildings - "Lights" or Nodes)
+                        if (Math.random() > 0.5) {
+                            const pointGeo = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, height, 0)]);
+                            const point = new THREE.Points(pointGeo, pointsMat);
+                            point.position.set(x * spread, 0, z * spread);
+                            cityGroup.add(point);
+                        }
                     }
                 }
             }
-            lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePos, 3));
-            const lineMat = new THREE.LineBasicMaterial({
-                color: 0x22d3ee,
-                transparent: true,
-                opacity: 0.15
-            });
-            const lines = new THREE.LineSegments(lineGeo, lineMat);
-            networkGroup.add(lines);
-
-            scene.add(networkGroup);
         }
 
         function onWindowResize() {
-            windowHalfX = window.innerWidth / 2;
-            windowHalfY = window.innerHeight / 2;
-
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         }
-
-        let scanX = -200;
 
         // --- Mouse Interaction for Dynamism ---
         let mouseX = 0;
@@ -2526,51 +2871,18 @@
         });
 
         function animate() {
-            animationId = requestAnimationFrame(animate);
+            requestAnimationFrame(animate);
 
-            const time = Date.now() * 0.0005;
+            // Rotation & Interaction
+            if (cityGroup) {
+                cityGroup.rotation.y += 0.0008; // Slower but moving
 
-            // --- Dynamic Camera Movement (Orbit + Parallax) ---
-            // Base orbit
-            const radius = 200;
-            const camX = Math.sin(time) * radius;
-            const camZ = Math.cos(time) * radius;
-
-            // Apply subtle mouse influence (Parallax)
-            camera.position.x += (camX + (mouseX * 0.2) - camera.position.x) * 0.05;
-            camera.position.z += (camZ - (mouseY * 0.2) - camera.position.z) * 0.05;
-            camera.position.y += (50 + (mouseY * 0.1) - camera.position.y) * 0.05;
-
-            camera.lookAt(0, 20, 0);
-
-            // --- Rotate AI Network ---
-            if (networkGroup) {
-                if (!reduceDynamism) {
-                    networkGroup.rotation.y -= 0.001;
-                } else {
-                    networkGroup.rotation.y -= 0.00005; // Very slow rotation
-                }
+                // Subtle Mouse Parallax
+                cityGroup.rotation.x += (mouseY * 0.00005 - cityGroup.rotation.x) * 0.05;
             }
-
-            // Move Scan
-            if (!reduceDynamism) {
-                scanX += 0.8;
-            } else {
-                scanX += 0.05; // Very slow scan
-            }
-            if (scanX > 200) scanX = -200;
-
-            // Update Clipping Planes
-            if (scanPlanePhysical) scanPlanePhysical.constant = scanX;
-            if (scanPlaneDigital) scanPlaneDigital.constant = -scanX;
-
-            // Visual Line
-            if (scanLineVisual) scanLineVisual.position.x = scanX;
 
             renderer.render(scene, camera);
         }
-
-
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
@@ -2578,9 +2890,11 @@
             const overlay = document.getElementById('landing-overlay');
             if (overlay) overlay.style.display = 'flex';
 
-            initThreeJS();
+            if (!document.documentElement.classList.contains('no-js')) {
+                initThreeJS();
+            }
 
-            // --- Intersection Observer for Fade In (Professional Feel) ---
+            // --- Intersection Observer for Fade In ---
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
