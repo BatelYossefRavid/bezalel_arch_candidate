@@ -276,7 +276,8 @@
             z-index: 2010;
         }
     </style>
-    <div id="canvas-container" class="fixed inset-0 z-0 opacity-0 transition-opacity duration-2000 pointer-events-none">
+    <div id="canvas-container"
+        class="fixed inset-0 z-0 opacity-20 transition-opacity duration-2000 pointer-events-none lg:opacity-100">
     </div>
 
     <script>
@@ -359,8 +360,47 @@
             }
         }
 
+        function toggleSidebar() {
+            const sidebar = document.getElementById('main-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            if (sidebar.classList.contains('translate-x-full')) {
+                sidebar.classList.remove('translate-x-full');
+                // Create overlay if it doesn't exist
+                if (!document.getElementById('sidebar-overlay')) {
+                    const newOverlay = document.createElement('div');
+                    newOverlay.id = 'sidebar-overlay';
+                    newOverlay.className = 'fixed inset-0 bg-black/50 z-30 lg:hidden transition-opacity duration-300 opacity-0';
+                    newOverlay.onclick = toggleSidebar;
+                    document.body.appendChild(newOverlay);
+                    // Fade in
+                    setTimeout(() => newOverlay.classList.remove('opacity-0'), 10);
+                }
+            } else {
+                sidebar.classList.add('translate-x-full');
+                const existingOverlay = document.getElementById('sidebar-overlay');
+                if (existingOverlay) {
+                    existingOverlay.classList.add('opacity-0');
+                    setTimeout(() => existingOverlay.remove(), 300);
+                }
+            }
+        }
+
+        // Close sidebar when clicking a link on mobile
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('#main-sidebar button');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 1024) { // Only on mobile/tablet
+                        toggleSidebar();
+                    }
+                });
+            });
+        });
+
         // Expose to window for inline onclick
         window.enterSite = enterSite;
+        window.toggleSidebar = toggleSidebar;
     </script>
 </head>
 
@@ -413,9 +453,17 @@
         </div>
     </div>
 
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" onclick="toggleSidebar()"
+        class="fixed top-6 right-6 z-50 p-3 bg-black text-white rounded-full shadow-xl lg:hidden hover:bg-gray-800 transition-all">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
     <!-- Sidebar: Navigation & Identity (Hebrew) -->
-    <aside
-        class="w-full lg:w-[400px] h-screen bg-white/98 backdrop-blur-lg border-l border-gray-100 flex flex-col justify-between p-6 lg:p-8 fixed right-0 top-0 z-40 shadow-[-10px_0_30px_rgba(0,0,0,0.03)] overflow-hidden transform translate-x-full transition-transform duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)]">
+    <aside id="main-sidebar"
+        class="w-[300px] md:w-[400px] h-screen bg-white/98 backdrop-blur-lg border-l border-gray-100 flex flex-col justify-between p-6 lg:p-8 fixed right-0 top-0 z-40 shadow-[-10px_0_30px_rgba(0,0,0,0.03)] overflow-hidden transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] lg:translate-x-0">
 
 
         <div class="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-gray-100 shadow-sm group">
@@ -531,9 +579,9 @@
 
     <!-- Main Content Area: The "Paper" -->
     <main
-        class="lg:mr-[400px] h-screen overflow-y-auto bg-white p-0 scroll-smooth opacity-0 translate-y-8 transition-all duration-1000 delay-500 relative scrollbar-hide">
+        class="lg:mr-[400px] h-screen overflow-y-auto bg-white p-0 scroll-smooth opacity-0 translate-y-8 transition-all duration-1000 delay-500 relative scrollbar-hide w-full lg:w-auto">
 
-        <div class="content-container py-24 md:py-32 relative">
+        <div class="content-container py-16 md:py-32 relative px-6 md:px-16 lg:px-16">
 
             <!-- Watermark / Background Grid -->
             <div class="absolute inset-0 bauhaus-grid opacity-[0.03] pointer-events-none"></div>
