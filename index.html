@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&family=Heebo:wght@100;300;400;700;900&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="public/profile.png">
     <style>
         :root {
             --spacing-section: 12rem;
@@ -3400,8 +3401,11 @@
                 dummy.updateMatrix();
                 physicalCity.setMatrixAt(i, dummy.matrix);
 
-                const colors = [new THREE.Color(0x4285F4), new THREE.Color(0x34A853), new THREE.Color(0xFBBC05), new THREE.Color(0xEA4335)];
-                const color = colors[Math.floor(Math.random() * colors.length)];
+
+                // Black & White Theme (Grayscale)
+                const grayValue = 0.1 + Math.random() * 0.4;
+                const color = new THREE.Color().setScalar(grayValue);
+
                 for (let j = 0; j < 8; j++) {
                     positions.push(x + (Math.random() - 0.5) * w, Math.random() * h, z + (Math.random() - 0.5) * d);
                     const c = color.clone().multiplyScalar(0.8 + Math.random() * 0.4);
@@ -3419,7 +3423,7 @@
             scanPlaneDigital = new THREE.Plane(new THREE.Vector3(1, 0, 0), 0);
             digitalMat.clippingPlanes = [scanPlaneDigital];
             const lineGeo = new THREE.PlaneGeometry(2, 600);
-            scanLineVisual = new THREE.Mesh(lineGeo, new THREE.MeshBasicMaterial({ color: 0x4285F4, transparent: true, opacity: 0.4, side: THREE.DoubleSide }));
+            scanLineVisual = new THREE.Mesh(lineGeo, new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.3, side: THREE.DoubleSide }));
             scanLineVisual.rotation.y = Math.PI / 2;
             scene.add(scanLineVisual);
         }
@@ -3431,7 +3435,7 @@
                 nodePos.push((Math.random() - 0.5) * 300, Math.random() * 100 + 50, (Math.random() - 0.5) * 300);
             }
             const nodeGeo = new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(nodePos, 3));
-            networkGroup.add(new THREE.Points(nodeGeo, new THREE.PointsMaterial({ color: 0x4285F4, size: 3, transparent: true, opacity: 0.6 })));
+            networkGroup.add(new THREE.Points(nodeGeo, new THREE.PointsMaterial({ color: 0x000000, size: 3, transparent: true, opacity: 0.5 })));
             const linePos = [];
             for (let i = 0; i < nodeCount; i++) {
                 for (let j = i + 1; j < nodeCount; j++) {
@@ -3441,7 +3445,7 @@
                     }
                 }
             }
-            networkGroup.add(new THREE.LineSegments(new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(linePos, 3)), new THREE.LineBasicMaterial({ color: 0x4285F4, transparent: true, opacity: 0.2 })));
+            networkGroup.add(new THREE.LineSegments(new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(linePos, 3)), new THREE.LineBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.1 })));
             scene.add(networkGroup);
         }
 
