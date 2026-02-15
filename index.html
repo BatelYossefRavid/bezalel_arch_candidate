@@ -479,7 +479,6 @@
                 עיצוב עירוני בעידן הדיגיטלי<br>אדריכלות | מחקר יישומי
             </p>
         </div>
-        </div>
 
         <!-- Navigation Menu -->
         <nav class="space-y-1 text-right mt-8">
@@ -792,7 +791,7 @@
                                         </div>
                                     </div>
                                     <button onclick="toggleDesc('mres')"
-                                        class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mt-4 inline-block">
+                                        class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-block uppercase tracking-wider">
                                         <span id="btn-text-mres">להמשך +</span>
                                     </button>
                                 </div>
@@ -1169,7 +1168,7 @@
                                 </p>
                             </div>
                             <button onclick="toggleDesc('twin')"
-                                class="text-xs font-bold text-gray-400 hover:text-black mb-4 flex items-center gap-1 focus:outline-none">
+                                class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider focus:outline-none">
                                 <span id="btn-text-twin">להמשך +</span>
                                 <svg class="w-3 h-3 transform rotate-0 transition-transform" id="icon-twin" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -1211,7 +1210,7 @@
                                 </p>
                             </div>
                             <button onclick="toggleDesc('tlv')"
-                                class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-4 flex items-center gap-1 focus:outline-none">
+                                class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider focus:outline-none">
                                 <span id="btn-text-tlv">להמשך +</span>
                                 <svg class="w-3 h-3 transform rotate-0 transition-transform" id="icon-tlv" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -1260,7 +1259,7 @@
                                 </p>
                             </div>
                             <button onclick="toggleDesc('geo')"
-                                class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-4 flex items-center gap-1 focus:outline-none">
+                                class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider focus:outline-none">
                                 <span id="btn-text-geo">להמשך +</span>
                                 <svg class="w-3 h-3 transform rotate-0 transition-transform" id="icon-geo" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -1306,7 +1305,7 @@
                                 </p>
                             </div>
                             <button onclick="toggleDesc('vote')"
-                                class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-4 flex items-center gap-1 focus:outline-none">
+                                class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider focus:outline-none">
                                 <span id="btn-text-vote">להמשך +</span>
                                 <svg class="w-3 h-3 transform rotate-0 transition-transform" id="icon-vote" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -1332,9 +1331,28 @@
                         class="group relative flex flex-col md:flex-row gap-8 items-start border-r-2 border-black pr-8 md:pr-12">
                         <div
                             class="w-full md:w-1/3 aspect-[16/9] bg-gray-100 overflow-hidden border border-gray-100 relative shrink-0">
-                            <img src="assets/images/local_culture_phone.jpg"
-                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                                alt="מהי תרבות מקומית?">
+                            <!-- 2. Local Culture (Pardes Hanna) - Phone Image -->
+                            <div class="group">
+                                <div class="h-64 md:h-80 bg-gray-100 overflow-hidden relative mb-6">
+                                    <img src="assets/images/local_culture_phone.jpg" alt="Local Culture Map"
+                                        class="w-full h-full object-cover object-bottom transition-transform duration-700 group-hover:scale-105">
+                                    <div
+                                        class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <h3
+                                    class="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors font-arch">
+                                    מהי תרבות
+                                    מקומית?</h3>
+                                <p class="text-sm text-gray-400 mb-4">מועצה מקומית פרדס חנה-כרכור</p>
+                                <p class="text-sm text-gray-600 leading-relaxed max-w-prose">
+                                    כלי מיפוי דיגיטלי המאפשר לתושבים לסמן מוקדים של "תרבות רכה" – פעילות יומיומית,
+                                    קהילתית
+                                    ולא פורמלית. הצלבת הנתונים עם שכבות עיצוב עירוניות חשפה את הקשר בין מבנה המרחב לבין
+                                    האפשרות לייצר קהילה ותרבות מקומית.<br><br>
+                                    הפרויקט מציע מסגרת למדיניות תכנון השומרת על מרקמים חברתיים עדינים.
+                                </p>
+                            </div>
                         </div>
                         <div class="w-full md:w-2/3">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-2">מועצה
@@ -1357,7 +1375,7 @@
                                 </p>
                             </div>
                             <button onclick="toggleDesc('culture')"
-                                class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-4 flex items-center gap-1 focus:outline-none">
+                                class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider focus:outline-none">
                                 <span id="btn-text-culture">להמשך +</span>
                                 <svg class="w-3 h-3 transform rotate-0 transition-transform" id="icon-culture"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1366,16 +1384,7 @@
                                     </path>
                                 </svg>
                             </button>
-                            <a href="https://docs.google.com/document/d/1ri7-denCHJmmiDiUvVGPxHLL-Wbd4nO5RUUQkMDkNK8/edit"
-                                target="_blank"
-                                class="inline-flex items-center gap-2 text-xs font-black bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">
-                                <span>מסמך המדיניות</span>
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                    </path>
-                                </svg>
-                            </a>
+
                         </div>
                     </article>
 
@@ -1433,7 +1442,7 @@
                                     </p>
                                 </div>
                                 <button onclick="toggleDesc('nur')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-4 flex items-center gap-1 focus:outline-none">
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider focus:outline-none">
                                     <span id="btn-text-nur">להמשך +</span>
                                     <svg class="w-3 h-3 transform rotate-0 transition-transform" id="icon-nur"
                                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1484,7 +1493,7 @@
                                     </p>
                                 </div>
                                 <button onclick="toggleDesc('social')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-4 flex items-center gap-1 focus:outline-none">
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider focus:outline-none">
                                     <span id="btn-text-social">להמשך +</span>
                                     <svg class="w-3 h-3 transform rotate-0 transition-transform" id="icon-social"
                                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1982,7 +1991,7 @@
                                     </div>
                                 </div>
                                 <button onclick="toggleTeachingMore('sce-digital')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-8"
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider"
                                     id="btn-sce-digital">להמשך +</button>
                                 <div class="flex flex-wrap gap-4 mt-4">
                                     <a href="https://drive.google.com/drive/folders/17flfz1msFxImpgo2qaO7389z_SpjA3cc"
@@ -2058,7 +2067,7 @@
                                     </div>
                                 </div>
                                 <button onclick="toggleTeachingMore('city-science')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-8"
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider"
                                     id="btn-city-science">להמשך +</button>
                             </div>
                             <div class="order-2 md:order-1">
@@ -2130,7 +2139,7 @@
                                     </div>
                                 </div>
                                 <button onclick="toggleTeachingMore('sce-innovation')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-8"
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider"
                                     id="btn-sce-innovation">להמשך +</button>
                                 <div class="flex flex-wrap gap-4 mt-4">
                                     <a href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:aca4724c-073a-495e-b92a-e709dd5d31f5"
@@ -2305,7 +2314,7 @@
                                     </div>
                                 </div>
                                 <button onclick="toggleTeachingMore('hci-gis')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-8"
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider"
                                     id="btn-hci-gis">להמשך +</button>
                                 <div class="flex flex-wrap gap-4 mt-4">
                                     <a href="https://colab.research.google.com/drive/1QJz5AAcPr2PjIcaG5BCLzJ8lRqWMGHfS?usp=sharing#scrollTo=SoyufxTnorqo"
@@ -2374,7 +2383,7 @@
                                     </div>
                                 </div>
                                 <button onclick="toggleTeachingMore('sce-layers')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-8"
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider"
                                     id="btn-sce-layers">להמשך +</button>
                                 <div class="flex flex-wrap gap-4 mt-4">
                                     <a href="https://www.prtfl.co.il/archives/220540" target="_blank"
@@ -2541,7 +2550,7 @@
                                     </div>
                                 </div>
                                 <button onclick="toggleTeachingMore('tech-social')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-8"
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider"
                                     id="btn-tech-social">להמשך +</button>
                                 <div class="flex flex-wrap gap-4 mt-4">
                                     <a href="https://socialhub.technion.ac.il/class/%D7%9ק%D7%95%D7%A8%D7%A1-%D7%AA%D7%9B%D7%A0%D7%95%D7%9F-%D7%97%D7%91%D7%A8%D7%AA%D7%99/"
@@ -2629,7 +2638,7 @@
                                     </div>
                                 </div>
                                 <button onclick="toggleTeachingMore('bez-civic')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-8"
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider"
                                     id="btn-bez-civic">להמשך +</button>
                             </div>
                             <div class="order-2 md:order-1">
@@ -2684,7 +2693,7 @@
                                     </div>
                                 </div>
                                 <button onclick="toggleTeachingMore('bez-makom')"
-                                    class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-8"
+                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider"
                                     id="btn-bez-makom">להמשך +</button>
                             </div>
                             <div class="order-2 md:order-1">
@@ -2711,20 +2720,6 @@
 
                 </div>
 
-                <script>
-                    function toggleTeachingMore(id) {
-                        const moreDiv = document.getElementById('more-' + id);
-                        const btn = document.getElementById('btn-' + id);
-                        if (moreDiv.classList.contains('hidden')) {
-                            moreDiv.classList.remove('hidden');
-                            btn.innerText = 'סגור -';
-                        } else {
-                            moreDiv.classList.add('hidden');
-                            btn.innerText = 'להמשך +';
-                        }
-                    }
-                </script>
-            </section>
             </section>
 
             <hr class="border-gray-100 mb-40">
@@ -2752,23 +2747,42 @@
                         Books & Chapters
                     </h3>
                     <div class="grid gap-12">
-                        <article class="group">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-black min-w-[60px]">2025</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-blue-600 border border-blue-200 px-2 py-0.5 rounded-full">Book</span>
+                        <article class="group flex flex-col md:flex-row gap-8 items-start">
+                            <!-- Image Container -->
+                            <div
+                                class="w-full md:w-1/4 aspect-[3/4] bg-gray-100 relative shrink-0 border border-gray-200 shadow-sm overflow-hidden">
+                                <img src="assets/images/publications/regionalism_book_cover.png"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    alt="האזוריות החדשה של ישראל">
                             </div>
-                            <h4
-                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                Israel’s New Regionalism: From Polarization to Cohesion
-                            </h4>
-                            <p class="text-sm text-gray-500 mb-3 italic">
-                                Ben-Zaken, A., Cohen, M., Savin Ben-Shoshan, L., Yossef Ravid, B., & Avitar, Y. | The
-                                Institute for Israeli Thought
-                            </p>
-                            <div class="mt-2 text-xs text-gray-400">
-                                Coming Soon. A framework for the transition from polarization to cohesion through a
-                                regional lens.
+                            <!-- Content Container -->
+                            <div class="w-full md:w-3/4">
+                                <div class="flex items-baseline gap-4 mb-3">
+                                    <span class="text-sm font-bold text-black">2025</span>
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-white bg-black px-2 py-0.5 rounded-full">ספר
+                                        חדש</span>
+                                </div>
+                                <h4
+                                    class="text-2xl font-black leading-tight mb-3 group-hover:underline decoration-2 underline-offset-4 font-arch">
+                                    האזוריות החדשה של ישראל: מקיטוב ללכידות
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-4 font-serif leading-relaxed">
+                                    אבנר בן-זקן | מרדכי כהן | ליאת סאבין בן שושן | בת-אל יוסף רביד | יותם אביתר
+                                </p>
+                                <p class="text-sm text-gray-800 leading-relaxed mb-6 font-light">
+                                    הספר מציע חזון פוליטי-מרחבי חדשני ומהפכני, המותאם למציאות הישראלית. הוא מציג רפורמה
+                                    מבנית בשלטון המקומי ובממשל האזורי כדרך לצמצום פערים וחיזוק הלכידות.
+                                </p>
+                                <a href="https://israelithought.co.il/14013-2/" target="_blank"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-black border border-gray-200 px-5 py-2 hover:bg-black hover:text-white transition-all shadow-sm">
+                                    <span>לרכישה וקריאה באתר המכון</span>
+                                    <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
                             </div>
                         </article>
                     </div>
@@ -2833,15 +2847,32 @@
                             </div>
                             <h4
                                 class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                "Towards Regionalism in Israel Coping with Political Rift and War"
+                                "Imagining a New Regionalism of Israel: Methodology, Work Process, and Future Vision"
                             </h4>
                             <p class="text-sm text-gray-500 mb-3 italic">
-                                Yossef Ravid, B., Savin Ben Shoshan, L. | Geography Research Forum (GRF)
+                                Savin Ben Shoshan, L., Yossef Ravid, B. | Geography Research Forum (GRF)
                             </p>
                             <div class="text-xs text-gray-400 mb-2">
-                                Special Issue on Regionalism. Full publication expected April 2025. Vol 44 No 1 (2025):
-                                TOWARDS NEW REGIONALISM IN ISRAEL
+                                Special Issue on Regionalism. Vol 44 (2025): 35-70.
                             </div>
+                        </article>
+
+                        <!-- 2025 Making Deliberation Affordable -->
+                        <article class="group">
+                            <div class="flex items-baseline gap-4 mb-2">
+                                <span class="text-sm font-bold text-black min-w-[60px]">2025</span>
+                                <span
+                                    class="text-[10px] font-bold uppercase tracking-widest text-orange-600 border border-orange-200 px-2 py-0.5 rounded-full">Under
+                                    Review</span>
+                            </div>
+                            <h4
+                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
+                                "Making Deliberation Affordable: Deliberative Affordances of Situated Digital Citizen
+                                Participation Technologies"
+                            </h4>
+                            <p class="text-sm text-gray-500 mb-3 italic">
+                                Yossef Ravid, B., et al. | Environment and Planning B: Urban Analytics and City Science
+                            </p>
                         </article>
 
                         <!-- 2025 Social Secrets -->
@@ -2946,264 +2977,80 @@
                                 id="btn-social-twin">להמשך +</button>
                             <div class="mt-2">
                                 <a href="https://journals.sagepub.com/doi/10.1177/23998083221142232" target="_blank"
-                                    class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">לקריאה
                                     -></a>
                             </div>
                         </article>
                     </div>
                 </div>
 
-                <!-- 7.2 Papers Under Review -->
-                <div class="mb-24 border-r-2 border-black pr-8 md:pr-12">
-                    <h3
-                        class="text-xl font-black uppercase tracking-widest mb-12 flex items-center gap-4 text-black border-b border-gray-200 pb-4">
-                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                        Papers Under Review
-                    </h3>
-                    <div class="grid gap-12">
-
-                        <!-- 2025 Social Block -->
-                        <article class="group opacity-80 hover:opacity-100 transition-opacity">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-gray-500 min-w-[60px]">2025</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-orange-500 border border-orange-200 px-2 py-0.5 rounded-full">Under
-                                    Review</span>
-                            </div>
-                            <h4 class="text-lg font-bold leading-tight mb-2 group-hover:text-black transition-colors">
-                                "The Social Block: A Scale for Organizing Social Data in Data-Driven Spatial Models"
-                            </h4>
-                            <p class="text-sm text-gray-500 mb-3 italic">
-                                Bat-El Yosef Ravid, Shahar Hasechel, Meirav Aharon Gutman, Hagit Na’ali Yosef, Michal
-                                Sutin, Timna Hurgis Golan | Submitted to Planning (Tichnun)
-                            </p>
-                        </article>
-
-                        <!-- 2025 Displacement -->
-                        <article class="group opacity-80 hover:opacity-100 transition-opacity">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-gray-500 min-w-[60px]">2025</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-orange-500 border border-orange-200 px-2 py-0.5 rounded-full">Under
-                                    Review</span>
-                            </div>
-                            <h4 class="text-lg font-bold leading-tight mb-2 group-hover:text-black transition-colors">
-                                "Displacement and Sumud - Informal Bedouin Settlements and the Politics of Digital
-                                Mapping and Design"
-                            </h4>
-                            <p class="text-sm text-gray-500 mb-3 italic">
-                                Yossef Ravid, B. Savin Ben Shoshan, L., Tzfadia, E. | URBAN DESIGN International
-                            </p>
-                        </article>
-
-                        <!-- 2023 Language of Technology -->
-                        <article class="group opacity-80 hover:opacity-100 transition-opacity">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-gray-500 min-w-[60px]">2023</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-orange-500 border border-orange-200 px-2 py-0.5 rounded-full">Under
-                                    Review</span>
-                            </div>
-                            <h4 class="text-lg font-bold leading-tight mb-2 group-hover:text-black transition-colors">
-                                "The Language of Technology: Using Smart City Tools for Collaborative Decision Making"
-                            </h4>
-                            <p class="text-sm text-gray-500 mb-3 italic">
-                                Yossef Ravid, B., Axel, A., Aharon-Gutman, M. | Planning Theory and Practice
-                            </p>
-                        </article>
-
-                    </div>
-                </div>
-
-                <!-- 7.3 Reports & Projects -->
+                <!-- 7.3 Media & Press -->
                 <div class="mb-20 border-r-2 border-black pr-8 md:pr-12">
                     <h3
                         class="text-xl font-black uppercase tracking-widest mb-12 flex items-center gap-4 text-black border-b border-gray-200 pb-4">
                         <span class="w-2 h-2 bg-black rounded-full"></span>
-                        Reports & Projects
+                        Media & Press (עיתונות ומדיה)
                     </h3>
                     <div class="grid gap-12">
-                        <!-- TAMA 35 -->
-                        <article class="group">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-black min-w-[60px]">2022-Pres.</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-blue-600 border border-blue-200 px-2 py-0.5 rounded-full">Policy</span>
+                        <!-- Urbanology (With Image) -->
+                        <article class="group flex flex-col md:flex-row gap-8 items-start">
+                            <div
+                                class="w-full md:w-1/4 aspect-[4/3] bg-gray-100 relative shrink-0 border border-gray-200 shadow-sm overflow-hidden">
+                                <img src="assets/images/publications/media_urbanology.png"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    alt="Urbanology Article">
                             </div>
-                            <h4
-                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                "תמ"א 35: מעקב ובקרה - 'מערכת ההפעלה' של התכנון הישראלי"
-                            </h4>
-                            <p class="text-xs text-gray-400 mb-2">מינהל התכנון</p>
-                            <div id="desc-tama35"
-                                class="hidden text-sm text-gray-600 leading-relaxed bg-gray-50 p-6 border-l-2 border-black mt-4 mb-4">
-                                <p>אחריות על היוועצות מבוססת נתונים ועיצוב תפיסת המעקב בעידן הדיגיטלי עבור תוכנית המתאר
-                                    הארצית המשולבת.</p>
-                            </div>
-                            <button onclick="toggleArticle('tama35')"
-                                class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-2"
-                                id="btn-tama35">להמשך +</button>
-                            <div class="mt-2">
-                                <a href="https://mavat.iplan.gov.il/d434acda-7e9c-4914-a626-ce53d83c3c68"
-                                    target="_blank"
-                                    class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">למסמכי
-                                    התוכנית -></a>
-                            </div>
-                        </article>
-
-                        <!-- Public Participation -->
-                        <article class="group">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-black min-w-[60px]">2023</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-blue-600 border border-blue-200 px-2 py-0.5 rounded-full">Guide</span>
-                            </div>
-                            <h4
-                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                "שיתוף ציבור והנגשת מידע בעידן הדיגיטלי - מדריך וארגז כלים"
-                            </h4>
-                            <p class="text-xs text-gray-400 mb-2">מינהל התכנון (אגף אסטרטגיה)</p>
-                            <div id="desc-participation-guide"
-                                class="hidden text-sm text-gray-600 leading-relaxed bg-gray-50 p-6 border-l-2 border-black mt-4 mb-4">
-                                <p>אפיון ובניית מדריך שיתוף ציבור וארגז כלים דיגיטלי (בוט) לייעול תהליכי תכנון והנגשת
-                                    מידע לציבור הרחב.</p>
-                            </div>
-                            <button onclick="toggleArticle('participation-guide')"
-                                class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-2"
-                                id="btn-participation-guide">להמשך +</button>
-                            <div class="mt-2 flex gap-4">
-                                <a href="https://participatory-assist.physital.studio/" target="_blank"
-                                    class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">לכלי
-                                    הדיגיטלי -></a>
-                                <a href="https://docs.google.com/document/d/1CHihdJ0MYY2Q4xYaGrJNA24AdG-xaoQ7/edit?usp=drive_link"
-                                    target="_blank"
-                                    class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">למדריך
-                                    המלא -></a>
+                            <div class="w-full md:w-3/4">
+                                <div class="flex items-baseline gap-4 mb-2">
+                                    <span class="text-sm font-bold text-black min-w-[60px]">2024</span>
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">Methodology</span>
+                                </div>
+                                <h4
+                                    class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
+                                    "סליחה, אבל מה בעצם השאלה שלך? מתודולוגיה לשיתוף ציבור"
+                                </h4>
+                                <p class="text-xs text-gray-400 mb-4">אורבנולוגיה (Urbanology)</p>
+                                <a href="https://urbanologia.tau.ac.il/questions_campaign2/" target="_blank"
+                                    class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">
+                                    <span>לקריאה נוספת</span>
+                                    <svg class="w-3 h-3 rtl:rotate-180" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
                             </div>
                         </article>
 
-                        <!-- Innovation Districts -->
-                        <article class="group">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-black min-w-[60px]">2024</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-blue-600 border border-blue-200 px-2 py-0.5 rounded-full">Research</span>
+                        <!-- Globes (With Image) -->
+                        <article class="group flex flex-col md:flex-row gap-8 items-start">
+                            <div
+                                class="w-full md:w-1/4 aspect-[4/3] bg-gray-100 relative shrink-0 border border-gray-200 shadow-sm overflow-hidden">
+                                <img src="assets/images/publications/media_globes.png"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    alt="Globes Article">
                             </div>
-                            <h4
-                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                "מהו רובע חדשנות? מיפוי השוואתי בינלאומי"
-                            </h4>
-                            <p class="text-xs text-gray-400 mb-2">סטודיו עיצוב עירוני בנגב</p>
-                            <div id="desc-innovation"
-                                class="hidden text-sm text-gray-600 leading-relaxed bg-gray-50 p-6 border-l-2 border-black mt-4 mb-4">
-                                <p>סקירה השוואתית של רובעי חדשנות ברחבי העולם והנגשת הממצאים למקבלי החלטות לטובת פיתוח
-                                    אורבני מבוסס ידע.</p>
+                            <div class="w-full md:w-3/4">
+                                <div class="flex items-baseline gap-4 mb-2">
+                                    <span class="text-sm font-bold text-black min-w-[60px]">2019</span>
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">Legal</span>
+                                </div>
+                                <h4
+                                    class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
+                                    "כל מה שרציתם לדעת על הודעה לפי חוק התכנון והבנייה"
+                                </h4>
+                                <p class="text-xs text-gray-400 mb-4">גלובס (Globes)</p>
+                                <a href="https://www.globes.co.il/news/article.aspx?did=1001305495" target="_blank"
+                                    class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">
+                                    <span>לקריאה נוספת</span>
+                                    <svg class="w-3 h-3 rtl:rotate-180" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
                             </div>
-                            <button onclick="toggleArticle('innovation')"
-                                class="text-xs font-black uppercase tracking-[0.2em] border-b border-black hover:border-gray-400 pb-1 mb-2"
-                                id="btn-innovation">להמשך +</button>
-                            <div class="mt-2">
-                                <a href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:aca4724c-073a-495e-b92a-e709dd5d31f5"
-                                    target="_blank"
-                                    class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">לקריאה
-                                    -></a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <!-- 7.4 Media & Press -->
-                <div class="mb-20 border-r-2 border-black pr-8 md:pr-12">
-                    <h3
-                        class="text-xl font-black uppercase tracking-widest mb-12 flex items-center gap-4 text-black border-b border-gray-200 pb-4">
-                        <span class="w-2 h-2 bg-black rounded-full"></span>
-                        Media & Press
-                    </h3>
-                    <div class="grid gap-12">
-                        <!-- Portfolio -->
-                        <article class="group">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-black min-w-[60px]">2022</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">Interview</span>
-                            </div>
-                            <h4
-                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                "הדאטה כבר כאן, עכשיו צריך להבין מה עושים איתו"
-                            </h4>
-                            <p class="text-xs text-gray-400 mb-4">מגזין פורטפוליו | ראיון על תאומים דיגיטליים חברתיים
-                            </p>
-                            <a href="https://www.prtfl.co.il/archives/164741" target="_blank"
-                                class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">לכתבה
-                                המלאה -></a>
-                        </article>
-
-                        <!-- Davar -->
-                        <article class="group">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-black min-w-[60px]">2023</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">Press</span>
-                            </div>
-                            <h4
-                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                "חדר המצב החברתי: להפוך את הנתונים לכלי עבודה עבור התושבים"
-                            </h4>
-                            <p class="text-xs text-gray-400 mb-4">דבר | על פרויקט חדר המצב החברתי בשכונת הדר</p>
-                            <a href="https://www.davar1.co.il/427658/" target="_blank"
-                                class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">לכתבה
-                                המלאה -></a>
-                        </article>
-
-                        <!-- Kfar Saba -->
-                        <article class="group">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-black min-w-[60px]">2024</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">Personal</span>
-                            </div>
-                            <h4
-                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                "כפר-סבאים חוזרים לעיר שלהם"
-                            </h4>
-                            <p class="text-xs text-gray-400 mb-4">טיסות נכנסות / טיסות יוצאות | ראיון אישי על מקום, בית
-                                ועשייה</p>
-                            <div class="text-xs text-gray-300 italic">Link coming soon</div>
-                        </article>
-
-                        <!-- Urbanology -->
-                        <article class="group">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-black min-w-[60px]">2024</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">Methodology</span>
-                            </div>
-                            <h4
-                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                "סליחה, אבל מה בעצם השאלה שלך? מתודולוגיה לשיתוף ציבור"
-                            </h4>
-                            <p class="text-xs text-gray-400 mb-4">אורבנולוגיה (Urbanology)</p>
-                            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:653811ac-ac13-4d6a-8b7d-fdd81be3bcac"
-                                target="_blank"
-                                class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">לכתבה
-                                המלאה -></a>
-                        </article>
-
-                        <!-- Globes -->
-                        <article class="group">
-                            <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-sm font-bold text-black min-w-[60px]">2019</span>
-                                <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">Legal</span>
-                            </div>
-                            <h4
-                                class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
-                                "כל מה שרציתם לדעת על הודעה לפי חוק התכנון והבנייה"
-                            </h4>
-                            <p class="text-xs text-gray-400 mb-4">גלובס (Globes)</p>
-                            <a href="https://www.globes.co.il/news/article.aspx?did=1001305495" target="_blank"
-                                class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">לכתבה
-                                המלאה -></a>
                         </article>
 
                         <!-- ALondon -->
@@ -3263,7 +3110,8 @@
                                 class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
                                 "Erasmus+ Smart Living Lab"
                             </h4>
-                            <p class="text-xs text-gray-400">Krems, Vienna | International Academic Collaboration</p>
+                            <p class="text-xs text-gray-400">Krems, Vienna | International
+                                Academic Collaboration</p>
                         </article>
 
                         <!-- Social on the Table -->
@@ -3277,7 +3125,8 @@
                                 class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
                                 "Putting the Social on the Table"
                             </h4>
-                            <p class="text-xs text-gray-400">Technion & HafenCity University, Hamburg | Organizing
+                            <p class="text-xs text-gray-400">Technion & HafenCity University,
+                                Hamburg | Organizing
                                 Committee</p>
                         </article>
 
@@ -3292,7 +3141,8 @@
                                 class="text-lg font-bold leading-tight mb-2 group-hover:text-blue-600 transition-colors">
                                 "לחשוב אזוריות / Thinking Regionally"
                             </h4>
-                            <p class="text-xs text-gray-400">SCE School of Architecture | Organizing Team</p>
+                            <p class="text-xs text-gray-400">SCE School of Architecture |
+                                Organizing Team</p>
                         </article>
                     </div>
                 </div>
@@ -3303,165 +3153,120 @@
 
             <section id="vision" class="relative scroll-mt-24">
                 <div class="flex flex-col items-start mb-16 border-b-4 border-black pb-8 border-r-2 pr-8 md:pr-12">
-                    <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">09. חזון לביה"ס</span>
-                    <h2 class="text-4xl font-black tracking-tight font-arch">מסורת, מורכבות והנהגה לעתיד</h2>
+                    <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">09. חזון
+                        לביה"ס</span>
+                    <h2 class="text-4xl font-black tracking-tight font-arch">ארכיטקטורה ועיצוב ב-Complexity
+                        City
+                        הפיזיטלית</h2>
                 </div>
 
                 <article
                     class="prose prose-xl prose-gray font-light leading-relaxed space-y-8 max-w-none mx-auto w-full text-gray-900 border-r-2 border-black pr-8 md:pr-12">
-                    <p class="font-medium text-2xl leading-relaxed text-black mb-8">
-                        אני מכירה, מעריכה ומכבדת עמוקות את המסורת ארוכת השנים של בצלאל. בית הספר לאדריכלות עיצב לאורך
-                        עשורים
-                        שפה
-                        אדריכלית ייחודית — עמוקה, ביקורתית ובעלת עמדה תרבותית מובהקת. המסורת הזו איננה עבר שיש לשמר
-                        בלבד;
-                        היא
-                        תשתית חיה שממנה ניתן להמשיך ולהתפתח.
-                    </p>
+
+                    <h3 class="text-2xl font-bold text-black decoration-gray-300 underline underline-offset-4">
+                        מבוא:
+                        אדריכלות ברגע של תפנית סינגולרית</h3>
                     <p>
-                        דווקא מתוך הכבוד למסורת הזו, יש להתבונן במציאות שבתוכה האדריכלות פועלת כיום — ולשאול מה נדרש
-                        מבית
-                        ספר
-                        מוביל בתנאים שהשתנו באופן מהותי.
+                        אנו חיים בעידן שבו קצב השינוי המואץ מכתיב מציאות חדשה שאינה דומה לשום דבר שהכרנו.
+                        המציאות הזו
+                        אינה רק טכנולוגית; היא משנה מהיסוד את יחסי הכוחות בין האדם, המכונה והמרחב האנושי.
+                        המרחב נעשה
+                        אינטנסיבי ורב-שכבתי: זוהי ה-Complexity City, עיר שבה תשתיות פיזיות ורשתות דיגיטליות
+                        שזורות זו
+                        בזו ללא הפרד. החזון שאני מציעה לבית הספר בבצלאל מכיר ברגע הזה ובוחר לפעול איתו, כדי
+                        להגדיר מחדש
+                        את תפקיד האדריכל והמעצב העירוני בתוך המציאות הפיזיטלית (Physital).
                     </p>
 
-                    <div class="space-y-6 mb-16">
-                        <h3 class="text-3xl font-black text-black">Complexity City</h3>
-                        <p class="text-lg leading-relaxed text-gray-800">
-                            האדריכלות מתקיימת היום בתוך מה שניתן לכנות Complexity City — עיר של מורכבות מואצת. מרחב צפוף
-                            יותר,
-                            רב־שכבתי יותר, תלת־ממדי יותר, שבו תשתיות, תחבורה, אנרגיה, מידע ומערכות דיגיטליות שזורות זו
-                            בזו.
-                        </p>
-                        <p class="text-lg leading-relaxed text-gray-800">
-                            העיר אינה רק פיזית ואינה רק תכנונית; היא מערכת חיה של יחסים, נתונים, טכנולוגיות וקונפליקטים.
-                            המרחב נעשה אינטנסיבי יותר, מחייב אותנו לחשוב מחדש על גבולות המקצוע.
-                        </p>
-                    </div>
-
-                    <p class="text-xl font-light mb-12">
-                        בתוך Complexity City, האדריכלות נעשית יותר ויותר פיזיטלית — שילוב בלתי נפרד של פיזי ודיגיטלי.
-                        המרחב
-                        אינו
-                        רק חומר ובטון; הוא גם שכבות מידע, אלגוריתמים, סימולציות ותהליכי קבלת החלטות מבוססי דאטה.
-                    </p>
-
-                    <div class="bg-gray-50 p-10 border-r-2 border-black my-12 shadow-sm">
-                        <h4 class="font-bold text-xl mb-4 text-black underline underline-offset-8 decoration-gray-200">
-                            למה
-                            נדרש
-                            שינוי תפיסתי עכשיו?</h4>
-                        <p class="mb-6 text-lg leading-relaxed">
-                            האדריכלות אינה פועלת עוד במרחב יציב. משבר האקלים מחייב אחריות סביבתית עמוקה. שיקולים חברתיים
-                            אינם
-                            תוספת ערכית אלא סטנדרט מקצועי. ריבוי השחקנים גדל, והצורך באמון ציבורי ובהשתתפות משמעותית
-                            מתעצם.
-                        </p>
-                        <p class="mb-6 text-lg leading-relaxed">
-                            ובתוך כל אלה — קצב השינויים הטכנולוגיים מואץ באופן חסר תקדים.
-                        </p>
-                        <p class="mb-6 text-lg leading-relaxed">
-                            כלים דיגיטליים, בינה מלאכותית, מערכות חישוביות ותאומים דיגיטליים אינם עוד תוספת לארגז הכלים
-                            — הם
-                            משנים
-                            את אופן החשיבה ואת מבנה הידע בשדה. השאלה איננה כיצד “להוסיף טכנולוגיה”, אלא כיצד להכשיר
-                            אדריכלים
-                            ואדריכליות לפעול בתוך מציאות פיזיטלית מורכבת — מבלי לאבד עומק תרבותי, ביקורתי ועיצובי.
-                        </p>
-                        <p class="mb-0 text-lg leading-relaxed font-medium">
-                            אם בית ספר לאדריכלות לא יוביל את ההתמודדות עם מורכבות זו, הוא יסתפק בתגובה מאוחרת לשינויים
-                            המוגדרים
-                            מחוץ לו. בצלאל, כבעלת מסורת של עצמאות אינטלקטואלית, יכולה וצריכה להיות המקום שבו מנוסחת
-                            תגובה
-                            עמוקה
-                            —
-                            לא טכנית, אלא תפיסתית.
-                        </p>
-                    </div>
-
-                    <h3 class="text-3xl font-bold mt-16 mb-6 text-black border-b border-gray-100 pb-4 inline-block">מה
-                        נדרש
-                        לבנות?</h3>
-                    <ul class="list-none space-y-8 pl-0">
-                        <li class="flex gap-4 items-start">
-                            <span class="text-black text-2xl font-bold mt-1">01.</span>
-                            <span><strong>רצף אקדמי מלא וברור</strong> — מהסטודיו ועד מחקר מתקדם. חיזוק התארים המתקדמים
-                                ופיתוח
-                                תשתית שתאפשר בעתיד דוקטורט מבוסס עיצוב הם מהלך אסטרטגי. דוקטורט שבו הפרויקט הוא מחקר,
-                                והמחקר
-                                פועל
-                                בעולם פיזיטלי, מחבר בין תיאוריה, תכנון ומערכות חיות.</span>
+                    <h3 class="text-2xl font-bold text-black mt-16 decoration-gray-300 underline underline-offset-4">
+                        1.
+                        פדגוגיה של יצירה: מהוראת "תוצרים" להוראת "מערכות יחסים"</h3>
+                    <p>בתוך התפנית הדיגיטלית, הלימודים בבצלאל יעברו טרנספורמציה פדגוגית:</p>
+                    <ul class="list-none space-y-4 pr-0">
+                        <li class="flex gap-3 items-start">
+                            <span class="text-black font-bold text-xl">•</span>
+                            <span><strong>מהאדריכל כיוצר לאדריכל כאוצר מערכות:</strong> עלינו להכשיר
+                                אדריכלים בעלי יכולת
+                                אצירה וביקורת. הסטודיו יהיה המרחב שבו הסטודנט מגדיר את הפרמטרים האתיים
+                                והאסתטיים של
+                                המכונה.</span>
                         </li>
-                        <li class="flex gap-4 items-start">
-                            <span class="text-black text-2xl font-bold mt-1">02.</span>
-                            <span><strong>ביסוס מחקר יישומי כעמוד שדרה.</strong> בעולם של Complexity City, האקדמיה אינה
-                                יכולה
-                                להסתפק בניתוח; עליה לפתח כלים, מתודולוגיות ופלטפורמות פעולה — ולהוביל מציאות, לא רק
-                                להגיב
-                                לה.</span>
+                        <li class="flex gap-3 items-start">
+                            <span class="text-black font-bold text-xl">•</span>
+                            <span><strong>אינטגרציה דיגיטלית מהותית:</strong> כלי ה-AI והמערכות החישוביות הם
+                                הרחבה של
+                                השפה האדריכלית עצמה. הטמעתם בלב הסטודיו תהפוך את הנתונים (Data) לחומר גלם
+                                ליצירה
+                                וליופי.</span>
                         </li>
-                        <li class="flex gap-4 items-start">
-                            <span class="text-black text-2xl font-bold mt-1">03.</span>
-                            <span><strong>הקמת מרחבי Co-Production מתמשכים</strong> — פלטפורמות עבודה שבהן ידע נוצר יחד
-                                עם
-                                גופים
-                                ציבוריים, פרקטיקה וחברה אזרחית. במציאות מורכבת, ידע אינו מיוצר במקום אחד בלבד; הוא נוצר
-                                דרך
-                                חיבורים.</span>
-                        </li>
-                        <li class="flex gap-4 items-start">
-                            <span class="text-black text-2xl font-bold mt-1">04.</span>
-                            <span><strong>אינטגרציה דיגיטלית מהותית</strong> בתוך החשיבה האדריכלית. לא כקורס טכנולוגי
-                                מבודד,
-                                אלא
-                                כהרחבת השפה עצמה — כך שתוכל לפעול באופן ביקורתי, יצירתי ואחראי במרחב פיזיטלי.</span>
+                        <li class="flex gap-3 items-start">
+                            <span class="text-black font-bold text-xl">•</span>
+                            <span><strong>המורכבות כחומר גלם:</strong> הלימודים יכשירו את הסטודנטים להשתמש
+                                בסימולציות
+                                ובתאומים דיגיטליים כדי למצוא סדר ומשמעות בתוך המורכבות העירונית
+                                המואצת.</span>
                         </li>
                     </ul>
 
-                    <h3 class="text-3xl font-bold mt-16 mb-6 text-black border-b border-gray-100 pb-4 inline-block">כיצד
-                        הדבר
-                        יתממש?</h3>
-                    <p>
-                        הובלה אינה מתרחשת דרך שינוי נקודתי של קורס. היא מתרחשת דרך בניית מסגרות פעולה יציבות.
-                    </p>
-                    <p>
-                        אחד המודלים המרכזיים שאני מבקשת להביא לבית הספר הוא מודל ה-<strong>Living Lab</strong> — מרחב
-                        שבו
-                        מחקר,
-                        תכנון ופעולה מתקיימים בו־זמנית, בשיתוף גורמים ציבוריים ומקצועיים, ובזמן אמת. Living Lab איננו
-                        “סטודיו עם
-                        שותף חיצוני”; הוא תשתית מתמשכת שבה בית הספר פועל בתוך המציאות ולא רק מדמה אותה.
-                    </p>
-                    <p>
-                        אני רואה פוטנציאל להקים מספר צירי פעולה קבועים — קבוצות חשיבה ועבודה מתמשכות — שיחברו בין מרצים,
-                        חוקרים,
-                        סטודנטים מתקדמים ואנשי פרקטיקה. צירים אלה יעסקו בנושאים שבהם האדריכלות פוגשת מורכבות: תכנון
-                        אזורי,
-                        חוסן
-                        אקלימי, שיתוף ציבור, אינטגרציה דיגיטלית ותכנון פיזיטלי.
-                    </p>
-                    <p>
-                        המטרה איננה לייצר עוד שיח, אלא לייצר מנגנון עבודה — מנגנון שמפתח ידע, מייצר תוצרים, מושך משאבים
-                        ומעמיק
-                        את
-                        מעמדו האקדמי של בית הספר.
-                    </p>
-                    <p>
-                        האינטגרציה הדיגיטלית תוטמע בתוך מסגרות אלו כחלק מהשפה האדריכלית עצמה. עבודה עם דאטה, סימולציות
-                        ובינה
-                        מלאכותית תתקיים בתוך הקשר עיצובי וביקורתי — כך שהפיזי והדיגיטלי יפעלו יחד.
-                    </p>
+                    <h3 class="text-2xl font-bold text-black mt-16 decoration-gray-300 underline underline-offset-4">
+                        2.
+                        בניית הרצף האקדמי: ייסוד תשתית למחקר מתקדם</h3>
+                    <p>היעד האסטרטגי שלי הוא ביסוס בצלאל כמרכז ידע לאומי דרך יצירת רצף מחקרי מלא:</p>
+                    <ul class="list-none space-y-4 pr-0">
+                        <li class="flex gap-3 items-start">
+                            <span class="text-black font-bold text-xl">•</span>
+                            <span><strong>חלוציות בדוקטורט מבוסס עיצוב (Design-based PhD):</strong> אפעל
+                                לביסוס התשתית
+                                להקמת דוקטורט בבצלאל. בהשראת המודל של ה-RCA בלונדון, אני שואפת למודל שבו
+                                הפרויקט
+                                האדריכלי הוא המתודולוגיה המחקרית — מחקר יישומי שבו הפעולה העיצובית מייצרת
+                                ידע
+                                חדש.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="text-black font-bold text-xl">•</span>
+                            <span><strong>התואר השני כמעבדת Urban Analytics:</strong> הפיכת התואר השני
+                                בעיצוב עירוני
+                                למוקד המשלב את הכלים שפיתחתי ב-NUR Lab ובשותפות עם MIT, כדי לייצר פתרונות
+                                מרחביים מבוססי
+                                נתונים עבור המציאות הישראלית.</span>
+                        </li>
+                    </ul>
 
-                    <div class="mt-24 pt-16 border-t border-gray-100 flex flex-col items-center text-center">
-                        <p class="text-2xl md:text-3xl font-black text-black mb-6 max-w-3xl leading-tight">
-                            בצלאל היא הלב הפועם של התרבות והעיצוב בישראל. הובלתה היא שליחות של חיבור בין עבר מפואר לעתיד
-                            דיגיטלי
-                            ואנושי.
+                    <h3 class="text-2xl font-bold text-black mt-16 decoration-gray-300 underline underline-offset-4">
+                        3.
+                        מתודולוגיית ה-Living Lab: גשר למציאות הפיזיטלית</h3>
+                    <p>הובלה בתוך Complexity City מחייבת מסגרות פעולה יציבות:</p>
+                    <ul class="list-none space-y-4 pr-0">
+                        <li class="flex gap-3 items-start">
+                            <span class="text-black font-bold text-xl">•</span>
+                            <span><strong>מרחבי Co-Production:</strong> הקמת מעבדות חיות (Living Labs) שבהן
+                                חוקרים,
+                                סטודנטים ואנשי פרקטיקה פועלים יחד עם גופים ציבוריים (כמו מינהל התכנון) בזמן
+                                אמת.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="text-black font-bold text-xl">•</span>
+                            <span><strong>מנגנון של יצירת ידע:</strong> המעבדות יהיו תשתית שתאפשר לבית הספר
+                                לייצר תוצרים
+                                ממשיים ולהפוך לשותף אסטרטגי בעיצוב המדיניות המרחבית הלאומית.</span>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gray-50 p-10 border-r-2 border-black mt-16 shadow-sm">
+                        <h4 class="font-bold text-xl mb-4 text-black">סיכום</h4>
+                        <p class="text-lg leading-relaxed m-0 text-black">
+                            בצלאל ניצבת בפני רגע היסטורי שבו עליה להחליט: האם היא מגיבה לשינויי העידן, או
+                            מעצבת אותם.
+                            החזון שאני מציעה אינו מסתפק בהטמעה של טכנולוגיה, אלא דורשת להוביל ולעצב אותה.
+                            כראש בית הספר,
+                            מחויבותי תהיה לבנות אקדמיה שפועלת בתוך המהירות של העידן הדיגיטלי מבלי לאבד את
+                            העומק של המבט
+                            האדריכלי.
                         </p>
-                        <div class="w-24 h-1 bg-black"></div>
                     </div>
-                </article>
 
+                </article>
             </section>
 
             <hr class="border-gray-100 mb-40">
@@ -3579,11 +3384,11 @@
             const boxGeo = new THREE.BoxGeometry(1, 1, 1);
             boxGeo.translate(0, 0.5, 0);
             const physicalMat = new THREE.MeshLambertMaterial({ color: 0xeeeeee });
-            const digitalMat = new THREE.PointsMaterial({ color: 0x22d3ee, size: 2, vertexColors: true, sizeAttenuation: true });
+            const digitalMat = new THREE.PointsMaterial({ size: 2, vertexColors: true, sizeAttenuation: true, transparent: true, opacity: 0.8 });
             const count = 3000;
             physicalCity = new THREE.InstancedMesh(boxGeo, physicalMat, count);
             const digitalGeo = new THREE.BufferGeometry();
-            const positions = [], colors = [];
+            const positions = [], digitalColors = [];
             const dummy = new THREE.Object3D();
             for (let i = 0; i < count; i++) {
                 const x = (Math.random() - 0.5) * 400, z = (Math.random() - 0.5) * 400;
@@ -3594,16 +3399,19 @@
                 dummy.scale.set(w, h, d);
                 dummy.updateMatrix();
                 physicalCity.setMatrixAt(i, dummy.matrix);
+
+                const colors = [new THREE.Color(0x4285F4), new THREE.Color(0x34A853), new THREE.Color(0xFBBC05), new THREE.Color(0xEA4335)];
+                const color = colors[Math.floor(Math.random() * colors.length)];
                 for (let j = 0; j < 8; j++) {
                     positions.push(x + (Math.random() - 0.5) * w, Math.random() * h, z + (Math.random() - 0.5) * d);
-                    const color = new THREE.Color().setHex(Math.random() > 0.5 ? 0x22d3ee : 0xec4899);
-                    colors.push(color.r, color.g, color.b);
+                    const c = color.clone().multiplyScalar(0.8 + Math.random() * 0.4);
+                    digitalColors.push(c.r, c.g, c.b);
                 }
             }
             physicalCity.instanceMatrix.needsUpdate = true;
             scene.add(physicalCity);
             digitalGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-            digitalGeo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+            digitalGeo.setAttribute('color', new THREE.Float32BufferAttribute(digitalColors, 3));
             digitalCity = new THREE.Points(digitalGeo, digitalMat);
             scene.add(digitalCity);
             scanPlanePhysical = new THREE.Plane(new THREE.Vector3(-1, 0, 0), 0);
@@ -3611,7 +3419,7 @@
             scanPlaneDigital = new THREE.Plane(new THREE.Vector3(1, 0, 0), 0);
             digitalMat.clippingPlanes = [scanPlaneDigital];
             const lineGeo = new THREE.PlaneGeometry(2, 600);
-            scanLineVisual = new THREE.Mesh(lineGeo, new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.5, side: THREE.DoubleSide }));
+            scanLineVisual = new THREE.Mesh(lineGeo, new THREE.MeshBasicMaterial({ color: 0x4285F4, transparent: true, opacity: 0.4, side: THREE.DoubleSide }));
             scanLineVisual.rotation.y = Math.PI / 2;
             scene.add(scanLineVisual);
         }
@@ -3623,7 +3431,7 @@
                 nodePos.push((Math.random() - 0.5) * 300, Math.random() * 100 + 50, (Math.random() - 0.5) * 300);
             }
             const nodeGeo = new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(nodePos, 3));
-            networkGroup.add(new THREE.Points(nodeGeo, new THREE.PointsMaterial({ color: 0x000000, size: 3, transparent: true, opacity: 0.6 })));
+            networkGroup.add(new THREE.Points(nodeGeo, new THREE.PointsMaterial({ color: 0x4285F4, size: 3, transparent: true, opacity: 0.6 })));
             const linePos = [];
             for (let i = 0; i < nodeCount; i++) {
                 for (let j = i + 1; j < nodeCount; j++) {
@@ -3633,24 +3441,31 @@
                     }
                 }
             }
-            networkGroup.add(new THREE.LineSegments(new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(linePos, 3)), new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.15 })));
+            networkGroup.add(new THREE.LineSegments(new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(linePos, 3)), new THREE.LineBasicMaterial({ color: 0x4285F4, transparent: true, opacity: 0.2 })));
             scene.add(networkGroup);
         }
 
         function animate() {
             animationId = requestAnimationFrame(animate);
+
             const time = Date.now() * 0.0005;
             const radius = 250;
             const camX = Math.sin(time * 0.5) * radius, camZ = Math.cos(time * 0.5) * radius;
+
             camera.position.x += (camX + (mouseX * 0.5) - camera.position.x) * 0.05;
             camera.position.z += (camZ - (mouseY * 0.5) - camera.position.z) * 0.05;
             camera.position.y += (100 + (mouseY * 0.2) - camera.position.y) * 0.05;
             camera.lookAt(0, 20, 0);
+
             if (networkGroup) networkGroup.rotation.y -= 0.001;
-            scanX += 0.8; if (scanX > 200) scanX = -200;
+
+            scanX += 0.8;
+            if (scanX > 200) scanX = -200;
+
             if (scanPlanePhysical) scanPlanePhysical.constant = scanX;
             if (scanPlaneDigital) scanPlaneDigital.constant = -scanX;
             if (scanLineVisual) scanLineVisual.position.x = scanX;
+
             renderer.render(scene, camera);
         }
 
@@ -3775,6 +3590,11 @@
                 if (btn) btn.innerHTML = hidden ? 'להמשך +' : 'סגור -';
             }
         }
+
+        // Initialize Carousel
+        document.addEventListener('DOMContentLoaded', () => {
+            initTeachingCarousel();
+        });
     </script>
     <!-- Lightbox for Teaching Section -->
     <div id="teaching-lightbox">
