@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug iPad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            direction: ltr;
+        }
+
+        .metric {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .value {
+            color: blue;
+            font-family: monospace;
+        }
+
+        @media (min-width: 1024px) {
+            #bp-lg {
+                color: green;
+                font-weight: bold;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #bp-xl {
+                color: green;
+                font-weight: bold;
+            }
+        }
+
+        @media (min-width: 1536px) {
+            #bp-2xl {
+                color: green;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-black">
+    <h1 class="text-2xl font-bold mb-4">iPad Debug Page</h1>
+
+    <div class="metric">
+        <span class="label">Screen Width:</span> <span id="width" class="value">Loading...</span>
+    </div>
+    <div class="metric">
+        <span class="label">Window Inner Width:</span> <span id="inner-width" class="value">Loading...</span>
+    </div>
+    <div class="metric">
+        <span class="label">Pixel Ratio (DPR):</span> <span id="dpr" class="value">Loading...</span>
+    </div>
+
+    <div class="metric">
+        <span class="label">Active Breakpoints:</span>
+        <div id="breakpoints">
+            <span id="bp-lg">lg (1024px)</span> |
+            <span id="bp-xl">xl (1280px)</span> |
+            <span id="bp-2xl">2xl (1536px)</span>
+        </div>
+    </div>
+
+    <div class="metric">
+        <span class="label">Sidebar State (Simulation):</span>
+        <div id="sidebar-state" class="mt-2 text-sm">
+            Check if sidebar would be hidden:<br>
+            Class '2xl:hidden': <span id="check-hidden"></span>
+        </div>
+    </div>
+
+    <div class="mt-8 p-4 bg-white rounded shadow">
+        <h2 class="font-bold">Instructions:</h2>
+        <p>Please update Batel with the numbers you see above.</p>
+    </div>
+
+    <div id="test-element" class="2xl:block hidden"></div>
+
+    <script>
+        function updateMetrics() {
+            document.getElementById('width').textContent = screen.width + 'px';
+            document.getElementById('inner-width').textContent = window.innerWidth + 'px';
+            document.getElementById('dpr').textContent = window.devicePixelRatio;
+
+            const testEl = document.getElementById('test-element');
+            const style = window.getComputedStyle(testEl);
+            const is2xl = style.display === 'block';
+
+            document.getElementById('check-hidden').textContent = is2xl ? "VISIBLE (Desktop Mode)" : "HIDDEN (Mobile Mode)";
+            document.getElementById('check-hidden').style.color = is2xl ? "red" : "green";
+        }
+
+        window.addEventListener('resize', updateMetrics);
+        updateMetrics();
+    </script>
+</body>
+
+</html>

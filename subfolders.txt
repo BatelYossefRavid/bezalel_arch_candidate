@@ -1,0 +1,16 @@
+﻿
+FullName                                                                                           
+--------                                                                                           
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\ SCE מדע נתונים                         
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\HCI+GIS SCE                             
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\בצלאל מראה מקום                         
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\בצלאל סטודיו אדריכלות אזרחית            
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\טכניון - מבוא לעיצוב עירוני             
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\טכניון עיצוב עירוני                     
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\טכניון תכנון חברתי                      
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\סמי שמעון- הדרום הגלובי SCE             
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\עיצוב עירוני- רובע החדשנות SCE          
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\שכבות במרחב האורבני SCE                 
+C:\git\bezalel_arch_candidate\assets\images\teaching\הוראה\סמי שמעון- הדרום הגלובי SCE\קבצים מוכנים
+
+

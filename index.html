@@ -59,7 +59,7 @@
             margin-bottom: var(--spacing-section);
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
@@ -477,16 +477,16 @@
         <div class="relative z-20 p-6 md:p-12 max-w-[1050px] w-full text-right flex flex-col items-start">
             <!-- Header Group -->
             <div class="mb-12" style="opacity: 0; animation: slideUp 0.8s forwards 0.2s;">
-                <h2 class="text-2xl md:text-4xl font-black tracking-tight text-black mb-6 border-accent-blue">
-                    ד״ר אדר׳ בת-אל יוסף רביד</h2>
                 <h1 class="text-4xl md:text-7xl font-bold mb-8 tracking-tighter leading-tight text-gray-900 font-arch">
                     אדריכלות במפגש שבין<br>מרחב, נתונים וטכנולוגיה
                 </h1>
+                <h2 class="text-2xl md:text-4xl font-black tracking-tight text-black mb-6 border-accent-blue">
+                    ד״ר אדר׳ בת-אל יוסף רביד</h2>
             </div>
 
             <!-- Intro Sentence -->
             <div class="w-full mb-16" style="opacity: 0; animation: slideUp 0.8s forwards 0.5s;">
-                <p class="text-lg md:text-xl font-medium text-gray-700 leading-relaxed font-sans" dir="ltr">
+                <p class="text-lg md:text-xl font-medium text-gray-700 leading-relaxed font-sans text-left" dir="ltr">
                     Urban Design · Digital Urbanism · Physital Architecture · <br>Applied Urban Research · Regional
                     Governance
                 </p>
@@ -522,78 +522,79 @@
 
     <!-- Sidebar: Navigation & Identity (Hebrew) -->
     <aside id="main-sidebar"
-        class="w-[300px] md:w-[400px] h-screen bg-white/98 backdrop-blur-lg border-l border-gray-200 flex flex-col justify-between p-6 lg:p-8 fixed right-0 top-0 z-40 shadow-[-10px_0_30px_rgba(0,0,0,0.03)] overflow-hidden transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] 2xl:translate-x-0">
+        class="w-[300px] md:w-[400px] h-screen bg-white/98 backdrop-blur-lg border-l border-gray-200 flex flex-col justify-between p-4 lg:p-6 fixed right-0 top-0 z-40 shadow-[-10px_0_30px_rgba(0,0,0,0.03)] overflow-y-auto scrollbar-hide transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] 2xl:translate-x-0">
 
 
-        <div class="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-gray-200 shadow-sm group">
-            <img src="public/profile.png" alt="Dr. Batel Yossef Ravid"
+        <div
+            class="relative w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-gray-200 shadow-sm group flex-shrink-0">
+            <img src="public/profile.png" alt="Dr. Batel Yossef Ravid" loading="eager" decoding="async"
                 class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105">
         </div>
 
         <div class="text-center">
-            <h1 class="text-2xl font-bold tracking-tight mb-2 font-arch">
+            <h1 class="text-xl font-bold tracking-tight mb-1 font-arch">
                 ד״ר אדר׳ בת-אל יוסף רביד
             </h1>
-            <p class="text-sm font-medium leading-relaxed opacity-60">
+            <p class="text-xs font-medium leading-relaxed opacity-60">
                 עיצוב עירוני בעידן הדיגיטלי<br>אדריכלות | מחקר יישומי
             </p>
         </div>
 
         <!-- Navigation Menu -->
-        <nav class="space-y-1 text-right mt-8">
+        <nav class="space-y-0.5 text-right mt-4">
             <button onclick="scrollToSection('intro')" data-section-id="intro"
-                class="nav-btn w-full text-right px-4 py-2 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
+                class="nav-btn w-full text-right px-4 py-1.5 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
                 <span class="tracking-wide group-hover:text-black whitespace-nowrap">01. ראשית דבר</span>
                 <span class="flex-grow border-b border-dotted border-gray-300 mx-2 mb-1.5 opacity-40"></span>
                 <span class="text-[10px] font-medium text-gray-400 uppercase tracking-wider font-arch">Foreword</span>
             </button>
             <button onclick="scrollToSection('cv')" data-section-id="cv"
-                class="nav-btn w-full text-right px-4 py-2 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
+                class="nav-btn w-full text-right px-4 py-1.5 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
                 <span class="tracking-wide group-hover:text-black whitespace-nowrap">02. קורות חיים</span>
                 <span class="flex-grow border-b border-dotted border-gray-300 mx-2 mb-1.5 opacity-40"></span>
                 <span class="text-[10px] font-medium text-gray-400 uppercase tracking-wider font-arch">Resume</span>
             </button>
             <button onclick="scrollToSection('physital')" data-section-id="physital"
-                class="nav-btn w-full text-right px-4 py-2 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
+                class="nav-btn w-full text-right px-4 py-1.5 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
                 <span class="tracking-wide group-hover:text-black whitespace-nowrap">03. פרקטיקה הווה</span>
                 <span class="flex-grow border-b border-dotted border-gray-300 mx-2 mb-1.5 opacity-40"></span>
                 <span class="text-[10px] font-medium text-gray-400 uppercase tracking-wider font-arch">Physital
                     Studio</span>
             </button>
             <button onclick="scrollToSection('labs')" data-section-id="labs"
-                class="nav-btn w-full text-right px-4 py-2 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
+                class="nav-btn w-full text-right px-4 py-1.5 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
                 <span class="tracking-wide group-hover:text-black whitespace-nowrap">04. מעבדות מחקר</span>
                 <span class="flex-grow border-b border-dotted border-gray-300 mx-2 mb-1.5 opacity-40"></span>
                 <span class="text-[10px] font-medium text-gray-400 uppercase tracking-wider font-arch">Research
                     Labs</span>
             </button>
             <button onclick="scrollToSection('data-art')" data-section-id="data-art"
-                class="nav-btn w-full text-right px-4 py-2 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
+                class="nav-btn w-full text-right px-4 py-1.5 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
                 <span class="tracking-wide group-hover:text-black whitespace-nowrap">05. אומנות נתונים</span>
                 <span class="flex-grow border-b border-dotted border-gray-300 mx-2 mb-1.5 opacity-40"></span>
                 <span class="text-[10px] font-medium text-gray-400 uppercase tracking-wider font-arch">Data Art</span>
             </button>
             <button onclick="scrollToSection('architecture')" data-section-id="architecture"
-                class="nav-btn w-full text-right px-4 py-2 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
+                class="nav-btn w-full text-right px-4 py-1.5 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
                 <span class="tracking-wide group-hover:text-black whitespace-nowrap">06. פרקטיקה עבר</span>
                 <span class="flex-grow border-b border-dotted border-gray-300 mx-2 mb-1.5 opacity-40"></span>
                 <span class="text-[10px] font-medium text-gray-400 uppercase tracking-wider font-arch">Past
                     Practice</span>
             </button>
             <button onclick="scrollToSection('pedagogy')" data-section-id="pedagogy"
-                class="nav-btn w-full text-right px-4 py-2 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
+                class="nav-btn w-full text-right px-4 py-1.5 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
                 <span class="tracking-wide group-hover:text-black whitespace-nowrap">07. פדגוגיה</span>
                 <span class="flex-grow border-b border-dotted border-gray-300 mx-2 mb-1.5 opacity-40"></span>
                 <span class="text-[10px] font-medium text-gray-400 uppercase tracking-wider font-arch">Pedagogy</span>
             </button>
             <button onclick="scrollToSection('articles')" data-section-id="articles"
-                class="nav-btn w-full text-right px-4 py-2 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
+                class="nav-btn w-full text-right px-4 py-1.5 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
                 <span class="tracking-wide group-hover:text-black whitespace-nowrap">08. פרסומים</span>
                 <span
                     class="text-[10px] font-medium text-gray-400 uppercase tracking-wider font-arch">Publications</span>
             </button>
             <button onclick="scrollToSection('vision')" data-section-id="vision"
-                class="nav-btn w-full text-right px-4 py-2 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
+                class="nav-btn w-full text-right px-4 py-1.5 hover:bg-gray-50 transition-all border-r-2 border-transparent hover:border-black group text-sm font-bold flex items-baseline gap-2 justify-between">
                 <span class="tracking-wide group-hover:text-black whitespace-nowrap">09. חזון לביה"ס</span>
                 <span class="flex-grow border-b border-dotted border-gray-300 mx-2 mb-1.5 opacity-40"></span>
                 <span class="text-[10px] font-medium text-gray-400 uppercase tracking-wider font-arch">School
@@ -603,8 +604,9 @@
 
         <!-- Footer Links -->
         <div
-            class="text-[10px] font-bold tracking-widest opacity-80 uppercase text-center mt-auto pt-6 border-t border-gray-200 flex flex-col items-center gap-2">
-            <div class="flex flex-col gap-1 items-center mb-2">
+            class="text-[10px] font-bold tracking-widest opacity-80 uppercase text-center mt-auto pt-4 border-t border-gray-200 flex flex-col items-center gap-1">
+            <span class="text-xs font-black mb-0.5">ד״ר אדר׳ בת-אל יוסף רביד</span>
+            <div class="flex flex-col gap-0.5 items-center mb-1">
                 <a href="tel:050-7613107" class="hover:underline">050-7613107</a>
                 <a href="mailto:Batel.Yossef.Ravid@gmail.com" class="hover:underline">Batel.Yossef.Ravid@gmail.com</a>
             </div>
@@ -657,38 +659,29 @@
 
                 <article class="section-intro pr-8 md:pr-12"
                     style="max-width: none !important; width: 100% !important;">
-                    <p class="font-medium text-2xl leading-relaxed text-black mb-6">
-                        יש רגעים שהם לא רק צעד מקצועי, אלא סגירת מעגל. המועמדות הזו עבורי היא רגע כזה.
+                    <p class="font-medium text-xl leading-relaxed text-black mb-6">
+                        אני זוכרת את היום שבו התקבלתי ללימודים בבצלאל. פתיחת המעטפה לא סימלה עבורי רק קבלה למסלול
+                        לימודים, אלא כניסה למרחב אינטלקטואלי שבו אדריכלות נתפסה כתחום ביקורתי, תרבותי ואזרחי. השנים בבית
+                        הספר עיצבו את שפת החשיבה שלי ואת ההבנה כי תכנון איננו רק פעולה מקצועית, אלא עמדה ביחס למציאות.
                     </p>
                     <p>
-                        אני זוכרת את היום שבו התקבלתי לבצלאל. את המתח, את תחושת הבלתי־אפשרי, ואת הרגע שבו פתחתי את
-                        המעטפה והבנתי שהעולם שאני חולמת עליו הופך למציאות. עבורי זו לא הייתה רק קבלה ללימודים; זו הייתה
-                        כניסה למרחב של יצירה, ביקורת, מחשבה עמוקה ואחריות. בצלאל פתחה בפניי לא רק מקצוע, אלא עמדה —
-                        האפשרות לעצב מציאות ולא רק להגיב לה.
+                        המועמדות להובלת בית הספר נשענת על מסלול מקצועי ואקדמי שהחל כאן והתרחב לאורך השנים דרך מחקר,
+                        הוראה והובלה מוסדית. לימודי המחקר בלונדון והדוקטורט בטכניון חידדו אצלי את העיסוק בשאלות מערכתיות
+                        של קבלת החלטות מרחבית, תשתיות ידע וכלים דיגיטליים מתקדמים. בהמשך, שותפות בהקמת בית הספר
+                        לארכיטקטורה ב-SCE והובלת תחום הידע הדיגיטלי במסגרתו אפשרו לי לפעול בתוך מערכות אקדמיות מורכבות
+                        ולפתח תשתיות מחקר ופדגוגיה חדשות. במקביל, במסגרת NUR Lab, פיתחתי שיתופי פעולה עם רשויות תכנון,
+                        מוסדות ציבוריים ושותפים בינלאומיים.
                     </p>
                     <p>
-                        מאז עברו שנים של התפתחות אינטנסיבית. לימודי המחקר בלונדון (RCA), שהתאפשרו בזכות מלגה מבצלאל,
-                        הרחיבו את המבט הבינלאומי; הדוקטורט בטכניון וההוראה בו חידדו את החשיבה המערכתית והמחקרית. בשנים
-                        האחרונות, כחברת סגל ב-SCE, הייתי שותפה להקמת בית הספר לארכיטקטורה והובלתי את תחום הידע והפדגוגיה
-                        הדיגיטלית. במקביל, אני מנהלת את המחקר ב-NUR Lab (Negev Urban Research) — מעבדה יישומית הפועלת
-                        בשותפות אסטרטגית עם אוניברסיטת בן גוריון ו-MIT Media Lab, שם אנו מפתחים כלים מתקדמים לניתוח
-                        וחיזוי עירוני.
+                        אני מגיעה לתפקיד מתוך תפיסה ביקורתית של האדריכלות כתחום ידע ופעולה, ומתוך ניסיון בעבודה עם
+                        מערכות מורכבות שבהן מרחב, מדיניות וטכנולוגיה שזורים זה בזה. ניסיון זה מעצב את הבנתי לגבי אחריותו
+                        ותפקידו של בית ספר לאדריכלות בעידן של שינוי טכנולוגי וחברתי מואץ — לא רק כמוסד הוראה, אלא כזירה
+                        לעיצוב תרבות מקצועית ושיח ציבורי.
                     </p>
                     <p>
-                        במבט לאחור על העבודה הקשה והרחבה שעשיתי, אני מבינה שהתכוננתי לרגע הזה. היה לי חשוב להעמיק במחקר
-                        אך להישאר נטועה בפרקטיקה; לעסוק בטכנולוגיה מורכבת אך לא לוותר על הביקורת; לחקור מנגנוני תכנון
-                        לאומיים (כמו ה-iPlan Twin) אך להתמקד בעיצוב המרחב. האמנתי שעיצוב, מחקר ופדגוגיה הם מארג אחד בלתי
-                        נפרד.
-                    </p>
-                    <p>
-                        בתיק העבודות המצורף בחרתי להציג את הפרויקטים והמחקרים המרכזיים שמייצגים את הדרך הזו – לא כרשימת
-                        הישגים, אלא כמסע שהצטבר לכדי ארגז כלים שלם. זהו ארגז הכלים שאיתו אני מגיעה להוביל את בית הספר:
-                        הוא משלב את היכולת לנהל מערכות אקדמיות מורכבות, את השליטה בשפה הדיגיטלית החדשה ואת המחויבות
-                        העמוקה לערכים האזרחיים והאסתטיים של בצלאל.
-                    </p>
-                    <p>
-                        היום, כל נקודות הקצה הללו מתכנסות. עבורי זו אינה רק מועמדות לתפקיד, אלא סגירת מעגל: לחזור למקום
-                        שממנו צמחתי, ולהעמיד את כל הניסיון שצברתי לטובת הובלת בית הספר אל השלב הבא.
+                        התשתית המקצועית והמחקרית שנבנתה לאורך השנים היא הבסיס שממנו אני מבקשת לפעול: לחזק את העומק
+                        הביקורתי של בית הספר, להרחיב את אופקיו הבין־תחומיים, ולבסס את מקומו כמוסד מוביל בשדה האדריכלות
+                        הישראלי והבינלאומי.
                     </p>
                 </article>
             </section>
@@ -711,15 +704,13 @@
                 <div class="mb-20">
                     <h3
                         class="flex items-center gap-4 text-2xl font-black tracking-[0.1em] uppercase mb-10 text-black pb-4 border-b border-gray-200">
-                        <span class="w-3 h-3 bg-black rounded-full"></span> השכלה אקדמית
+                        השכלה אקדמית
                     </h3>
                     <div class="space-y-10 pr-8 md:pr-12 mr-2 relative">
 
                         <!-- Item: Post-Doc -->
                         <div class="relative group">
-                            <div
-                                class="absolute -right-[34px] top-3 w-1.5 h-1.5 rounded-full bg-black shadow-sm group-hover:scale-125 transition-transform">
-                            </div>
+
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8 text-right">
                                 <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2024–2026
                                 </div>
@@ -769,9 +760,7 @@
 
                         <!-- Item 1: PhD -->
                         <div class="relative group">
-                            <div
-                                class="absolute -right-[34px] top-3 w-1.5 h-1.5 rounded-full bg-black shadow-sm group-hover:scale-125 transition-transform">
-                            </div>
+
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8 text-right">
                                 <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2019–2023
                                 </div>
@@ -830,9 +819,7 @@
 
                         <!-- Item 2: RCA -->
                         <div class="relative group">
-                            <div
-                                class="absolute -right-[34px] top-3 w-2 h-2 rounded-full bg-black shadow-sm group-hover:scale-125 transition-transform">
-                            </div>
+
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8 text-right">
                                 <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2017–2018
                                 </div>
@@ -889,9 +876,7 @@
 
                         <!-- Item 3: Bezalel B.Arch -->
                         <div class="relative group">
-                            <div
-                                class="absolute -right-[34px] top-3 w-2 h-2 rounded-full bg-black shadow-sm group-hover:scale-125 transition-transform">
-                            </div>
+
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8 text-right">
                                 <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2008–2013
                                 </div>
@@ -925,15 +910,13 @@
                 <div class="mb-20">
                     <h3
                         class="flex items-center gap-4 text-2xl font-black tracking-[0.1em] uppercase mb-10 text-black pb-4 border-b border-gray-200">
-                        <span class="w-3 h-3 bg-black rounded-full"></span> מינויים אקדמיים ומחקר
+                        מינויים אקדמיים ומחקר
                     </h3>
                     <div class="space-y-10 pr-8 md:pr-12 mr-2 relative">
 
                         <!-- Item: SCE -->
                         <div class="relative group">
-                            <div
-                                class="absolute -right-[34px] top-3 w-2 h-2 rounded-full bg-black shadow-sm group-hover:scale-125 transition-transform">
-                            </div>
+
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8">
                                 <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2024 —
                                     הווה
@@ -954,9 +937,7 @@
 
                         <!-- Item: NUR Lab -->
                         <div class="relative group">
-                            <div
-                                class="absolute -right-[34px] top-3 w-2 h-2 rounded-full bg-black shadow-sm group-hover:scale-125 transition-transform">
-                            </div>
+
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8">
                                 <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2024 —
                                     הווה
@@ -979,9 +960,7 @@
                         <!-- Item: Institute for Israeli Thought -->
                         <!-- Item: Institute for Israeli Thought -->
                         <div class="relative group">
-                            <div
-                                class="absolute -right-[34px] top-3 w-2 h-2 rounded-full bg-black shadow-sm group-hover:scale-125 transition-transform">
-                            </div>
+
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8">
                                 <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2024 —
                                     הווה</div>
@@ -999,9 +978,7 @@
 
                         <!-- Item: Technion -->
                         <div class="relative group">
-                            <div
-                                class="absolute -right-[34px] top-3 w-2 h-2 rounded-full bg-black shadow-sm group-hover:scale-125 transition-transform">
-                            </div>
+
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8">
                                 <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2021 — 2023
                                 </div>
@@ -1018,9 +995,7 @@
 
                         <!-- Item: Bezalel -->
                         <div class="relative group">
-                            <div
-                                class="absolute -right-[34px] top-3 w-2 h-2 rounded-full bg-black shadow-sm group-hover:scale-125 transition-transform">
-                            </div>
+
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8">
                                 <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2013 — 2017
                                 </div>
@@ -1042,7 +1017,7 @@
                 <div class="mb-20 pr-8 md:pr-12 border-r border-gray-200">
                     <h3
                         class="flex items-center gap-4 text-2xl font-black tracking-[0.1em] uppercase mb-10 text-black pb-4 border-b border-gray-200">
-                        <span class="w-3 h-3 bg-black rounded-full"></span> מענקים (Grants)
+                        מענקים (Grants)
                     </h3>
                     <div class="space-y-6 text-left" dir="ltr">
 
@@ -1053,7 +1028,7 @@
                                 Digital Twin and Collaborative Dialogue Space for Be’er Sheva’s Historic Neighborhoods.”
                             </p>
                             <p class="text-xs text-gray-500 mt-1 font-sans">Funder: SCE – Early-Career Research Grant.
-                                <strong>NIS 120,000</strong>
+                                <strong>120,000 NIS</strong>
                             </p>
                         </div>
 
@@ -1066,7 +1041,7 @@
                                 Aging Urbanism.”
                             </p>
                             <p class="text-xs text-gray-500 mt-1 font-sans">Funder: Technion Artificial Intelligence
-                                Hub, Faculty of Data Science. <strong>NIS 40,000</strong></p>
+                                Hub, Faculty of Data Science. <strong>40,000 NIS</strong></p>
                         </div>
 
                         <div
@@ -1077,7 +1052,7 @@
                                 Policy Simulation: A View from the (Urban) South.”
                             </p>
                             <p class="text-xs text-gray-500 mt-1 font-sans">Funder: Ministry of Science, Technology, and
-                                Space. <strong>NIS 499,999</strong></p>
+                                Space. <strong>499,999 NIS</strong></p>
                         </div>
 
                     </div>
@@ -1100,13 +1075,15 @@
 
                 <div class="flex flex-col items-start mb-16 pb-8 pr-8 md:pr-12 border-r border-b border-gray-200">
                     <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">03. פרקטיקה ויזמות</span>
-                    <h2 class="text-4xl font-black tracking-tight mb-2">הווה - סטודיו פיזיטלי</h2>
+                    <h2 class="text-4xl font-black tracking-tight mb-2">סטודיו פיזיטלי - תכנון מבוסס טכנולוגיה</h2>
                     <span class="text-sm font-bold text-gray-500 mb-6 block">הובלה ובעלות פרטית</span>
                     <div class="pr-8 md:pr-12">
-                        <p class="section-intro">סטודיו פיזיטלי הוא מעבדת תכנון הפועלת בחזית הטכנולוגיה, במפגש שבין
-                            המרחב הפיזי למרחב הווירטואלי. אנו רותמים את כוחם של מדעי הנתונים והבינה המלאכותית כדי ליצור
-                            תכנון דינמי, חי ומגיב. לא עוד תוכניות סטטיות, אלא מערכות חכמות, שקופות ומתעדכנות בזמן אמת,
-                            המעניקות למקבלי ההחלטות ולציבור יכולת חסרת תקדים להבין, לחזות ולעצב את עתיד המרחב.
+                        <p class="section-intro">הסטודיו הפיזיטלי פועל מתוך ההבנה כי המרחב המתוכנן כיום אינו מתקיים רק
+                            בממד הפיזי, אלא משולב במערכות נתונים, רגולציה ותשתיות דיגיטליות המשפיעות בפועל על קבלת
+                            החלטות. עבודת הסטודיו משלבת ניתוח מרחבי, כלים גיאו־מרחביים וסימולציות כחלק מחשיבה תכנונית
+                            רחבה, שבה הטכנולוגיה משמשת אמצעי להבנת מורכבות ולא מטרה בפני עצמה. הפרויקטים המפותחים בו
+                            פועלים בצומת שבין עיצוב, מדיניות ומידע, ומבקשים להציע מסגרות עבודה חדשות לתכנון ציבורי בעידן
+                            דיגיטלי.
                         </p>
                     </div>
                 </div>
@@ -1246,7 +1223,7 @@
                             <button onclick="toggleDesc('twin')" class="read-more-btn"><span id="btn-text-twin">להמשך
                                     +</span></button>
                             <span
-                                class="text-xs font-bold text-gray-400 cursor-not-allowed border border-gray-200 px-3 py-1">בפיתוח</span>
+                                class="text-[10px] font-bold uppercase tracking-wider text-gray-500 bg-gray-100 px-2 py-1 rounded inline-block">בפיתוח</span>
                         </div>
                     </article>
 
@@ -1337,7 +1314,7 @@
                         class="group relative flex flex-col md:flex-row gap-8 items-start pr-8 md:pr-12 border-r border-gray-200">
                         <div
                             class="w-full md:w-1/3 aspect-[16/9] bg-gray-100 overflow-hidden border border-gray-200 relative shrink-0">
-                            <img src="assets/images/vote120_preview.png"
+                            <img src="assets/images/vote120_preview.png" loading="lazy"
                                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                                 alt="בחירות אזוריות: דמיון פוליטי">
                         </div>
@@ -1376,8 +1353,8 @@
                         <div
                             class="w-full md:w-1/3 aspect-[16/9] bg-gray-100 overflow-hidden border border-gray-200 relative shrink-0">
                             <!-- 2. Local Culture (Pardes Hanna) - Phone Image -->
-                            <img src="assets/images/local_culture_phone.jpg" alt="Local Culture Map"
-                                class="w-full h-full object-cover object-[50%_75%] scale-[2.5] transition-transform duration-700 group-hover:scale-[2.6]">
+                            <img src="assets/images/culture_mapping.png" alt="Local Culture Map"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             <div
                                 class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500">
                             </div>
@@ -1421,7 +1398,7 @@
                 <div class="flex flex-col items-start mb-16 pb-8 pr-8 md:pr-12 border-r border-b border-gray-200">
                     <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">04. מעבדות מחקר
                         יישומיות</span>
-                    <h2 class="text-4xl font-black tracking-tight mb-6">מעבדות מחקר יישומיות</h2>
+                    <h2 class="text-4xl font-black tracking-tight mb-6">מחקר ופיתוח יישומי</h2>
                     <div>
                         <p class="section-intro">
                             מעבדות מחקר יישומיות מהוות תשתית מרכזית ליצירת ידע תכנוני רלוונטי ומתמשך. בשונה מקורס אקדמי,
@@ -1482,7 +1459,7 @@
                             <!-- Image: NUR Lab (Model) -->
                             <div
                                 class="w-full lg:w-1/2 aspect-video bg-gray-100 overflow-hidden border border-gray-200 relative shrink-0">
-                                <img src="assets/images/social_room.jpg"
+                                <img src="assets/images/social_room.jpg" loading="lazy"
                                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                                     alt="NUR Lab Model">
                             </div>
@@ -1556,7 +1533,7 @@
             <section id="data-art" class="relative scroll-mt-24 pl-8 md:pl-16">
                 <div class="flex flex-col items-start mb-16 pb-8 pr-8 md:pr-12 border-r border-b border-gray-200">
                     <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">05. אומנות נתונים</span>
-                    <h2 class="text-4xl font-black tracking-tight">תערוכת אומנות נתונים</h2>
+                    <h2 class="text-4xl font-black tracking-tight">ויזואליזציה ומרחב דיגיטלי</h2>
                     <div class="mt-8 section-intro">
                         אמנות הנתונים היא מרחב של מתיחת גבולות — בין מחקר ליצירה, בין טכנולוגיה לביקורת, בין מדידה
                         לדמיון.
@@ -1577,16 +1554,8 @@
                                 <img src="assets/images/constellation_wide.jpg"
                                     class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                                     alt="A Constellation of Loneliness">
-                                <!-- Play Button Overlay -->
-                                <a href="https://youtu.be/-UNPL-ip4Lw" target="_blank"
-                                    class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:scale-110 transition-transform duration-300">
-                                    <div
-                                        class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
-                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M8 5v14l11-7z" />
-                                        </svg>
-                                    </div>
-                                </a>
+                                <!-- Link moved to button below -->
+
                             </div>
                         </div>
 
@@ -1647,16 +1616,8 @@
                                 <img src="assets/images/isolated_case_1.jpg"
                                     class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                                     alt="An Isolated Case">
-                                <!-- Play Button Overlay -->
-                                <a href="https://youtu.be/tZAKwl51pv4" target="_blank"
-                                    class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:scale-110 transition-transform duration-300">
-                                    <div
-                                        class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
-                                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M8 5v14l11-7z" />
-                                        </svg>
-                                    </div>
-                                </a>
+                                <!-- Link moved to button below -->
+
                             </div>
                         </div>
 
@@ -1736,7 +1697,7 @@
                 <div class="flex flex-col items-start mb-16 pb-8 pr-8 md:pr-12 border-r border-b border-gray-200">
                     <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">06. פרקטיקה
                         עבר</span>
-                    <h2 class="text-4xl font-black tracking-tight">פרקטיקה עבר</h2>
+                    <h2 class="text-4xl font-black tracking-tight">אדריכלות, שימור ותכנון בנייני</h2>
                 </div>
 
                 <div class="max-w-4xl mb-16 pr-8 md:pr-12 border-r border-gray-200">
@@ -1793,27 +1754,27 @@
                             class="relative overflow-hidden w-full h-64 md:h-80 bg-gray-50 group border-y border-gray-200">
                             <div class="flex animate-scroll-belt w-[200%] h-full">
                                 <div class="flex shrink-0 w-1/2 justify-around gap-4 px-2 items-center">
-                                    <img src="assets/images/nitza_01.jpg"
+                                    <img src="assets/images/nitza_01.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
-                                    <img src="assets/images/nitza_02.jpg"
+                                    <img src="assets/images/nitza_02.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
-                                    <img src="assets/images/nitza_03.jpg"
+                                    <img src="assets/images/nitza_03.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
-                                    <img src="assets/images/nitza_04.jpg"
+                                    <img src="assets/images/nitza_04.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
-                                    <img src="assets/images/nitza_05.jpg"
+                                    <img src="assets/images/nitza_05.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
                                 </div>
                                 <div class="flex shrink-0 w-1/2 justify-around gap-4 px-2 items-center">
-                                    <img src="assets/images/nitza_01.jpg"
+                                    <img src="assets/images/nitza_01.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
-                                    <img src="assets/images/nitza_02.jpg"
+                                    <img src="assets/images/nitza_02.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
-                                    <img src="assets/images/nitza_03.jpg"
+                                    <img src="assets/images/nitza_03.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
-                                    <img src="assets/images/nitza_04.jpg"
+                                    <img src="assets/images/nitza_04.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
-                                    <img src="assets/images/nitza_05.jpg"
+                                    <img src="assets/images/nitza_05.jpg" loading="lazy"
                                         class="h-[90%] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500">
                                 </div>
                             </div>
@@ -1867,7 +1828,7 @@
 
                 <div class="flex flex-col items-start mb-16 pb-8 pr-8 md:pr-12 border-r border-b border-gray-200">
                     <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">07. פדגוגיה</span>
-                    <h2 class="text-4xl font-black tracking-tight">פדגוגיה</h2>
+                    <h2 class="text-4xl font-black tracking-tight">בין תיאוריה למעשה בחינוך לאדריכלות</h2>
                 </div>
 
                 <div class="max-w-4xl mb-24 pr-8 md:pr-12 border-r border-gray-200">
@@ -2018,7 +1979,7 @@
                                 <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative">
                                     <div class="carousel-slide active h-full">
                                         <img src="assets/images/teaching_organized/sce_city_science/sce_city_science_1.gif"
-                                            class="w-full h-full object-cover">
+                                            loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
                                             onclick="openTeachingLightbox('assets/images/teaching_organized/sce_city_science/sce_city_science_1.gif')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
@@ -2031,7 +1992,7 @@
                                     </div>
                                     <div class="carousel-slide h-full">
                                         <img src="assets/images/teaching_organized/sce_city_science/sce_city_science_2.gif"
-                                            class="w-full h-full object-cover">
+                                            loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
                                             onclick="openTeachingLightbox('assets/images/teaching_organized/sce_city_science/sce_city_science_2.gif')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
@@ -2082,8 +2043,7 @@
                                             עירוניים.</p>
                                     </div>
                                 </div>
-                                <button onclick="toggleTeachingMore('sce-innovation')"
-                                    class="text-sm font-bold text-black hover:text-blue-600 transition-colors cursor-pointer mt-4 inline-flex items-center gap-2 uppercase tracking-wider"
+                                <button onclick="toggleTeachingMore('sce-innovation')" class="read-more-btn"
                                     id="btn-sce-innovation">להמשך +</button>
                                 <div class="flex flex-wrap gap-4 mt-4">
                                     <a href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:aca4724c-073a-495e-b92a-e709dd5d31f5"
@@ -2100,7 +2060,7 @@
                                 <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative">
                                     <div class="carousel-slide active h-full">
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_1.gif"
-                                            class="w-full h-full object-cover">
+                                            loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
                                             onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_1.gif')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
@@ -2113,7 +2073,7 @@
                                     </div>
                                     <div class="carousel-slide h-full">
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_8.jpeg"
-                                            class="w-full h-full object-cover">
+                                            loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
                                             onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_8.jpeg')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
@@ -2126,7 +2086,7 @@
                                     </div>
                                     <div class="carousel-slide h-full">
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_3.png"
-                                            class="w-full h-full object-cover">
+                                            loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
                                             onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_3.png')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
@@ -3428,141 +3388,56 @@
             <hr class="border-gray-200 mb-40">
 
             <section id="vision" class="relative scroll-mt-24">
-                <div class="flex flex-col items-start mb-16 pb-8 pr-8 md:pr-12 border-r border-gray-200">
-                    <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">09. חזון
-                        לביה"ס</span>
-                    <h2 class="text-4xl font-black tracking-tight font-arch">ארכיטקטורה ועיצוב ב-Complexity
-                        City
-                        הפיזיטלית</h2>
+                <div class="flex flex-col items-start mb-8 pb-8 pr-8 md:pr-12 border-r border-b border-gray-200">
+                    <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">09. חזון לביה"ס</span>
+                    <h2 class="text-4xl font-black tracking-tight">חזון לבית הספר</h2>
                 </div>
 
-                <article
-                    class="prose prose-xl prose-gray font-light leading-relaxed space-y-16 max-w-none mx-auto w-full text-gray-900 pr-8 md:pr-12 border-r border-gray-200">
-
-                    <!-- Chapter 1: Introduction -->
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-black border-b border-gray-200 pb-4">מבוא: אדריכלות ברגע של
-                            תפנית סינגולרית</h3>
-                        <p>
-                            אנו חיים בעידן שבו קצב השינוי המואץ מכתיב מציאות חדשה שאינה דומה לשום דבר שהכרנו. המציאות
-                            הזו
-                            אינה רק טכנולוגית; היא משנה מהיסוד את יחסי הכוחות בין האדם, המכונה והמרחב האנושי. המרחב נעשה
-                            אינטנסיבי ורב-שכבתי: זוהי ה-Complexity City, עיר שבה תשתיות פיזיות ורשתות דיגיטליות שזורות
-                            זו
-                            בזו ללא הפרד. החזון שאני מציעה לבית הספר בבצלאל מכיר ברגע הזה ובוחר לפעול איתו, כדי להגדיר
-                            מחדש
-                            את תפקיד האדריכל והמעצב העירוני בתוך המציאות הפיזיטלית (Physital).
+                <article class="pr-8 md:pr-12 relative">
+                    <div class="space-y-8 text-xl font-light leading-relaxed text-gray-800">
+                        <p>בית הספר לאדריכלות בבצלאל פועל מתוך מסורת מבוססת של יצירה, ביקורת ומעורבות תרבותית, ומהווה
+                            מוקד מרכזי לעיצוב תרבות אדריכלית בישראל. החזון המוצע אינו מבקש לשנות את יסודותיו, אלא להוביל
+                            אותו לשלב הבא של התפתחותו — בשעה סינגולרית שבה תנאי היסוד של ידע, מקצוע ואקדמיה משתנים
+                            בו־זמנית.</p>
+                        <p>התקופה הנוכחית אינה רק עידן של האצה טכנולוגית, אלא נקודת מפנה מבנית. המרחב הבנוי אינו מתעצב
+                            עוד רק באמצעות חומר, צורה וטכניקה, אלא בתוך מערכות נתונים, רגולציה, מדיניות ותשתיות
+                            חישוביות. החלטות מרחביות מתקבלות באמצעות מודלים, אלגוריתמים ומנגנוני ממשל המשפיעים בפועל על
+                            המציאות הפיזית. הפיזי והדיגיטלי אינם עוד שני מישורים נפרדים, אלא מרחב פעולה אחד — פיזיטלי.
+                            שינוי זה אינו תוספת חיצונית למקצוע, אלא שינוי סינגולרי בתנאי הפעולה שלו.</p>
+                        <p>בתנאים אלה, תפקידו של בית ספר לאדריכלות אינו להסתפק בהכשרת מעצבים מיומנים בלבד, אלא להכשיר
+                            אדריכלים ואדריכליות המסוגלים לפעול בתוך מורכבות מערכתית. לא רק לעצב אובייקטים, אלא להבין
+                            מערכות; לא רק להגיב למציאות, אלא לקרוא את המנגנונים המייצרים אותה. ההכשרה האקדמית צריכה
+                            להעמיק את ליבת הסטודיו, אך גם להטעין אותו בהבנה מערכתית, ביכולת אנליטית ובדמיון
+                            מרחבי־פוליטי.</p>
+                        <p>הדמיון המרחבי־פוליטי הוא יכולת מקצועית הכרחית. אדריכלים פועלים בתוך מרחב ציבורי משתנה
+                            (ובמיוחד על רקע המציאות הישראלית שבה סוגיות של תכנון, משילות, זהות וחלוקה מרחבית מצויות בלב
+                            הדיון הציבורי). על בית הספר לטפח את היכולת להבין את יחסי הכוח והמדיניות הפועלים במרחב,
+                            ולהציע לו חלופות מרחביות מושכלות. זהו אינו אקטיביזם, אלא אחריות מקצועית עמוקה.</p>
+                        <p>בהיותה חלק מאקדמיה לאמנות ולעיצוב, בצלאל מחזיקה יתרון ייחודי. היא אינה מוסד טכני בלבד ואינה
+                            פקולטה הנדסית גרידא, אלא מרחב תרבותי שבו יצירה, מחקר ומחשבה ביקורתית מתקיימים בדיאלוג מתמשך.
+                            חזון בית הספר מבקש לבסס את האדריכלות כתחום ידע הפועל בין סטודיו לתיאוריה, בין מחקר לפרקטיקה,
+                            ובין דמיון לאחריות ציבורית. האדריכלות אינה רק מקצוע; היא שדה אינטלקטואלי.</p>
+                        <p>מתוך תפיסה זו, תוכנית הלימודים אינה מסגרת קבועה אלא תשתית מתפתחת. עליה לשקף את מורכבות הזמן,
+                            להעמיק את ליבת הסטודיו כמרחב יצירה ומחקר, ולשלב באופן מדורג כלים ומתודולוגיות המרחיבים את
+                            טווח הפעולה של האדריכלות — מן האובייקט הבנוי ועד למערכות הפיזיטליות שבתוכן הוא מתקיים.
+                            הטכנולוגיה אינה יעד; היא אמצעי להבנת מורכבות ולפיתוח יכולת פעולה מושכלת.</p>
+                        <p>במקביל, יש להעמיק את החיבור בין בית הספר לשדה הציבורי. עבודה עם רשויות, מוסדות וקהילות אינה
+                            רק התנסות יישומית, אלא מרחב מחקרי ועיצובי כאחד. בכך מתרחב תפקיד האדריכל מן האובייקט הבנוי אל
+                            המערכת שבתוכה הוא פועל — מערכת פיזיטלית, ציבורית ופוליטית.</p>
+                        <p>מהלך אסטרטגי מרכזי הוא פיתוח תארים מתקדמים במחקר עיצובי. אדריכלות כתחום ידע זקוקה למסגרת שבה
+                            העיצוב עצמו מהווה מתודולוגיית מחקר, והסטודיו משמש זירה לייצור ידע. תארים מתקדמים במחקר
+                            עיצובי יבססו את בית הספר כמרכז ידע עצמאי המייצר תיאוריה מתוך המעשה, יחזקו את מעמדו בזירה
+                            הבינלאומית, ויאפשרו פיתוח שפה מחקרית מקורית המחברת בין פרקטיקה, תיאוריה וחדשנות מתודולוגית.
                         </p>
+                        <p>בעידן שבו ידע נגיש מחוץ לכותלי האקדמיה, ייחודה של בצלאל אינו בבלעדיות על מידע אלא ביכולתה
+                            לייצר עומק, מסגרת חשיבה ותרבות מקצועית. בית הספר לאדריכלות צריך להיות המקום שבו ידע הופך
+                            לשפה, שבו פרקטיקה הופכת למחקר, ושבו סטודנטים מפתחים עמדה — לא רק מיומנות.</p>
+                        <p>בית הספר אינו רק מוסד המלמד אדריכלות; הוא תשתית ליצירת תרבות אדריכלית המתאימה לאופייה
+                            הסינגולרי של התקופה. תפקידו לפתוח אפשרויות, לטפח עומק, ולעצב דור המסוגל לפעול באחריות,
+                            בדמיון ובהבנה מערכתית של הזמן. חזון זה מבקש למצב את בצלאל כבית ספר המוביל שיח אדריכלי חדש
+                            בישראל — שיח המחבר בין יצירה לעומק מחקרי, בין מורכבות פיזיטלית לדמיון מרחבי־פוליטי, ובין
+                            סטודיו למערכת הציבורית שבתוכה האדריכלות פועלת</p>
                     </div>
-
-                    <!-- Chapter 2: Pedagogy -->
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-black border-b border-gray-200 pb-4">פדגוגיה של מערכות: מן
-                            האובייקט
-                            אל ההקשר</h3>
-                        <p>
-                            ליבת ההוראה בבית הספר תמשיך להיות הסטודיו, אך תפיסתו תעמיק. לצד פיתוח יכולות תכנוניות
-                            וצורניות, הסטודיו יהפוך למרחב שבו נבחנות מערכות יחסים: בין מבנה לסביבה, בין תכנון למדיניות,
-                            בין נתונים לחוויה אנושית. האדריכל של המאה ה־21 אינו רק יוצר אובייקטים מרחביים, אלא פועל
-                            בתוך רשת של תנאים, אילוצים והשפעות הדדיות. עליו להבין כיצד אלגוריתמים מעצבים זרימות, כיצד
-                            נתונים משפיעים על קבלת החלטות, וכיצד טכנולוגיות משנות דפוסי שימוש והתנהגות.
-                        </p>
-                        <p>
-                            כלי בינה מלאכותית, מודלים פרמטריים, סימולציות ותאומים דיגיטליים ישולבו בהוראה כחלק
-                            אינטגרלי מתהליך החשיבה, ולא כתוספת טכנית. עם זאת, השימוש בהם ילווה בדיון ביקורתי מתמשך: מי
-                            מייצר את הנתונים? מי מיוצג בהם ומי אינו? אילו הנחות ערכיות טמונות במודלים שאנו מפעילים?
-                            כך יוכשרו הסטודנטים לפעול מתוך הבנה מערכתית ומתוך אחריות מקצועית.
-                        </p>
-                        <p>
-                            המורכבות העירונית לא תיתפס כקושי שיש לפשטו, אלא כחומר גלם שיש ללמוד לעבוד עמו. הסטודנטים
-                            ילמדו לבחון תרחישים, לזהות דפוסים בתוך אי־ודאות ולהציע התערבויות המודעות להשפעתן הרב־שכבתית
-                            – חברתית, סביבתית וטכנולוגית כאחד.
-                        </p>
-                    </div>
-
-                    <!-- Chapter 3: Academic Sequence -->
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-black border-b border-gray-200 pb-4">רצף אקדמי ומחקר מבוסס
-                            עיצוב
-                        </h3>
-                        <p>
-                            כדי לחזק את מעמדו של בית הספר כמוסד מוביל, יש לבסס רצף אקדמי מלא המשלב יצירה ומחקר. אחד
-                            היעדים המרכזיים הוא הנחת התשתית להקמת מסלול דוקטורט בבצלאל, בדגש על דוקטורט מבוסס עיצוב.
-                            במודל כזה, הפרויקט האדריכלי אינו רק תוצר סופי אלא כלי מחקרי: תהליך העיצוב משמש כמתודולוגיה,
-                            והפרקטיקה עצמה מייצרת ידע חדש. מהלך זה יאפשר לבית הספר להרחיב את פעילותו המחקרית תוך
-                            שמירה על אופיו הייחודי כמרחב של יצירה.
-                        </p>
-                        <p>
-                            התואר השני בעיצוב עירוני יהווה נדבך מרכזי במהלך זה. בכוונתי לפתחו כמרחב המשלב ניתוח מרחבי
-                            מתקדם, עבודה עם נתונים אזוריים ולאומיים ושיתופי פעולה עם גופים ציבוריים. התוכנית תהפוך לזירה
-                            שבה תיאוריה ופרקטיקה נפגשות באופן ישיר, והסטודנטים פועלים על סוגיות תכנוניות חיות – לא רק
-                            על תרגילים אקדמיים. בכך יחוזק הקשר בין בית הספר לבין השדה המקצועי והציבורי.
-                        </p>
-                    </div>
-
-                    <!-- Chapter 4: Living Labs -->
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-black border-b border-gray-200 pb-4">Living Labs ושיתופי
-                            פעולה
-                            ציבוריים</h3>
-                        <p>
-                            חלק בלתי נפרד מהחזון הוא פיתוח מסגרות פעולה קבועות המחברות בין האקדמיה למציאות. בכוונתי
-                            לקדם הקמת Living Labs – מעבדות חיות שבהן סטודנטים וחוקרים פועלים יחד עם רשויות תכנון, קהילות
-                            וגורמי פרקטיקה על אתגרים ממשיים. מסגרות אלו יאפשרו לבית הספר לייצר תוצרים יישומיים, לתרום
-                            לחשיבה מדינית ולהעמיק את הרלוונטיות הציבורית של ההוראה והמחקר.
-                        </p>
-                        <p>
-                            עם זאת, מהלך כזה מחייב תהליך מוסדי רחב ומוסכם. איני רואה בו יוזמה אישית אלא תהליך משותף
-                            שיתפתח מתוך הקהילה האקדמית.
-                        </p>
-                    </div>
-
-                    <!-- Chapter 5: Implementation -->
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-black border-b border-gray-200 pb-4">תהליך יישום: עבודה
-                            משותפת
-                            וקבוצות חשיבה</h3>
-                        <p>
-                            יישום החזון יתבצע באופן מדורג, באמצעות הקמת קבוצות עבודה ייעודיות בתוך בית הספר. קבוצות
-                            אלו יורכבו מחברי סגל מתחומים שונים ויתמקדו בנושאים כגון פדגוגיה דיגיטלית, פיתוח מחקר מתקדם,
-                            שיתופי פעולה ציבוריים ובחינת מודלים אקדמיים חדשים. מטרתן תהיה לגבש הצעות אופרטיביות, לבחון
-                            היתכנות וללוות את תהליך ההטמעה באופן אחראי.
-                        </p>
-                        <p>
-                            דרך עבודה זו מבטיחה כי ההתחדשות תצמח מתוך שיח פנימי ושותפות מקצועית, ותישען על הניסיון
-                            המצטבר של הסגל. היא מאפשרת שינוי שאינו חד או כפוי, אלא תהליך מתמשך של למידה והתאמה.
-                        </p>
-                    </div>
-
-                    <!-- Chapter 6: Humanistic Responsibility -->
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-black border-b border-gray-200 pb-4">אחריות הומניסטית בעידן
-                            דיגיטלי</h3>
-                        <p>
-                            לצד הפתיחות לטכנולוגיה ולכלים חדשים, על בית הספר לשמור על מחויבותו העמוקה לאדריכלות כתחום
-                            תרבותי והומניסטי. מערכות נתונים ואלגוריתמים אינות ניטרליות; הן מעצבות מציאות ומשפיעות על
-                            יחסי כוח. על כן, הדיון בצדק מרחבי, בייצוג ובאחריות ציבורית יהיה חלק בלתי נפרד מן ההוראה
-                            והמחקר. דווקא בתוך Complexity City, נדרשת רגישות מוגברת לממד האנושי של התכנון.
-                        </p>
-                    </div>
-
-                    <!-- Chapter 7: Conclusion -->
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-black border-b border-gray-200 pb-4">חיזוק היסודות והעמקת
-                            הכיוון
-                        </h3>
-                        <p>
-                            החזון המוצע אינו מבקש לנתק את בצלאל ממסורתה, אלא להעמיק אותה. הוא מציע לחזק את הסטודיו
-                            כמרחב לחשיבה מערכתית, לבסס תשתית למחקר מתקדם, ולהרחיב את הקשר בין האקדמיה לשדה הציבורי – כל
-                            זאת מתוך תהליך משותף ומדוד.
-                        </p>
-                        <p>
-                            מטרתי היא לפעול יחד עם הסגל והסטודנטים לבניית תשתית ארוכת טווח שתאפשר לבית הספר להתמודד
-                            באופן מושכל עם אתגרי התקופה, להמשיך לטפח יצירה מצוינת ולבסס את מעמדו כמוסד מוביל באדריכלות
-                            ובעיצוב.
-                        </p>
-                    </div>
-
                 </article>
             </section>
 
@@ -3586,7 +3461,7 @@
             const navLinks = document.querySelectorAll('.nav-btn');
 
             // --- Scroll Observer for Fade-in Animations ---
-            const scrollOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+            const scrollOptions = { threshold: 0.05, rootMargin: '0px 0px 0px 0px' };
             const scrollObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -3785,8 +3660,14 @@
         }
 
         function scrollToSection(id) {
+            console.log('Attempting to scroll to section:', id); // DEBUG
             const target = document.getElementById(id);
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            if (target) {
+                target.classList.add('visible'); // Force immediate visibility
+                target.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.warn('Target section not found:', id); // DEBUG
+            }
             document.querySelector('aside')?.classList.remove('mobile-open');
         }
 
