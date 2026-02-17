@@ -255,7 +255,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            cursor: zoom-out;
+            cursor: pointer;
         }
 
         #teaching-lightbox.active {
@@ -329,6 +329,26 @@
             transform: translateX(-2px);
             /* Move arrow slightly left on hover (RTL) */
         }
+
+        .active-nav {
+            position: relative;
+            color: black !important;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .active-nav::after {
+            content: '';
+            position: absolute;
+            left: -5%;
+            right: -5%;
+            top: 10%;
+            bottom: 0%;
+            background-color: rgba(71, 85, 105, 0.12);
+            z-index: -1;
+            border-radius: 2px;
+            pointer-events: none;
+        }
     </style>
     <div id="canvas-container"
         class="fixed inset-0 z-0 opacity-20 transition-opacity duration-2000 pointer-events-none 2xl:opacity-100">
@@ -373,7 +393,6 @@
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
 
-                // Update active state
                 document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active-nav', 'border-black'));
                 const buttons = document.querySelectorAll('.nav-btn');
                 buttons.forEach(btn => {
@@ -675,7 +694,7 @@
                     <p>
                         אני מגיעה לתפקיד מתוך תפיסה ביקורתית של האדריכלות כתחום ידע ופעולה, ומתוך ניסיון בעבודה עם
                         מערכות מורכבות שבהן מרחב, מדיניות וטכנולוגיה שזורים זה בזה. ניסיון זה מעצב את הבנתי לגבי אחריותו
-                        ותפקידו של בית ספר לאדריכלות בעידן של שינוי טכנולוגי וחברתי מואץ — לא רק כמוסד הוראה, אלא כזירה
+                        ותפקידו של בית ספר לאדריכלות בעידן של שינוי טכנולוגי וחברתי מואץ - לא רק כמוסד הוראה, אלא כזירה
                         לעיצוב תרבות מקצועית ושיח ציבורי.
                     </p>
                     <p>
@@ -722,7 +741,7 @@
                                         <div class="relative overflow-hidden transition-all duration-500 max-h-0"
                                             id="desc-postdoc">
                                             <p class="text-sm text-gray-600 mt-2">קבוצת מחקר: אזרחות עירונית דיגיטלית
-                                                (במימון הקרן הלאומית למדע – ISF)</p>
+                                                (במימון הקרן הלאומית למדע - ISF)</p>
                                             <p class="text-xs text-gray-500 mt-1">בהובלת: פרופ' אורן יפתחאל ופרופ' ארז
                                                 צפדיה
                                             </p>
@@ -749,7 +768,7 @@
                                             </svg>
                                         </button>
                                         <div class="mt-4 text-xs text-gray-500 font-sans text-left space-y-2" dir="ltr">
-                                            <p><strong>2023</strong> – Israel Planners Association, “Hagit Adiv Prize” –
+                                            <p><strong>2023</strong> - Israel Planners Association, “Hagit Adiv Prize” –
                                                 For
                                                 leadership in the field of social planning.</p>
                                         </div>
@@ -766,7 +785,7 @@
                                 </div>
                                 <div class="pr-0">
                                     <h4 class="text-xl font-bold text-black mb-1">דוקטורט בארכיטקטורה ובינוי ערים</h4>
-                                    <div class="text-base font-medium text-gray-700">הטכניון – המכון הטכנולוגי לישראל
+                                    <div class="text-base font-medium text-gray-700">הטכניון - המכון הטכנולוגי לישראל
                                     </div>
                                     <div
                                         class="mt-4 max-w-2xl border-l-4 border-gray-200 pl-6 py-1 hover:border-black transition-colors">
@@ -776,7 +795,7 @@
                                         <div class="relative overflow-hidden transition-all duration-500 max-h-0"
                                             id="desc-phd">
                                             <p class="text-sm text-gray-600 mt-2 leading-relaxed">עבודת הדוקטורט עסקה
-                                                בפיתוח ועיצוב “אגורה חכמה” — מרחב אזרחי פיזיטלי (פיזי ודיגיטלי) המאפשר
+                                                בפיתוח ועיצוב “אגורה חכמה” - מרחב אזרחי פיזיטלי (פיזי ודיגיטלי) המאפשר
                                                 שותפות בין הנהגה עירונית לתושבים בתהליכי קבלת החלטות. המחקר ביקש לבחון
                                                 מחדש את מושג האגורה במובנו האדריכלי והפוליטי בעידן העיר הדיגיטלית,
                                                 ולשאול כיצד ניתן לתכנן מרחב התומך בדיאלוג אזרחי, בשקיפות ובמשילות משתפת.
@@ -806,10 +825,10 @@
                                             </svg>
                                         </button>
                                         <div class="mt-4 text-xs text-gray-500 font-sans text-left space-y-2" dir="ltr">
-                                            <p><strong>2022</strong> – Technion–Israel Institute of Technology,
-                                                “Gutwirth Prize” – For academic excellence.</p>
-                                            <p><strong>2021</strong> – Technion–Israel Institute of Technology, “Machine
-                                                Learning and Intelligent Systems (MLIS)” – For cross-disciplinary
+                                            <p><strong>2022</strong> - Technion–Israel Institute of Technology,
+                                                “Gutwirth Prize” - For academic excellence.</p>
+                                            <p><strong>2021</strong> - Technion–Israel Institute of Technology, “Machine
+                                                Learning and Intelligent Systems (MLIS)” - For cross-disciplinary
                                                 research integrated with data science.</p>
                                         </div>
                                     </div>
@@ -859,11 +878,11 @@
                                             </svg>
                                         </button>
                                         <div class="mt-4 text-xs text-gray-500 font-sans text-left space-y-2" dir="ltr">
-                                            <p class="flex items-start gap-2"><span><strong>2020</strong> – RCA-Royal
-                                                    College of Art, London, UK – For outstanding alumni.</span></p>
-                                            <p class="flex items-start gap-2"><span><strong>2017</strong> – Bezalel
+                                            <p class="flex items-start gap-2"><span><strong>2020</strong> - RCA-Royal
+                                                    College of Art, London, UK - For outstanding alumni.</span></p>
+                                            <p class="flex items-start gap-2"><span><strong>2017</strong> - Bezalel
                                                     Academy
-                                                    of Arts and Design, “Clore Bezalel-RCA Leadership" – For an
+                                                    of Arts and Design, “Clore Bezalel-RCA Leadership" - For an
                                                     outstanding
                                                     graduate student at Bezalel to support Master's degree studies at
                                                     RCA
@@ -882,19 +901,19 @@
                                 </div>
                                 <div class="pr-0">
                                     <h4 class="text-xl font-bold text-black mb-1">B.Arch., תואר ראשון באדריכלות</h4>
-                                    <div class="text-base font-medium text-gray-700">בצלאל – אקדמיה לאמנות ולעיצוב,
+                                    <div class="text-base font-medium text-gray-700">בצלאל - אקדמיה לאמנות ולעיצוב,
                                         ירושלים</div>
                                     <div
                                         class="mt-4 max-w-2xl border-l-4 border-gray-200 pl-6 py-1 hover:border-black transition-colors">
                                         <div class="mt-4 text-xs text-gray-500 font-sans text-left space-y-2" dir="ltr">
-                                            <p class="flex items-start gap-2"><span><strong>2023</strong> – Israel
+                                            <p class="flex items-start gap-2"><span><strong>2023</strong> - Israel
                                                     Planners
-                                                    Association, “Hagit Adiv Prize” – For leadership in the field of
+                                                    Association, “Hagit Adiv Prize” - For leadership in the field of
                                                     social
                                                     planning.</span></p>
-                                            <p class="flex items-start gap-2"><span><strong>2012</strong> – Bezalel
+                                            <p class="flex items-start gap-2"><span><strong>2012</strong> - Bezalel
                                                     Academy
-                                                    of Arts and Design, “Paul and Diane Schatz Award” – For an
+                                                    of Arts and Design, “Paul and Diane Schatz Award” - For an
                                                     outstanding
                                                     project with social content.</span></p>
                                         </div>
@@ -980,7 +999,7 @@
                         <div class="relative group">
 
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8">
-                                <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2021 — 2023
+                                <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2021 - 2023
                                 </div>
                                 <div class="pr-0">
                                     <h4 class="text-xl font-bold group-hover:underline transition-all">מרצה מן החוץ
@@ -997,7 +1016,7 @@
                         <div class="relative group">
 
                             <div class="flex flex-col md:grid md:grid-cols-[140px_1fr] gap-8">
-                                <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2013 — 2017
+                                <div class="text-sm font-mono text-gray-400 pt-1 font-bold tracking-wider">2013 - 2017
                                 </div>
                                 <div class="pr-0">
                                     <h4 class="text-xl font-bold group-hover:underline transition-all">אסיסטנטית בהוראה
@@ -1027,7 +1046,7 @@
                                 <strong>2025, Negev School of Architecture SCE:</strong> “Innovation in Urban Design:
                                 Digital Twin and Collaborative Dialogue Space for Be’er Sheva’s Historic Neighborhoods.”
                             </p>
-                            <p class="text-xs text-gray-500 mt-1 font-sans">Funder: SCE – Early-Career Research Grant.
+                            <p class="text-xs text-gray-500 mt-1 font-sans">Funder: SCE - Early-Career Research Grant.
                                 <strong>120,000 NIS</strong>
                             </p>
                         </div>
@@ -1109,19 +1128,19 @@
 
                             <div class="relative overflow-hidden transition-all duration-500 max-h-28" id="desc-tama35">
                                 <p class="text-gray-600 font-light leading-relaxed mb-4 text-sm">
-                                    תמ״א 35, שאושרה בשנת 2008, מהווה את מסגרת־העל של התכנון במדינת ישראל – מעין "מערכת
+                                    תמ״א 35, שאושרה בשנת 2008, מהווה את מסגרת־העל של התכנון במדינת ישראל - מעין "מערכת
                                     הפעלה" של המרחב הלאומי.
                                     <br><br>
                                     במסגרת העבודה עם אגף התכנון המרחבי במינהל התכנון, מפותחת תפיסת המעקב והבקרה המותאמת
                                     לעידן הדיגיטלי: מערכת שמנטרת באופן רציף את תמונת המצב המרחבית.<br><br>הפרויקט מבקש
                                     להפוך
-                                    את התוכנית ממסמך סטטי לכלי דינמי – מערכת המתבססת על נתונים פתוחים, מתעדכנת דרך ממשקי
+                                    את התוכנית ממסמך סטטי לכלי דינמי - מערכת המתבססת על נתונים פתוחים, מתעדכנת דרך ממשקי
                                     API, ומאפשרת לבצע חיתוכים עקביים לאורך זמן.
                                 </p>
                             </div>
                             <button onclick="toggleDesc('tama35')" class="read-more-btn"><span
                                     id="btn-text-tama35">להמשך +</span></button>
-                            <a href="https://mavat.iplan.gov.il/d434acda-7e9c-4914-a626-ce53d83c3c68" target="_blank"
+                            <a href="assets/docs/tama_35_analysis_2026.pdf" target="_blank"
                                 class="inline-flex items-center gap-2 text-xs font-black bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">
                                 <span>צפה במסמכי התוכנית</span>
                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1159,7 +1178,7 @@
                                     הפרויקט כולל כתיבת מדריך שיתוף ציבור, אפיון מתודולוגיות עבודה, ופיתוח ארגז כלים
                                     דיגיטלי
                                     המאפשר להנגיש מידע תכנוני מורכב לציבור רחב.<br><br>בין היתר פותחה "יועצת שיתוף ציבור
-                                    דיגיטלית" – כלי אינטראקטיבי המסייע למתכננים וליועצים לבנות תהליך השתתפות מותאם הקשר
+                                    דיגיטלית" - כלי אינטראקטיבי המסייע למתכננים וליועצים לבנות תהליך השתתפות מותאם הקשר
                                     ושלב
                                     תכנוני.
                                 </p>
@@ -1286,7 +1305,7 @@
 
                             <div class="relative overflow-hidden transition-all duration-500 max-h-28" id="desc-geo">
                                 <p class="text-gray-600 font-light leading-relaxed mb-4 text-sm">
-                                    הפרויקט "לקראת אזוריות חדשה" בוחן מודלים שונים של אזוריות בישראל – מוסדיים, תכנוניים
+                                    הפרויקט "לקראת אזוריות חדשה" בוחן מודלים שונים של אזוריות בישראל - מוסדיים, תכנוניים
                                     ופוליטיים.
                                     <br><br>
                                     העבודה משלבת מחקר מדיניות, מפגשים עם בעלי תפקידים מרכזיים, ופיתוח כלי דיגיטלי המאפשר
@@ -1353,7 +1372,7 @@
                         <div
                             class="w-full md:w-1/3 aspect-[16/9] bg-gray-100 overflow-hidden border border-gray-200 relative shrink-0">
                             <!-- 2. Local Culture (Pardes Hanna) - Phone Image -->
-                            <img src="assets/images/culture_mapping.png" alt="Local Culture Map"
+                            <img src="assets/images/local_culture_phone.jpg" alt="Local Culture Map"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             <div
                                 class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500">
@@ -1369,7 +1388,7 @@
                             <div class="relative overflow-hidden transition-all duration-500 max-h-28"
                                 id="desc-culture">
                                 <p class="text-gray-600 font-light leading-relaxed mb-4 text-sm">
-                                    כלי מיפוי דיגיטלי המאפשר לתושבים לסמן מוקדים של "תרבות רכה" – פעילות יומיומית,
+                                    כלי מיפוי דיגיטלי המאפשר לתושבים לסמן מוקדים של "תרבות רכה" - פעילות יומיומית,
                                     קהילתית
                                     ולא פורמלית.
                                     <br><br>
@@ -1422,7 +1441,7 @@
                                 <span
                                     class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-2">SCE
                                     | Director of Research</span>
-                                <h3 class="text-2xl font-black mb-4 font-arch">NUR – Negev Urban Research Lab</h3>
+                                <h3 class="text-2xl font-black mb-4 font-arch">NUR - Negev Urban Research Lab</h3>
                                 <div class="relative overflow-hidden transition-all duration-500 max-h-28"
                                     id="desc-nur">
                                     <p class="text-gray-600 leading-relaxed font-light mb-6 text-sm">
@@ -1535,7 +1554,7 @@
                     <span class="text-xs font-black tracking-[0.2em] text-gray-400 block mb-2">05. אומנות נתונים</span>
                     <h2 class="text-4xl font-black tracking-tight">ויזואליזציה ומרחב דיגיטלי</h2>
                     <div class="mt-8 section-intro">
-                        אמנות הנתונים היא מרחב של מתיחת גבולות — בין מחקר ליצירה, בין טכנולוגיה לביקורת, בין מדידה
+                        אמנות הנתונים היא מרחב של מתיחת גבולות - בין מחקר ליצירה, בין טכנולוגיה לביקורת, בין מדידה
                         לדמיון.
                         זהו מקום מולטידיסציפלינרי שבו אדריכלות, מדעי הנתונים, עיצוב ומחשבה חברתית נפגשים ומתערבבים. כאן
                         הדאטה אינו רק כלי ניתוח, אלא חומר גלם לביטוי, לניסוי ולשאילת שאלות חדשות על מרחב, כוח וקהילה.
@@ -1578,7 +1597,7 @@
                                     להפוך בדידות עירונית לנראית.
                                     <br><br>
                                     הפרויקט תרגם מאגרי מידע לשפה חזותית-מרחבית: נקודות אור מבודדות במרחב אפל, היוצרות
-                                    קונסטלציה עירונית. הקווים המחברים בין הנקודות מדמים מערך כוכבים — דימוי פואטי המצביע
+                                    קונסטלציה עירונית. הקווים המחברים בין הנקודות מדמים מערך כוכבים - דימוי פואטי המצביע
                                     על
                                     המרחק שבין בני אדם, אך גם על האפשרות לחיבור.
                                     <br><br>
@@ -1586,7 +1605,7 @@
                                     ולחוות
                                     את הנתונים כחוויה חושית. במקום לנתח בדידות דרך טבלאות, המבקר פוגש אותה כטופוגרפיה
                                     חברתית
-                                    — מרחב שבו המספרים הופכים לדימוי טעון רגשית.
+                                    - מרחב שבו המספרים הופכים לדימוי טעון רגשית.
                                     <br><br>
                                     הפרויקט פותח במסגרת חדר המצב החברתי.
                                 </p>
@@ -1635,14 +1654,14 @@
                                     “An Isolated Case” הוצג במסגרת פסטיבל A-Genre בתיאטרון תמונע, ועבד בקנה מידה אינטימי
                                     וישיר יותר. בעוד ש-A Constellation of Loneliness עסק בדימוי מרחבי רחב של בדידות
                                     עירונית,
-                                    פרויקט זה התמקד במקרה הבודד — באדם אחד, בדירה אחת, באירוע אחד.
+                                    פרויקט זה התמקד במקרה הבודד - באדם אחד, בדירה אחת, באירוע אחד.
                                     <br><br>
                                     העבודה בחנה כיצד נתונים שנאספו על ידי שירותי רווחה, רשויות מקומיות וגופים סטטיסטיים
                                     יכולים להיחשף כעדות למציאות אנושית שברירית. דרך כלים של ויזואליזציה וספציאליזציה,
                                     “המקרה
                                     הבודד” הוצג לא כסטטיסטיקה אלא כסיפור מרחבי טעון.
                                     <br><br>
-                                    אם הקונסטלציה משרטטת דפוס רחב, “An Isolated Case” מבקש להתעכב על הנקודה הבודדת — על
+                                    אם הקונסטלציה משרטטת דפוס רחב, “An Isolated Case” מבקש להתעכב על הנקודה הבודדת - על
                                     השבר
                                     האנושי בתוך המערכת. הפרויקט מעלה שאלות על אנונימיות, על צל הנתונים, ועל הפער בין
                                     ניהול
@@ -1833,7 +1852,7 @@
 
                 <div class="max-w-4xl mb-24 pr-8 md:pr-12 border-r border-gray-200">
                     <p class="text-xl font-light leading-relaxed text-gray-800">
-                        הוראה היא עבורי מרחב מחקרי חי — מעבדה פתוחה שבה תיאוריה, פרקטיקה, כלים דיגיטליים ושאלות חברתיות
+                        הוראה היא עבורי מרחב מחקרי חי - מעבדה פתוחה שבה תיאוריה, פרקטיקה, כלים דיגיטליים ושאלות חברתיות
                         נפגשים ומתעצבים יחד. אני רואה בסטודיו ובקורסים שאני מלמדת מעדה חיה: מקום להתנסות, לטעות, לשאול,
                         ולפתח חשיבה ביקורתית ויישומית על המרחב העירוני והאזורי.
                     </p>
@@ -1845,7 +1864,7 @@
                     <div class="space-y-32">
                         <h3
                             class="flex items-center gap-4 text-2xl font-black tracking-[0.1em] uppercase mb-16 text-black pb-4 border-b border-gray-200">
-                            <span class="w-3 h-3 bg-black rounded-full"></span> SCE - מכללת סמי שמעון (2023–היום)
+                            SCE - מכללת סמי שמעון (2023-היום)
                         </h3>
 
                         <!-- Course 1: SCE Digital Studio -->
@@ -1855,7 +1874,7 @@
                                 <span
                                     class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2025–היום
                                     | SCE College</span>
-                                <h3 class="text-3xl font-black mb-6 font-arch">סטודיו עיצוב עירוני: טרנספורמציה דיגיטלית
+                                <h3 class="text-2xl font-black mb-6 font-arch">סטודיו עיצוב עירוני: טרנספורמציה דיגיטלית
                                     <span class="text-xl opacity-70 font-bold">(דרום גלובלי)</span>
                                 </h3>
                                 <div class="mb-6">
@@ -1886,7 +1905,7 @@
                                             תרבויות
                                             ומשאבים
                                             מוגבלים.</p>
-                                        <p>דרך מחקר מרחבי דיגיטלי – ניתוח נתונים, GIS, מיפוי וויזואליזציה –
+                                        <p>דרך מחקר מרחבי דיגיטלי - ניתוח נתונים, GIS, מיפוי וויזואליזציה –
                                             הסטודנטים
                                             בונים
                                             בסיס ידע רב־שכבתי המשלב תשתיות, תחבורה, סביבה וחברה, ומתרגמים תובנות
@@ -1908,7 +1927,8 @@
                             </div>
                             <div class="order-2 md:order-1">
                                 <!-- Course 1: SCE Digital Studio -->
-                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative">
+                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative"
+                                    data-carousel-id="digital-studio">
                                     <!-- Video Slide (Simulating GIF) -->
                                     <div class="carousel-slide active h-full">
                                         <video autoplay loop muted playsinline class="w-full h-full object-cover">
@@ -1922,7 +1942,7 @@
                                         <img src="assets/images/teaching/הוראה/סמי שמעון- הדרום הגלובי SCE/חוברות.jpeg"
                                             class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching/הוראה/סמי שמעון- הדרום הגלובי SCE/חוברות.jpeg')">
+                                            onclick="openTeachingLightbox('assets/images/teaching/הוראה/סמי שמעון- הדרום הגלובי SCE/חוברות.jpeg', 'digital-studio')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1943,14 +1963,14 @@
                                 <span
                                     class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2023–היום
                                     | NUR Lab & MIT</span>
-                                <h3 class="text-3xl font-black mb-6 font-arch">כלים דיגיטליים במדע עירוני (City
+                                <h3 class="text-2xl font-black mb-6 font-arch">כלים דיגיטליים במדע עירוני (City
                                     Science)
                                 </h3>
                                 <div class="mb-6">
                                     <span
                                         class="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-2">צוות
                                         פדגוגי:</span>
-                                    <p class="text-sm font-bold text-gray-600">בשיתוף NUR – Negev Urban Research
+                                    <p class="text-sm font-bold text-gray-600">בשיתוף NUR - Negev Urban Research
                                         Lab
                                         ו־MIT
                                         City Science</p>
@@ -1976,12 +1996,13 @@
                                     id="btn-city-science">להמשך +</button>
                             </div>
                             <div class="order-2 md:order-1">
-                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative">
+                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative"
+                                    data-carousel-id="city-science">
                                     <div class="carousel-slide active h-full">
                                         <img src="assets/images/teaching_organized/sce_city_science/sce_city_science_1.gif"
                                             loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_city_science/sce_city_science_1.gif')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'city-science')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1994,7 +2015,7 @@
                                         <img src="assets/images/teaching_organized/sce_city_science/sce_city_science_2.gif"
                                             loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_city_science/sce_city_science_2.gif')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'city-science')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2015,7 +2036,7 @@
                                 <span
                                     class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2023–2025
                                     | SCE College</span>
-                                <h3 class="text-3xl font-black mb-6 font-arch">רובע החדשנות בבאר שבע:
+                                <h3 class="text-2xl font-black mb-6 font-arch">רובע החדשנות בבאר שבע:
                                     טרנספורמציה
                                     דיגיטלית
                                 </h3>
@@ -2030,7 +2051,7 @@
                                 <div class="font-light text-gray-700 leading-relaxed mb-6 text-sm">
                                     <p>הסטודיו עוסק בבחינה של מושג רובע החדשנות כמרחב עירוני מורכב, דרך השוואה
                                         בין ההקשר
-                                        המקומי – באר שבע – לבין מודלים גלובליים מובילים.</p>
+                                        המקומי - באר שבע - לבין מודלים גלובליים מובילים.</p>
                                     <div id="more-sce-innovation" class="hidden font-light pt-4 space-y-4">
                                         <p>במהלך הקורס פיתחו הסטודנטים מתודולוגיה של מחקר מרחבי מבוסס נתונים,
                                             הכוללת
@@ -2057,12 +2078,13 @@
                                 </div>
                             </div>
                             <div class="order-2 md:order-1">
-                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative">
+                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative"
+                                    data-carousel-id="innovation-district">
                                     <div class="carousel-slide active h-full">
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_1.gif"
                                             loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_1.gif')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'innovation-district')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2075,7 +2097,7 @@
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_8.jpeg"
                                             loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_8.jpeg')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'innovation-district')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2088,7 +2110,7 @@
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_3.png"
                                             loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_3.png')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'innovation-district')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2101,7 +2123,7 @@
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_4.jpg"
                                             class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_4.jpg')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'innovation-district')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2114,7 +2136,7 @@
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_5.png"
                                             class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_5.png')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'innovation-district')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2127,7 +2149,7 @@
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_6.png"
                                             class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_6.png')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'innovation-district')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2140,7 +2162,7 @@
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_7.jpeg"
                                             class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_7.jpeg')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'innovation-district')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2153,7 +2175,7 @@
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_9.jpeg"
                                             class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_9.jpeg')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'innovation-district')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2166,7 +2188,7 @@
                                         <img src="assets/images/teaching_organized/sce_innovation/sce_innovation_10.jpeg"
                                             class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_innovation/sce_innovation_10.jpeg')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'innovation-district')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2191,7 +2213,7 @@
                                 <span
                                     class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2025–היום
                                     | Software Engineering, SCE</span>
-                                <h3 class="text-3xl font-black mb-6 font-arch">יישומי HCI ו-GIS לעירוניות וקבלת
+                                <h3 class="text-2xl font-black mb-6 font-arch">יישומי HCI ו-GIS לעירוניות וקבלת
                                     החלטות
                                 </h3>
                                 <div class="mb-6">
@@ -2228,12 +2250,13 @@
                                 </div>
                             </div>
                             <div class="order-2 md:order-1">
-                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative">
+                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative"
+                                    data-carousel-id="hci-gis">
                                     <div class="carousel-slide active h-full">
                                         <img src="assets/images/teaching_organized/sce_hci_gis/sce_hci_gis_1.png"
                                             loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_hci_gis/sce_hci_gis_1.png')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'hci-gis')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2246,7 +2269,7 @@
                                         <img src="assets/images/teaching_organized/sce_hci_gis/sce_hci_gis_2.png"
                                             loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_hci_gis/sce_hci_gis_2.png')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'hci-gis')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2267,7 +2290,7 @@
                                 <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2024
                                     |
                                     SCE & Visual Communication</span>
-                                <h3 class="text-3xl font-black mb-6 font-arch">שכבות במרחב האורבני</h3>
+                                <h3 class="text-2xl font-black mb-6 font-arch">שכבות במרחב האורבני</h3>
                                 <div class="mb-6">
                                     <span
                                         class="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-2">צוות
@@ -2277,7 +2300,7 @@
                                 <div class="font-light text-gray-700 leading-relaxed mb-6 text-sm">
                                     <p>קורס מולטידיסציפלינרי המפגיש סטודנטים לאדריכלות ולעיצוב חזותי לזיהוי וחשיפת
                                         רבדים
-                                        סמויים בעיר — היסטוריים, חברתיים ודיגיטליים.</p>
+                                        סמויים בעיר - היסטוריים, חברתיים ודיגיטליים.</p>
                                     <div id="more-sce-layers" class="hidden font-light pt-4 space-y-4">
                                         <p>העבודה בקורס בוחנת כיצד עיצוב גרפי יכול להעמיק קריאה מרחבית, וכיצד תכנון
                                             אדריכלי
@@ -2296,12 +2319,13 @@
                                 </div>
                             </div>
                             <div class="order-2 md:order-1">
-                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative">
+                                <div class="teaching-carousel aspect-[4/3] bg-gray-100 group relative"
+                                    data-carousel-id="sce-layers">
                                     <div class="carousel-slide active h-full">
                                         <img src="assets/images/teaching_organized/sce_layers/sce_layers_1.jpg"
                                             loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_layers/sce_layers_1.jpg')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'sce-layers')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2314,7 +2338,7 @@
                                         <img src="assets/images/teaching_organized/sce_layers/sce_layers_2.jpg"
                                             loading="lazy" class="w-full h-full object-cover">
                                         <div class="magnify-overlay"
-                                            onclick="openTeachingLightbox('assets/images/teaching_organized/sce_layers/sce_layers_2.jpg')">
+                                            onclick="openTeachingLightbox(this.previousElementSibling.src, 'sce-layers')">
                                             <svg class="magnify-icon-svg" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2335,14 +2359,14 @@
                         <h3
                             class="flex items-center gap-4 text-2xl font-black tracking-[0.1em] uppercase mb-16 text-black pb-4 border-b border-gray-200">
                             <span class="w-3 h-3 bg-black rounded-full"></span> הטכניון - מכון טכנולוגי לישראל
-                            (2020–2023)
+                            (2020-2023)
                         </h3>
 
                         <!-- Course Tech 1: Mikrov -->
                         <div class="grid md:grid-cols-2 gap-8 items-start">
                             <div class="order-1 md:order-2 pr-8 md:pr-12 border-r border-gray-200">
                                 <span
-                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2021–2023
+                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2021-2023
                                     | Technion (B.Arch, שנה ב')</span>
                                 <h3 class="text-3xl font-black mb-6 font-arch">סטודיו עיצוב עירוני: "סטודיו מקרוב"
                                 </h3>
@@ -2350,10 +2374,10 @@
                                     <span
                                         class="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-2">צוות
                                         פדגוגי:</span>
-                                    <p class="text-sm font-bold text-gray-600 mb-2">אדריכלות – אדר’ צביקה קורן, ד״ר
+                                    <p class="text-sm font-bold text-gray-600 mb-2">אדריכלות - אדר’ צביקה קורן, ד״ר
                                         אורית
                                         שמואלי, אדר’ גיא שחר</p>
-                                    <p class="text-sm font-bold text-gray-600">אדריכלות נוף – ד״ר נעמה מישר, אדר’
+                                    <p class="text-sm font-bold text-gray-600">אדריכלות נוף - ד״ר נעמה מישר, אדר’
                                         גלית
                                         לוינגר,
                                         אדר’ טל קמחי</p>
@@ -2390,7 +2414,7 @@
                         <div class="grid md:grid-cols-2 gap-16 items-start">
                             <div class="order-1 md:order-2 pr-8 md:pr-12 border-r border-gray-200">
                                 <span
-                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2020–2022
+                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2020-2022
                                     | Technion (B.Arch, שנה ב')</span>
                                 <h3 class="text-3xl font-black mb-6 font-arch">מבוא לעיצוב עירוני</h3>
                                 <div class="mb-6">
@@ -2432,7 +2456,7 @@
                         <div class="grid md:grid-cols-2 gap-16 items-start">
                             <div class="order-1 md:order-2 pr-8 md:pr-12 border-r border-gray-200">
                                 <span
-                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2020–2021
+                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2020-2021
                                     | Technion (תואר שני בתכנון ערים)</span>
                                 <h3 class="text-3xl font-black mb-6 font-arch">תכנון חברתי: דור 2.0</h3>
                                 <div class="mb-6">
@@ -2447,7 +2471,7 @@
                                         ככלי
                                         תכנוני, תוך התמקדות בחידוש המתודולוגיה לעידן הדיגיטלי.</p>
                                     <div id="more-tech-social" class="hidden font-light pt-4 space-y-4">
-                                        <p>הסטודנטים פיתחו את "תסקיר חברתי 2.0" – מתודולוגיה המשלבת נתונים כמותיים
+                                        <p>הסטודנטים פיתחו את "תסקיר חברתי 2.0" - מתודולוגיה המשלבת נתונים כמותיים
                                             ואיכותניים בשפה גרפית נגישה ובממשקים אינטראקטיביים. התוצרים שילבו מחקר
                                             עומק
                                             וניתוח נתונים להבנת מרקמים חברתיים בערים בישראל.</p>
@@ -2503,14 +2527,14 @@
                         <h3
                             class="flex items-center gap-4 text-2xl font-black tracking-[0.1em] uppercase mb-16 text-black pb-4 border-b border-gray-200">
                             <span class="w-3 h-3 bg-black rounded-full"></span> בצלאל אקדמיה לאמנות ועיצוב
-                            (2013–2015)
+                            (2013-2015)
                         </h3>
 
                         <!-- Course Bez 1: Civic -->
                         <div class="grid md:grid-cols-2 gap-16 items-start">
                             <div class="order-1 md:order-2 pr-8 md:pr-12 border-r border-gray-200">
                                 <span
-                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2013–2015
+                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2013-2015
                                     | Bezalel</span>
                                 <h3 class="text-3xl font-black mb-6 font-arch">אדריכלות אזרחית (Civic Architecture
                                     Research
@@ -2531,12 +2555,12 @@
                                 </div>
                                 <div class="font-light text-gray-700 leading-relaxed mb-6 text-sm">
                                     <p>היחידה עסקה בפיתוח טקטיקות לפעולה אדריכלית במרחב הציבורי, תוך בחינת יחסי
-                                        מרחב–חברה
+                                        מרחב-חברה
                                         ותפקידם של מוסדות ציבוריים בעיצוב מציאות אזרחית.</p>
                                     <div id="more-bez-civic" class="hidden font-light pt-4 space-y-4">
                                         <p>בתפקידי כעוזרת הוראה ליוויתי פרויקטי גמר מחקריים העוסקים באדריכלות אזרחית
                                             וביחסי
-                                            תכנון–קהילה–משילות, תוך קידום צדק חברתי וסביבתי באמצעות כלים של תכנון
+                                            תכנון-קהילה-משילות, תוך קידום צדק חברתי וסביבתי באמצעות כלים של תכנון
                                             ועיצוב
                                             מבוסס הקשר.</p>
                                     </div>
@@ -2568,9 +2592,9 @@
                         <div class="grid md:grid-cols-2 gap-16 items-start">
                             <div class="order-1 md:order-2 pr-8 md:pr-12 border-r border-gray-200">
                                 <span
-                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2013–2015
+                                    class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">2013-2015
                                     | Bezalel</span>
-                                <h3 class="text-3xl font-black mb-6 font-arch">“מראה מקום” – קורס רב־תחומי</h3>
+                                <h3 class="text-3xl font-black mb-6 font-arch">“מראה מקום” - קורס רב־תחומי</h3>
                                 <div class="mb-4">
                                     <span
                                         class="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-2">תפקיד:</span>
@@ -2661,8 +2685,8 @@
                                 <div class="flex items-baseline gap-4 mb-3">
                                     <span class="text-sm font-bold text-black">2025</span>
                                     <span
-                                        class="text-[10px] font-bold uppercase tracking-widest text-white bg-black px-2 py-0.5 rounded-full">ספר
-                                        חדש</span>
+                                        class="text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-2 py-0.5 shadow-sm">NEW
+                                        BOOK</span>
                                 </div>
                                 <h4
                                     class="text-2xl font-black leading-tight mb-3 group-hover:underline decoration-2 underline-offset-4 font-arch">
@@ -2724,7 +2748,8 @@
                             <div class="flex items-baseline gap-2 md:flex-col md:gap-1 min-w-[120px]">
                                 <span class="text-sm font-bold text-black">2026</span>
                                 <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-green-600 border border-green-200 px-2 py-0.5 rounded-full">Accepted</span>
+                                    class="text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-2 py-0.5 shadow-sm">ACCEPTED
+                                    • FORTHCOMING</span>
                             </div>
                             <div>
                                 <h4
@@ -2743,7 +2768,7 @@
                             <div class="flex items-baseline gap-2 md:flex-col md:gap-1 min-w-[120px]">
                                 <span class="text-sm font-bold text-black">2025</span>
                                 <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-green-600 border border-green-200 px-2 py-0.5 rounded-full">Accepted</span>
+                                    class="text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-2 py-0.5 shadow-sm">ACCEPTED</span>
                             </div>
                             <div>
                                 <h4
@@ -2785,7 +2810,7 @@
                             <div class="flex items-baseline gap-2 md:flex-col md:gap-1 min-w-[120px]">
                                 <span class="text-sm font-bold text-black">2025</span>
                                 <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-green-600 border border-green-200 px-2 py-0.5 rounded-full">Accepted</span>
+                                    class="text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-2 py-0.5 shadow-sm">ACCEPTED</span>
                             </div>
                             <div>
                                 <h4
@@ -2826,7 +2851,7 @@
                             <div class="flex items-baseline gap-2 md:flex-col md:gap-1 min-w-[120px]">
                                 <span class="text-sm font-bold text-black">2025</span>
                                 <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-green-600 border border-green-200 px-2 py-0.5 rounded-full">Accepted</span>
+                                    class="text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-2 py-0.5 shadow-sm">ACCEPTED</span>
                             </div>
                             <div>
                                 <h4
@@ -2867,7 +2892,8 @@
                             <div class="flex items-baseline gap-2 md:flex-col md:gap-1 min-w-[120px]">
                                 <span class="text-sm font-bold text-black">2025</span>
                                 <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-green-600 border border-green-200 px-2 py-0.5 rounded-full">Accepted</span>
+                                    class="text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-2 py-0.5 shadow-sm">ACCEPTED
+                                    • FORTHCOMING</span>
                             </div>
                             <div>
                                 <h4
@@ -2903,7 +2929,7 @@
                             <div class="flex items-baseline gap-2 md:flex-col md:gap-1 min-w-[120px]">
                                 <span class="text-sm font-bold text-black">2024</span>
                                 <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-green-600 border border-green-200 px-2 py-0.5 rounded-full">Accepted</span>
+                                    class="text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-2 py-0.5 shadow-sm">ACCEPTED</span>
                             </div>
                             <div>
                                 <h4
@@ -2940,43 +2966,41 @@
                             </div>
                         </article>
 
-                        <!-- 2023 Place-Bound -->
+                        <!-- 2023 Smart Neighborhood (Proceedings) -->
                         <article class="flex flex-col md:flex-row gap-4 md:items-baseline px-4 md:px-0">
                             <div class="flex items-baseline gap-2 md:flex-col md:gap-1 min-w-[120px]">
                                 <span class="text-sm font-bold text-black">2023</span>
                                 <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-green-600 border border-green-200 px-2 py-0.5 rounded-full">Accepted</span>
+                                    class="text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-2 py-0.5 shadow-sm">PROCEEDINGS</span>
                             </div>
                             <div>
                                 <h4
                                     class="text-lg font-bold leading-tight mb-1 group-hover:text-blue-600 transition-colors">
-                                    <a href="assets/docs/articles/environment_and_planning_b.pdf"
-                                        target="_blank">"Place-Bound Planning Support Systems for Deliberation:
-                                        Affording Better Communication and Comprehension"</a>
+                                    <a href="assets/docs/articles/smart_neighborhood_proceedings.pdf"
+                                        target="_blank">"Smart Neighborhood? Decentralizing the Smart City Paradigm by
+                                        shifting power from the city to the local neighborhood"</a>
                                 </h4>
                                 <p class="text-sm text-gray-500 mb-2 italic">
-                                    Weiner, R., Mello Rose, F., Yossef Ravid, B., Aharon-Gutman, M., Noennig, J. |
-                                    Environment and Planning B
+                                    Conference: Urbanism in the expanded field, Bezalel Academy of Arts and Design,
+                                    Jerusalem.
                                 </p>
-                                <div class="text-xs text-gray-400 mb-2">
-                                    Published online November 30, 2023.
-                                </div>
                                 <!-- Collapsible Content -->
-                                <div id="desc-place-bound"
+                                <div id="desc-smart-neighborhood"
                                     class="hidden text-sm text-gray-600 leading-relaxed bg-gray-50 p-6 mt-4 mb-4">
-                                    <p>This paper advances the concept of place-bound planning support systems (PSS)
-                                        that integrate digital twins, visualization tools, and participatory protocols
-                                        to enhance urban deliberation. Focusing on communicative dynamics within
-                                        immersive environments, the study explores how spatialized data and shared
-                                        visual interfaces foster mutual comprehension across stakeholders with different
-                                        forms of knowledge. The findings contribute to debates on democratic innovation
-                                        by demonstrating how carefully designed digital infrastructures can bridge
-                                        experiential and institutional perspectives.</p>
+                                    <p>This article proposes shifting the smart city paradigm from centralized municipal
+                                        management to the neighborhood scale as a way to enable more democratic and
+                                        socially grounded urban governance. Using the 3S Lab in the Hadar neighborhood
+                                        of Haifa as a case study, it shows how smart city tools—such as digital
+                                        dashboards and social digital twins—can support co-production between
+                                        municipalities and civil society, empower local actors, and reveal critical data
+                                        blind spots. The findings suggest that neighborhood-based smart city practices
+                                        offer a viable path toward a meaningful social reset, while also exposing
+                                        challenges of resources, representation, and sustainability.</p>
                                 </div>
-                                <button onclick="toggleArticle('place-bound')" class="read-more-btn"
-                                    id="btn-place-bound">להמשך +</button>
+                                <button onclick="toggleArticle('smart-neighborhood')" class="read-more-btn"
+                                    id="btn-smart-neighborhood">להמשך +</button>
                                 <div class="mt-2">
-                                    <a href="assets/docs/articles/environment_and_planning_b.pdf" target="_blank"
+                                    <a href="assets/docs/articles/smart_neighborhood_proceedings.pdf" target="_blank"
                                         class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">לקריאה
                                         -></a>
                                 </div>
@@ -2988,7 +3012,7 @@
                             <div class="flex items-baseline gap-2 md:flex-col md:gap-1 min-w-[120px]">
                                 <span class="text-sm font-bold text-black">2022</span>
                                 <span
-                                    class="text-[10px] font-bold uppercase tracking-widest text-green-600 border border-green-200 px-2 py-0.5 rounded-full">Accepted</span>
+                                    class="text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-2 py-0.5 shadow-sm">ACCEPTED</span>
                             </div>
                             <div>
                                 <h4
@@ -3000,7 +3024,7 @@
                                     Yossef Ravid, B., Aharon-Gutman, M. | Environment and Planning B
                                 </p>
                                 <div class="text-xs text-gray-400 mb-2">
-                                    Volume 50, Issue 6, July 2023, pp. 1455–1470.
+                                    Volume 50, Issue 6, July 2023, pp. 1455-1470.
                                 </div>
                                 <!-- Collapsible Content -->
                                 <div id="desc-social-twin"
@@ -3050,7 +3074,7 @@
                         <!-- 2. Sept 2025: Digital Displacement -->
                         <article class="flex flex-col md:flex-row gap-6 md:items-start">
                             <div class="flex flex-row md:flex-col gap-4 md:gap-2 min-w-[140px] shrink-0">
-                                <span class="text-sm font-bold text-black min-w-[80px]">Sept 2025</span>
+                                <span class="text-sm font-bold text-black min-w-[80px]">2025</span>
                                 <span
                                     class="text-[10px] font-bold bg-white border border-gray-200 px-2 py-0.5 rounded shadow-sm text-gray-600 self-start">מרצה</span>
                             </div>
@@ -3069,7 +3093,7 @@
                         <!-- 3. April 2025: From Data to Dialogue -->
                         <article class="flex flex-col md:flex-row gap-6 md:items-start">
                             <div class="flex flex-row md:flex-col gap-4 md:gap-2 min-w-[140px] shrink-0">
-                                <span class="text-sm font-bold text-black min-w-[80px]">April 2025</span>
+                                <span class="text-sm font-bold text-black min-w-[80px]">2025</span>
                                 <span
                                     class="text-[10px] font-bold bg-white border border-gray-200 px-2 py-0.5 rounded shadow-sm text-gray-600 self-start">מרצה</span>
                             </div>
@@ -3102,7 +3126,7 @@
                         <!-- 5. Nov 2024: Thinking Regionally -->
                         <article class="flex flex-col md:flex-row gap-6 md:items-start">
                             <div class="flex flex-row md:flex-col gap-4 md:gap-2 min-w-[140px] shrink-0">
-                                <span class="text-sm font-bold text-black min-w-[80px]">Nov 2024</span>
+                                <span class="text-sm font-bold text-black min-w-[80px]">2024</span>
                                 <span
                                     class="text-[10px] font-bold bg-white border border-gray-200 px-2 py-0.5 rounded shadow-sm text-gray-600 self-start">צוות
                                     הארגון</span>
@@ -3120,7 +3144,7 @@
                         <!-- 6. July 2024: EAIS Roundtable -->
                         <article class="flex flex-col md:flex-row gap-6 md:items-start">
                             <div class="flex flex-row md:flex-col gap-4 md:gap-2 min-w-[140px] shrink-0">
-                                <span class="text-sm font-bold text-black min-w-[80px]">July 2024</span>
+                                <span class="text-sm font-bold text-black min-w-[80px]">2024</span>
                                 <span
                                     class="text-[10px] font-bold bg-white border border-gray-200 px-2 py-0.5 rounded shadow-sm text-gray-600 self-start">מרצה</span>
                             </div>
@@ -3136,9 +3160,9 @@
                         </article>
 
                         <!-- 7. Sept 2023: Put the social on the table -->
-                        <article class="flex flex-col md:flex-row gap-6 md:items-start">
+                        <article class="flex flex-col md:flex-row gap-6 md:items-start group/pub">
                             <div class="flex flex-row md:flex-col gap-4 md:gap-2 min-w-[140px] shrink-0">
-                                <span class="text-sm font-bold text-black min-w-[80px]">Sept 2023</span>
+                                <span class="text-sm font-bold text-black min-w-[80px]">2023</span>
                                 <span
                                     class="text-[10px] font-bold bg-white border border-gray-200 px-2 py-0.5 rounded shadow-sm text-gray-600 self-start">ועדת
                                     כנס</span>
@@ -3147,13 +3171,16 @@
                                 <h4 class="text-lg font-bold leading-tight mb-1">"Put the social on the table"</h4>
                                 <p class="text-sm text-gray-600 mb-2">Conference collaboration with HafenCity
                                     University, Hamburg and the Technion.</p>
+                                <a href="assets/images/put_the_social_on_the_table.jpg" target="_blank"
+                                    class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-white text-black border border-gray-200 px-4 py-2 hover:border-black hover:underline transition-all shadow-sm">LINK
+                                    -></a>
                             </div>
                         </article>
 
                         <!-- 8. May 2023: Smart Neighborhood -->
                         <article class="flex flex-col md:flex-row gap-6 md:items-start">
                             <div class="flex flex-row md:flex-col gap-4 md:gap-2 min-w-[140px] shrink-0">
-                                <span class="text-sm font-bold text-black min-w-[80px]">May 2023</span>
+                                <span class="text-sm font-bold text-black min-w-[80px]">2023</span>
                                 <span
                                     class="text-[10px] font-bold bg-white border border-gray-200 px-2 py-0.5 rounded shadow-sm text-gray-600 self-start">מרצה</span>
                             </div>
@@ -3201,7 +3228,7 @@
                                     </h4>
                                     <p class="text-xs text-gray-400 mb-4">
                                         In: Planning Knowledge Development for Shaping the Renewed Neighborhood Concept
-                                        (p. 27). Tel Aviv–Yafo Municipality, Israel Planners Association, Yad Hanadiv.
+                                        (p. 27). Tel Aviv-Yafo Municipality, Israel Planners Association, Yad Hanadiv.
                                     </p>
                                     <a href="מסמך-מסכם-פיתוח-ידע-תכנוני-לגיבוש-תפיסת-השכונה-המתחדשת-_1741704075.pdf"
                                         download
@@ -3396,47 +3423,69 @@
                 <article class="pr-8 md:pr-12 relative">
                     <div class="space-y-8 text-xl font-light leading-relaxed text-gray-800">
                         <p>בית הספר לאדריכלות בבצלאל פועל מתוך מסורת מבוססת של יצירה, ביקורת ומעורבות תרבותית, ומהווה
-                            מוקד מרכזי לעיצוב תרבות אדריכלית בישראל. החזון המוצע אינו מבקש לשנות את יסודותיו, אלא להוביל
-                            אותו לשלב הבא של התפתחותו — בשעה סינגולרית שבה תנאי היסוד של ידע, מקצוע ואקדמיה משתנים
-                            בו־זמנית.</p>
+                            מוקד מרכזי בעיצוב התרבות האדריכלית בישראל. החזון המוצע אינו מבקש לשנות את יסודותיו, אלא
+                            להוביל אותו לשלב הבא של התפתחותו – בשעה סינגולרית שבה תנאי היסוד של ידע, מקצוע ואקדמיה
+                            משתנים בו־זמנית.</p>
+
                         <p>התקופה הנוכחית אינה רק עידן של האצה טכנולוגית, אלא נקודת מפנה מבנית. המרחב הבנוי אינו מתעצב
                             עוד רק באמצעות חומר, צורה וטכניקה, אלא בתוך מערכות נתונים, רגולציה, מדיניות ותשתיות
                             חישוביות. החלטות מרחביות מתקבלות באמצעות מודלים, אלגוריתמים ומנגנוני ממשל המשפיעים בפועל על
-                            המציאות הפיזית. הפיזי והדיגיטלי אינם עוד שני מישורים נפרדים, אלא מרחב פעולה אחד — פיזיטלי.
+                            המציאות הפיזית. הפיזי והדיגיטלי אינם עוד שני מישורים נפרדים, אלא מרחב פעולה אחד – פיזיטלי.
                             שינוי זה אינו תוספת חיצונית למקצוע, אלא שינוי סינגולרי בתנאי הפעולה שלו.</p>
+
                         <p>בתנאים אלה, תפקידו של בית ספר לאדריכלות אינו להסתפק בהכשרת מעצבים מיומנים בלבד, אלא להכשיר
                             אדריכלים ואדריכליות המסוגלים לפעול בתוך מורכבות מערכתית. לא רק לעצב אובייקטים, אלא להבין
                             מערכות; לא רק להגיב למציאות, אלא לקרוא את המנגנונים המייצרים אותה. ההכשרה האקדמית צריכה
-                            להעמיק את ליבת הסטודיו, אך גם להטעין אותו בהבנה מערכתית, ביכולת אנליטית ובדמיון
-                            מרחבי־פוליטי.</p>
-                        <p>הדמיון המרחבי־פוליטי הוא יכולת מקצועית הכרחית. אדריכלים פועלים בתוך מרחב ציבורי משתנה
-                            (ובמיוחד על רקע המציאות הישראלית שבה סוגיות של תכנון, משילות, זהות וחלוקה מרחבית מצויות בלב
-                            הדיון הציבורי). על בית הספר לטפח את היכולת להבין את יחסי הכוח והמדיניות הפועלים במרחב,
-                            ולהציע לו חלופות מרחביות מושכלות. זהו אינו אקטיביזם, אלא אחריות מקצועית עמוקה.</p>
-                        <p>בהיותה חלק מאקדמיה לאמנות ולעיצוב, בצלאל מחזיקה יתרון ייחודי. היא אינה מוסד טכני בלבד ואינה
-                            פקולטה הנדסית גרידא, אלא מרחב תרבותי שבו יצירה, מחקר ומחשבה ביקורתית מתקיימים בדיאלוג מתמשך.
-                            חזון בית הספר מבקש לבסס את האדריכלות כתחום ידע הפועל בין סטודיו לתיאוריה, בין מחקר לפרקטיקה,
-                            ובין דמיון לאחריות ציבורית. האדריכלות אינה רק מקצוע; היא שדה אינטלקטואלי.</p>
+                            להעמיק את ליבת הסטודיו כמרחב יצירה ומחקר, ובה בעת להטעין אותו בהבנה מערכתית, ביכולת אנליטית
+                            ובדמיון מרחבי־פוליטי.</p>
+
+                        <p>הדמיון המרחבי־פוליטי הוא יכולת מקצועית הכרחית. אדריכלים פועלים בתוך מרחב ציבורי משתנה,
+                            ובמיוחד על רקע המציאות הישראלית שבה סוגיות של תכנון, משילות, זהות וחלוקה מרחבית מצויות בלב
+                            הדיון הציבורי. על בית הספר לטפח את היכולת להבין את יחסי הכוח והמדיניות הפועלים במרחב, ולהציע
+                            לו חלופות מרחביות מושכלות. אין מדובר באקטיביזם, אלא באחריות מקצועית להבנת התנאים שבתוכם
+                            פועלת האדריכלות.</p>
+
+                        <p>בהיותו חלק מבצלאל – אקדמיה לאמנות ולעיצוב – נהנה בית הספר לאדריכלות מהקשר תרבותי ייחודי. הוא
+                            אינו פועל בתוך מסגרת טכנית בלבד ואינו ממוקם בסביבה הנדסית גרידא, אלא בתוך מרחב שבו יצירה
+                            אמנותית, מחקר ומחשבה ביקורתית מתקיימים בדיאלוג מתמשך. הקשר זה מאפשר לאדריכלות לפעול לא רק
+                            כפרקטיקה מקצועית, אלא כשדה ידע בעל עומק תרבותי ותיאורטי.</p>
+
                         <p>מתוך תפיסה זו, תוכנית הלימודים אינה מסגרת קבועה אלא תשתית מתפתחת. עליה לשקף את מורכבות הזמן,
-                            להעמיק את ליבת הסטודיו כמרחב יצירה ומחקר, ולשלב באופן מדורג כלים ומתודולוגיות המרחיבים את
-                            טווח הפעולה של האדריכלות — מן האובייקט הבנוי ועד למערכות הפיזיטליות שבתוכן הוא מתקיים.
-                            הטכנולוגיה אינה יעד; היא אמצעי להבנת מורכבות ולפיתוח יכולת פעולה מושכלת.</p>
+                            להעמיק את הסטודיו כמרחב מחקרי פעיל, ולשלב באופן מדורג כלים ומתודולוגיות המרחיבים את טווח
+                            הפעולה של האדריכלות – מן האובייקט הבנוי ועד למערכות הפיזיטליות שבתוכן הוא מתקיים. הטכנולוגיה
+                            אינה יעד, אלא אמצעי להבנת מורכבות ולפיתוח יכולת פעולה מושכלת. אוריינות מרחבית־נתונית וחשיבה
+                            מערכתית צריכות להשתלב בליבת ההכשרה כחלק מתנאי הפעולה של המקצוע.</p>
+
                         <p>במקביל, יש להעמיק את החיבור בין בית הספר לשדה הציבורי. עבודה עם רשויות, מוסדות וקהילות אינה
-                            רק התנסות יישומית, אלא מרחב מחקרי ועיצובי כאחד. בכך מתרחב תפקיד האדריכל מן האובייקט הבנוי אל
-                            המערכת שבתוכה הוא פועל — מערכת פיזיטלית, ציבורית ופוליטית.</p>
-                        <p>מהלך אסטרטגי מרכזי הוא פיתוח תארים מתקדמים במחקר עיצובי. אדריכלות כתחום ידע זקוקה למסגרת שבה
-                            העיצוב עצמו מהווה מתודולוגיית מחקר, והסטודיו משמש זירה לייצור ידע. תארים מתקדמים במחקר
-                            עיצובי יבססו את בית הספר כמרכז ידע עצמאי המייצר תיאוריה מתוך המעשה, יחזקו את מעמדו בזירה
-                            הבינלאומית, ויאפשרו פיתוח שפה מחקרית מקורית המחברת בין פרקטיקה, תיאוריה וחדשנות מתודולוגית.
-                        </p>
+                            רק התנסות יישומית, אלא מרחב מחקרי ועיצובי כאחד. בהקשר זה מוצע לבסס מעבדה למחקר יישומי מבוסס
+                            עיצוב – תשתית מוסדית קבועה שתפעל בצומת שבין סטודיו, מערכות ציבוריות ותשתיות דיגיטליות.
+                            המעבדה תהווה מרחב לפיתוח כלים, סימולציות ומודלים פיזיטליים, ותאפשר לסטודנטים ולסגל לפעול
+                            בתוך מציאות ממשית ומתמשכת. בכך מתרחב תפקיד האדריכל מן האובייקט הבנוי אל המערכת שבתוכה הוא
+                            פועל – מערכת ציבורית, פוליטית ופיזיטלית.</p>
+
+                        <p>ירושלים עצמה מהווה בהקשר זה קמפוס חי – מרחב לימודי הדומה במהותו למודל של Living Lab, שבו מחקר
+                            והוראה מתקיימים בזיקה ישירה למציאות עירונית חיה ומתמשכת. כעיר רבת שכבות, זהויות ומשמעויות
+                            בין־לאומיות, היא פועלת כ־Complexity City – מערכת דחוסה ורב־שכבתית שבה תשתיות חומריות,
+                            מדיניות, טכנולוגיה וקהילה מצטלבות ומשפיעות זו על זו. פיתוח אתרי מחקר ארוכי טווח בעיר ושיתופי
+                            פעולה עם רשויות וקהילות יבססו את הקשר בין הוראה למציאות חיה. בהיותה עיר בעלת הדהוד בין־לאומי
+                            עמוק, ירושלים מציבה את בצלאל גם בעמדה טבעית ליצירת שיתופי פעולה חוצי לאומים. מתוך עוגן מקומי
+                            ורב־תרבותי, מתאפשרת פעולה בין־לאומית שאינה מנותקת מהקשר, אלא צומחת ממנו.</p>
+
+                        <p>מהלך אסטרטגי משלים הוא פיתוח תארים מתקדמים במחקר עיצובי. אדריכלות כתחום ידע זקוקה למסגרת שבה
+                            העיצוב עצמו מהווה מתודולוגיית מחקר, והסטודיו משמש זירה לייצור ידע. במסגרת זו, ניתן לבסס
+                            מסלול מתקדם הפועל בשדה המתפתח של Research by Design, שבו הפרויקט אינו רק תוצר אלא אמצעי
+                            חקירה. מהלך כזה יחזק את מעמדו של בית הספר בזירה הבין־לאומית ויעמיק את תרומתו ליצירת ידע
+                            מקורי המחבר בין פרקטיקה, תיאוריה וחדשנות מתודולוגית.</p>
+
                         <p>בעידן שבו ידע נגיש מחוץ לכותלי האקדמיה, ייחודה של בצלאל אינו בבלעדיות על מידע אלא ביכולתה
                             לייצר עומק, מסגרת חשיבה ותרבות מקצועית. בית הספר לאדריכלות צריך להיות המקום שבו ידע הופך
-                            לשפה, שבו פרקטיקה הופכת למחקר, ושבו סטודנטים מפתחים עמדה — לא רק מיומנות.</p>
+                            לשפה, שבו פרקטיקה הופכת למחקר, ושבו סטודנטים וסטודנטיות מפתחים עמדה – לא רק מיומנות.</p>
+
                         <p>בית הספר אינו רק מוסד המלמד אדריכלות; הוא תשתית ליצירת תרבות אדריכלית המתאימה לאופייה
                             הסינגולרי של התקופה. תפקידו לפתוח אפשרויות, לטפח עומק, ולעצב דור המסוגל לפעול באחריות,
                             בדמיון ובהבנה מערכתית של הזמן. חזון זה מבקש למצב את בצלאל כבית ספר המוביל שיח אדריכלי חדש
-                            בישראל — שיח המחבר בין יצירה לעומק מחקרי, בין מורכבות פיזיטלית לדמיון מרחבי־פוליטי, ובין
-                            סטודיו למערכת הציבורית שבתוכה האדריכלות פועלת</p>
+                            בישראל – שיח המחבר בין יצירה לעומק מחקרי, בין מורכבות פיזיטלית לדמיון מרחבי־פוליטי, ובין
+                            סטודיו למערכת הציבורית והבין־לאומית שבתוכה האדריכלות פועלת.</p>
                     </div>
                 </article>
             </section>
@@ -3481,9 +3530,9 @@
                         const id = entry.target.getAttribute('id');
                         navLinks.forEach(link => {
                             if (link.getAttribute('data-section-id') === id) {
-                                link.classList.add('font-black', 'active-nav');
+                                link.classList.add('active-nav');
                             } else {
-                                link.classList.remove('font-black', 'active-nav');
+                                link.classList.remove('active-nav');
                             }
                         });
                     }
@@ -3632,9 +3681,9 @@
             camera.position.y += (100 + (mouseY * 0.2) - camera.position.y) * 0.05;
             camera.lookAt(0, 20, 0);
 
-            if (networkGroup) networkGroup.rotation.y -= 0.001;
+            if (networkGroup) networkGroup.rotation.y -= 0.0005;
 
-            scanX += 0.8;
+            scanX += 0.4;
             if (scanX > 200) scanX = -200;
 
             if (scanPlanePhysical) scanPlanePhysical.constant = scanX;
@@ -3673,24 +3722,30 @@
 
         function toggleDesc(id) {
             const desc = document.getElementById('desc-' + id);
-            const btnText = document.getElementById('btn-text-' + id);
-            const icon = document.getElementById('icon-' + id);
             if (!desc) return;
 
-            // Updated to check for max-h-28 (7rem) as standard
+            // Expand all in the same section/container
+            const section = desc.closest('section') || desc.closest('article') || document.body;
+            const allDescs = section.querySelectorAll('[id^="desc-"]');
+
             const isClosed = desc.classList.contains('max-h-28') || desc.classList.contains('max-h-20') || desc.classList.contains('max-h-24');
 
-            if (isClosed) {
-                desc.classList.remove('max-h-20', 'max-h-24', 'max-h-28');
-                desc.classList.add('max-h-[2000px]');
-                if (btnText) btnText.textContent = 'סגור -';
-                if (icon) icon.style.transform = 'rotate(180deg)';
-            } else {
-                desc.classList.remove('max-h-[2000px]');
-                desc.classList.add('max-h-28'); // Default collapse to 28
-                if (btnText) btnText.textContent = 'להמשך +';
-                if (icon) icon.style.transform = 'rotate(0deg)';
-            }
+            allDescs.forEach(el => {
+                const btnText = document.getElementById('btn-text-' + el.id.replace('desc-', ''));
+                const icon = document.getElementById('icon-' + el.id.replace('desc-', ''));
+
+                if (isClosed) {
+                    el.classList.remove('max-h-20', 'max-h-24', 'max-h-28');
+                    el.classList.add('max-h-[2000px]');
+                    if (btnText) btnText.textContent = 'סגור -';
+                    if (icon) icon.style.transform = 'rotate(180deg)';
+                } else {
+                    el.classList.remove('max-h-[2000px]');
+                    el.classList.add('max-h-28');
+                    if (btnText) btnText.textContent = 'להמשך +';
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                }
+            });
         }
 
         // --- Modals & Overlays ---
@@ -3742,34 +3797,99 @@
 
         function toggleTeachingMore(id) {
             const el = document.getElementById('more-' + id);
-            const btn = document.getElementById('btn-' + id);
-            if (el) {
-                const hidden = el.classList.toggle('hidden');
-                btn.innerHTML = hidden ? 'להמשך +' : 'סגור -';
-            }
+            if (!el) return;
+
+            const section = el.closest('section') || document.body;
+            const allMores = section.querySelectorAll('[id^="more-"]');
+            const hidden = el.classList.contains('hidden');
+
+            allMores.forEach(item => {
+                const btn = document.getElementById('btn-' + item.id.replace('more-', ''));
+                if (hidden) {
+                    item.classList.remove('hidden');
+                    if (btn) btn.innerHTML = 'סגור -';
+                } else {
+                    item.classList.add('hidden');
+                    if (btn) btn.innerHTML = 'להמשך +';
+                }
+            });
         }
 
-        function openTeachingLightbox(src) {
+        let currentLightboxImages = [];
+        let currentLightboxIndex = 0;
+
+        function openTeachingLightbox(src, carouselId = null) {
             const lb = document.getElementById('teaching-lightbox');
-            if (lb) {
-                lb.querySelector('img').src = src;
-                lb.classList.add('active');
-                document.body.style.overflow = 'hidden';
+            const img = document.getElementById('lightbox-img');
+            const prevBtn = document.getElementById('lb-prev-btn');
+            const nextBtn = document.getElementById('lb-next-btn');
+
+            if (!lb || !img) return;
+
+            currentLightboxImages = [src];
+            currentLightboxIndex = 0;
+
+            if (carouselId) {
+                const carousel = document.querySelector(`.teaching-carousel[data-carousel-id="${carouselId}"]`) ||
+                    document.querySelector(`#${carouselId}`);
+                if (carousel) {
+                    const allImgs = Array.from(carousel.querySelectorAll('img')).map(i => i.src);
+                    if (allImgs.length > 1) {
+                        currentLightboxImages = allImgs;
+                        currentLightboxIndex = allImgs.indexOf(src);
+                        if (currentLightboxIndex === -1) currentLightboxIndex = 0;
+                        prevBtn?.classList.remove('hidden');
+                        nextBtn?.classList.remove('hidden');
+                    } else {
+                        prevBtn?.classList.add('hidden');
+                        nextBtn?.classList.add('hidden');
+                    }
+                }
+            } else {
+                prevBtn?.classList.add('hidden');
+                nextBtn?.classList.add('hidden');
             }
+
+            img.src = currentLightboxImages[currentLightboxIndex];
+            lb.style.display = 'flex';
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function changeLightboxImage(delta) {
+            if (currentLightboxImages.length <= 1) return;
+            currentLightboxIndex = (currentLightboxIndex + delta + currentLightboxImages.length) % currentLightboxImages.length;
+            const img = document.getElementById('lightbox-img');
+            if (img) img.src = currentLightboxImages[currentLightboxIndex];
         }
 
         function closeTeachingLightbox() {
-            document.getElementById('teaching-lightbox')?.classList.remove('active');
-            document.body.style.overflow = '';
+            const lb = document.getElementById('teaching-lightbox');
+            if (lb) {
+                lb.style.display = 'none';
+                lb.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         }
 
         function toggleArticle(id) {
             const el = document.getElementById('desc-' + id);
-            const btn = document.getElementById('btn-' + id);
-            if (el) {
-                const hidden = el.classList.toggle('hidden');
-                if (btn) btn.innerHTML = hidden ? 'להמשך +' : 'סגור -';
-            }
+            if (!el) return;
+
+            const section = el.closest('section') || document.body;
+            const allDescs = section.querySelectorAll('[id^="desc-"]');
+            const hidden = el.classList.contains('hidden');
+
+            allDescs.forEach(item => {
+                const btn = document.getElementById('btn-' + item.id.replace('desc-', ''));
+                if (hidden) {
+                    item.classList.remove('hidden');
+                    if (btn) btn.innerHTML = 'סגור -';
+                } else {
+                    item.classList.add('hidden');
+                    if (btn) btn.innerHTML = 'להמשך +';
+                }
+            });
         }
 
         // Initialize Carousel
@@ -3778,13 +3898,30 @@
         });
     </script>
     <!-- Lightbox for Teaching Section -->
-    <div id="teaching-lightbox">
-        <div class="lightbox-close" onclick="closeTeachingLightbox()">
+    <div id="teaching-lightbox" class="fixed inset-0 bg-black/95 z-[2000] hidden items-center justify-center">
+        <button class="lightbox-close absolute top-8 right-8 text-white hover:text-gray-400 z-[2010]"
+            onclick="closeTeachingLightbox()">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
-        </div>
-        <img src="" alt="Enlarged view">
+        </button>
+
+        <!-- Navigation Arrows -->
+        <button id="lb-prev-btn" class="absolute left-8 text-white hover:text-gray-400 z-[2010] p-4 hidden"
+            onclick="changeLightboxImage(-1)">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+        <button id="lb-next-btn" class="absolute right-8 text-white hover:text-gray-400 z-[2010] p-4 hidden"
+            onclick="changeLightboxImage(1)">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+
+        <img id="lightbox-img" src="" alt="Enlarged view"
+            class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl transition-transform duration-300">
     </div>
 
 </body>
